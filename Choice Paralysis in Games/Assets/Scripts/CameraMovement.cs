@@ -5,7 +5,7 @@ namespace Scripts
     [RequireComponent(typeof(Camera))]
     public class CameraMovement : MonoBehaviour
     {
-        [SerializeField] private float _smoothTime = 0.1f;
+        [SerializeField] private float _smoothTime = 0.3f;
         [SerializeField] private float _maxDistance = 4;
 
         private UserInputController _userInput;
@@ -21,27 +21,23 @@ namespace Scripts
 
         private void FixedUpdate()
         {
-            Vector2 midPoint = (_playerTransform.position + _userInput.MouseWorldPosition) / 2;
+            FollowPlayer();
+        }
 
-            Vector2 damp = Vector2.SmoothDamp(transform.position, midPoint, ref _velocity, _smoothTime);
-            Vector3 targetPos = new Vector3(damp.x, damp.y, transform.position.z);
-            transform.position = targetPos;
+        /// <summary>
+        /// Smoothly follows the player and offsets the position depending on where the cursor is relative to the player
+        /// </summary>
+        private void FollowPlayer()
+        {
+            // The point between the cursor and the player
+            Vector2 midPoint = ((Vector2)_playerTransform.position + (Vector2)_userInput.MouseWorldPosition) / 2;
 
-            /*
-            if (Vector2.Distance(_playerTransform.position, targetPos) < _maxDistance)
-            {
-                transform.position = targetPos;
-                Debug.Log("Fast");
-            }
-            else
-            {
-                damp = Vector2.SmoothDamp(transform.position, midPoint, ref _velocity, _smoothTime);
-                _velocity = Vector2.ClampMagnitude(_velocity, 0.01f);
-                targetPos = new Vector3(damp.x, damp.y, transform.position.z);
-                transform.position = targetPos;
-                Debug.Log("Slowed");
-            }
-            */
+            // Offset between mid point and player, with clamped magnitude
+            Vector2 offset = midPoint - (Vector2)_playerTransform.position;
+            offset = Vector2.ClampMagnitude(offset, _maxDistance);
+
+            Vector3 targetPos = new Vector3(_playerTransform.position.x + offset.x, _playerTransform.position.y + offset.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, targetPos, _smoothTime);
         }
     }
 }
