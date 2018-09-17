@@ -21,6 +21,11 @@ namespace Scripts.Weapons
         {
             Instantiate(_bulletPrefabToSpawn, transform.position, transform.rotation).Shoot(_bulletDamage, _bulletSpeed);
         }
+
+        private void OnDisable()
+        {
+            _userInputController.OnAttackButtonDown -= SpawnBullet;
+        }
     }
 }
 

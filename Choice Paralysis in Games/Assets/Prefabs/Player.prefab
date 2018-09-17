@@ -36,7 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4365026775890520}
   - component: {fileID: 114168588944951692}
-  - component: {fileID: 114854451448561456}
   m_Layer: 0
   m_Name: Weapon Holder
   m_TagString: Untagged
@@ -54,6 +53,7 @@ GameObject:
   - component: {fileID: 4076420932209370}
   - component: {fileID: 212741809396826724}
   - component: {fileID: 70353407641885876}
+  - component: {fileID: 114733619643892566}
   m_Layer: 0
   m_Name: Body graphics
   m_TagString: Untagged
@@ -102,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 1200620160409654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4494071749790500}
   m_RootOrder: 0
@@ -156,13 +156,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1182619456322462}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4365026775890520}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!50 &50758007386510452
 Rigidbody2D:
   serializedVersion: 4
@@ -181,8 +181,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!70 &70353407641885876
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -196,7 +196,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 1.2}
   m_Direction: 0
 --- !u!114 &114168588944951692
 MonoBehaviour:
@@ -235,19 +235,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d686301ff70624dae2f980c12d5efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 5
---- !u!114 &114854451448561456
+  _movementSpeed: 10
+--- !u!114 &114733619643892566
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1197859568751828}
+  m_GameObject: {fileID: 1200620160409654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c326e06e2a14496b9225f3e1ce8ea48, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ce2609336f47d14fbfaaffc53ba80ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gunRotation: {fileID: 4365026775890520}
   _gunSpriteRenderer: {fileID: 212239883783079828}
+  _sortInFrontNumber: 11
+  _sortBehindNumber: 9
+  _walkNorthAnimName: North
+  _walkEastAnimName: East
+  _walkSouthAnimName: South
+  _walkWestAnimName: West
 --- !u!212 &212239883783079828
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -282,9 +289,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 25ee70a24227e554c8a943352d48fbc0, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_SortingOrder: 9
+  m_Sprite: {fileID: 21300000, guid: 6070e9c32541978478c82292da4354e2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -328,8 +335,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 25ee70a24227e554c8a943352d48fbc0, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: dd143267c77d4b64da8c6fe1efb7d954, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

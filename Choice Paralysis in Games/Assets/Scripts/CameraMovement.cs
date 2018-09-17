@@ -16,11 +16,13 @@ namespace Scripts
         private void Start()
         {
             _userInput = UserInputController.Instance;
-            _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            _playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
         }
 
         private void FixedUpdate()
         {
+            if (_playerTransform == null) { return; }
+
             FollowPlayer();
         }
 

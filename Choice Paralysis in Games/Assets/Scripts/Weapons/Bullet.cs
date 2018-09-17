@@ -33,7 +33,10 @@ namespace Scripts.Weapons
 
         private void HandleCollision(Collider2D collider)
         {
-                                             // TODO
+            collider.transform.root.GetComponentInChildren<IDamageable>()?.TakeDamage(_damage);
+
+            // Spawn bullet effect
+            Destroy(gameObject);
         }
     }
 }

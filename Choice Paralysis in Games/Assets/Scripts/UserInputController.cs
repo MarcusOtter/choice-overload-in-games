@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Scripts
 {
-    /// <inheritdoc />
     /// <summary>Singleton class that tracks the user's input.</summary>
 	public class UserInputController : MonoBehaviour
 	{
