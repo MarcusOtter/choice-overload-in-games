@@ -25,7 +25,7 @@ namespace Scripts.Enemies
 
         private void Update()
         {
-            _direction.up = _enemy.Direction;
+            _direction.up = _enemy.LookDirection;
             _animator.SetFloat("Rotation", _direction.localEulerAngles.z);
             //Debug.Log(_direction.localEulerAngles.z);
         }

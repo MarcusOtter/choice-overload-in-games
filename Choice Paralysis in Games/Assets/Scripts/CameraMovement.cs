@@ -1,22 +1,38 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using System.Collections;
 
 namespace Scripts
 {
-    [RequireComponent(typeof(Camera))]
     public class CameraMovement : MonoBehaviour
     {
-        [SerializeField] private float _smoothTime = 0.3f;
+        [Header("Follow mouse & player settings")]
+        [SerializeField] [Range(0, 1)] private float _smoothTime = 0.1f;
         [SerializeField] private float _maxDistance = 4;
+
+        [Header("Screen shake settings")]
+        [SerializeField] [Range(0.01f, 1f)] private float _smallShakeStrength = 0.12f;
+        [SerializeField] [Range(0, 1)] private float _shakeSpeed = 0.5f;
 
         private UserInputController _userInput;
         private Transform _playerTransform;
+        private Transform _playerLookDirection;
 
         private Vector2 _velocity;
+
+        private Coroutine _runningCameraShake;
+
+        private void OnEnable()
+        {
+            _userInput = UserInputController.Instance;
+            _userInput.OnAttackButtonDown += CameraShakeSmall;
+        }
 
         private void Start()
         {
             _userInput = UserInputController.Instance;
             _playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
+            _playerLookDirection = _playerTransform?.GetComponentInChildren<LookAtMouse>()?.transform;
         }
 
         private void FixedUpdate()
@@ -24,6 +40,46 @@ namespace Scripts
             if (_playerTransform == null) { return; }
 
             FollowPlayer();
+        }
+
+
+        private void CameraShakeSmall(object sender, EventArgs e)
+        {
+            if (_runningCameraShake != null) { return; }
+
+            _runningCameraShake = StartCoroutine(CameraShakeSmall());
+        }
+
+        private IEnumerator CameraShakeSmall()
+        {
+            var camTransform = Camera.main.transform;
+         
+            // The point to put the camera at
+            var shakePoint = (_playerLookDirection.up * -1) * _smallShakeStrength;
+            shakePoint.z = camTransform.localPosition.z;
+
+            // Move towards the shakepoint while far away from it
+            while (Vector3.Distance(camTransform.localPosition, shakePoint) > 0.1f)
+            {
+                camTransform.localPosition = Vector3.Lerp(camTransform.localPosition, shakePoint, _shakeSpeed);
+                yield return new WaitForEndOfFrame();
+            }
+
+            camTransform.localPosition = shakePoint;
+
+            yield return new WaitForSeconds(0.1f);
+
+            Vector3 middlePoint = new Vector3(0, 0, camTransform.localPosition.z);
+
+            // Move towards the middle of the screen again while far away from the middle
+            while(Vector3.Distance(camTransform.localPosition, middlePoint) > 0.1f)
+            {
+                camTransform.localPosition = Vector3.Lerp(camTransform.localPosition, middlePoint, _shakeSpeed);
+                yield return new WaitForEndOfFrame();
+            }
+
+            camTransform.localPosition = middlePoint;
+            _runningCameraShake = null;
         }
 
         /// <summary>
@@ -40,6 +96,11 @@ namespace Scripts
 
             Vector3 targetPos = new Vector3(_playerTransform.position.x + offset.x, _playerTransform.position.y + offset.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, targetPos, _smoothTime);
+        }
+
+        private void OnDisable()
+        {
+            _userInput.OnAttackButtonDown -= CameraShakeSmall;
         }
     }
 }

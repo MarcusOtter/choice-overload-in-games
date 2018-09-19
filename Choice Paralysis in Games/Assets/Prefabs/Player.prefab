@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 212741809396826724}
   - component: {fileID: 70353407641885876}
   - component: {fileID: 114733619643892566}
+  - component: {fileID: 95774011969023720}
   m_Layer: 0
   m_Name: Body graphics
   m_TagString: Untagged
@@ -157,7 +158,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1182619456322462}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4365026775890520}
@@ -198,6 +199,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.8, y: 1.2}
   m_Direction: 0
+--- !u!95 &95774011969023720
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200620160409654}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16253c5725f2b0a4e9676cc9d5c11e19, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114168588944951692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefabToSpawn: {fileID: 114026143446173018, guid: 6c4184d52bede4112847644ebfc50bc6,
     type: 2}
-  _bulletDamage: 10
+  _bulletDamage: 2
   _bulletSpeed: 30
 --- !u!114 &114564034676943210
 MonoBehaviour:
@@ -251,10 +270,7 @@ MonoBehaviour:
   _gunSpriteRenderer: {fileID: 212239883783079828}
   _sortInFrontNumber: 11
   _sortBehindNumber: 9
-  _walkNorthAnimName: North
-  _walkEastAnimName: East
-  _walkSouthAnimName: South
-  _walkWestAnimName: West
+  _rotationAnimationName: Rotation
 --- !u!212 &212239883783079828
 SpriteRenderer:
   m_ObjectHideFlags: 1
