@@ -5,25 +5,26 @@ namespace Scripts.Enemies
     [RequireComponent(typeof(Rigidbody2D))]
     public class Enemy : MonoBehaviour, IDamageable
     {
-        internal Vector2 LookDirection { get; private set; }
+        // Can't be internal because that's more restrective than protected
+        public Vector2 LookDirection { get; protected set; }
 
         [Header("General Enemy Settings")]
-        [SerializeField] private float _movementSpeed;
-        [SerializeField] private float _maxHealth;
+        [SerializeField] protected float MovementSpeed;
+        [SerializeField] protected float MaxHealth;
 
-        private float _health;
+        protected float Health;
 
-        private Rigidbody2D _rigidbody;
-        private Transform _playerTransform;
-        private EnemyGraphics _enemyGraphics;
+        protected Rigidbody2D Rigidbody;
+        protected Transform PlayerTransform;
+        protected EnemyGraphics EnemyGraphics;
 
         protected virtual void Start()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
-            _enemyGraphics = GetComponentInChildren<EnemyGraphics>();
+            Rigidbody = GetComponent<Rigidbody2D>();
+            PlayerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
+            EnemyGraphics = GetComponentInChildren<EnemyGraphics>();
 
-            _health = _maxHealth;
+            Health = MaxHealth;
         }
 
         protected virtual void FixedUpdate()
@@ -33,17 +34,15 @@ namespace Scripts.Enemies
 
         protected virtual void Move()
         {
-            if (_playerTransform == null) { return; }
-            LookDirection = (_playerTransform.position - transform.position).normalized;
-            _rigidbody.velocity = LookDirection * _movementSpeed;
+            // Overwritten
         }
 
         public virtual void TakeDamage(int incomingDamage)
         {
-            _health -= incomingDamage;
-            _enemyGraphics?.PlayDamagedAnimation();
+            Health -= incomingDamage;
+            EnemyGraphics?.PlayDamagedAnimation();
 
-            if (_health <= 0) { Die(); }
+            if (Health <= 0) { Die(); }
         }
 
         protected virtual void Die()

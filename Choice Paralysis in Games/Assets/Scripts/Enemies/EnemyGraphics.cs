@@ -20,6 +20,7 @@ namespace Scripts.Enemies
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _startColor = _spriteRenderer.color;
 
+            // Instantiate an object that displays the direction of the enemy to the player
             _direction = Instantiate(new GameObject("Direction Pointer"), transform).transform;
         }
 
