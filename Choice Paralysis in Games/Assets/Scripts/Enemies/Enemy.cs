@@ -2,6 +2,7 @@
 
 namespace Scripts.Enemies
 {
+    /// <summary>Base class for enemies</summary>
     [RequireComponent(typeof(Rigidbody2D))]
     public class Enemy : MonoBehaviour, IDamageable
     {

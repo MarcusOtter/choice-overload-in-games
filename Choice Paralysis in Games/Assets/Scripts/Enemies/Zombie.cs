@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.Enemies
 {
@@ -8,22 +6,40 @@ namespace Scripts.Enemies
     {
         [Header("Zombie settings")]
         [SerializeField] private uint _collisionDamage;
+        [SerializeField] private float _repelRange = 3f;
+        [SerializeField] private float _repelFactor = 0.2f;
 
         protected override void Move()
         {
             if (PlayerTransform == null) { return; }
             LookDirection = (PlayerTransform.position - transform.position).normalized;
-            Rigidbody.velocity = LookDirection * MovementSpeed;
+            Rigidbody.velocity = (LookDirection + GetRepelForce()) * MovementSpeed;
         }
 
+        /// <summary>Returns a force that is calculated depending on nearby enemies.</summary>
+        private Vector2 GetRepelForce()
+        {
+            Collider2D[] collidersWithinRepelRange = Physics2D.OverlapCircleAll(transform.position, _repelRange);
+
+            var repelForce = Vector2.zero;
+            foreach (var col in collidersWithinRepelRange)
+            {
+                if (col.transform.root.GetComponentInChildren<Enemy>() == null) { continue; }
+
+                repelForce += (Vector2)(transform.position - col.transform.position).normalized;
+            }
+
+            return repelForce * _repelFactor;
+        }
+
+        // SHould maybe be sent to the weaponbehaviour of zombies
         private void OnCollisionEnter2D(Collision2D other)
         {
             var colRoot = other.collider.transform.root;
 
             if (colRoot.CompareTag("Player"))
             {
-                colRoot.GetComponent<IDamageable>()?.TakeDamage((int)_collisionDamage);
-                Debug.Log("Colliding with player");
+                colRoot.GetComponentInChildren<IDamageable>()?.TakeDamage((int)_collisionDamage);
             }
         }
     }

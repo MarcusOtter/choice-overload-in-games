@@ -3,7 +3,7 @@
 namespace Scripts.Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour, IDamageable
     {
         [SerializeField] private float _movementSpeed;
 
@@ -20,6 +20,11 @@ namespace Scripts.Player
         {
             _rigidbody.velocity = new Vector2(_inputController.HorizontalAxis * _movementSpeed,
                 _inputController.VerticalAxis * _movementSpeed);
+        }
+
+        public void TakeDamage(int incomingDamage)
+        {
+            Debug.Log($"Player took {incomingDamage} damage.");
         }
     }
 }

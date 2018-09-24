@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212239883783079828}
   m_Layer: 0
   m_Name: Gun Sprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 114463726198286518}
   m_Layer: 0
   m_Name: Bullet spawner
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,7 +175,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -208,7 +208,7 @@ Animator:
   m_GameObject: {fileID: 1200620160409654}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 16253c5725f2b0a4e9676cc9d5c11e19, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6c98ed3753f50421b99e9e9398d5a14e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

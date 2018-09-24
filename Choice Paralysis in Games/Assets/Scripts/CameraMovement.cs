@@ -32,7 +32,7 @@ namespace Scripts
         {
             _userInput = UserInputController.Instance;
             _playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
-            _playerLookDirection = _playerTransform?.GetComponentInChildren<LookAtMouse>()?.transform;
+            _playerLookDirection = _playerTransform?.root.GetComponentInChildren<LookAtMouse>()?.transform;
         }
 
         private void FixedUpdate()

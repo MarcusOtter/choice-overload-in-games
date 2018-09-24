@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c226abaaddc20b045baa4c2e76147d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _smoothTime: 0.1
-  _maxDistance: 4
+  _smoothTime: 0.05
+  _maxDistance: 6.5
   _smallShakeStrength: 0.15
   _shakeSpeed: 0.4
