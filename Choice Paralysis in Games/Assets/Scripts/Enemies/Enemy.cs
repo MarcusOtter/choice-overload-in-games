@@ -6,12 +6,9 @@ namespace Scripts.Enemies
     [RequireComponent(typeof(Rigidbody2D))]
     public class Enemy : MonoBehaviour, IDamageable
     {
-        // Can't be internal because that's more restrective than protected
-        public Vector2 LookDirection { get; protected set; }
-
         [Header("General Enemy Settings")]
-        [SerializeField] protected float MovementSpeed;
         [SerializeField] protected float MaxHealth;
+        [SerializeField] protected float MovementSpeed;
 
         protected float Health;
 
@@ -22,7 +19,7 @@ namespace Scripts.Enemies
         protected virtual void Start()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
-            PlayerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
+            PlayerTransform = GameObject.FindGameObjectWithTag("Player")?.transform.root;
             EnemyGraphics = GetComponentInChildren<EnemyGraphics>();
 
             Health = MaxHealth;

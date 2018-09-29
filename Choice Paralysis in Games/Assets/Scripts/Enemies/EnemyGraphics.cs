@@ -6,29 +6,27 @@ namespace Scripts.Enemies
     [RequireComponent(typeof(Animator), typeof(SpriteRenderer))]
     public class EnemyGraphics : MonoBehaviour
     {
-        private Enemy _enemy;
         private Animator _animator;
-        private Transform _direction;
+        private Weapons.Weapon _weapon;
         private SpriteRenderer _spriteRenderer;
 
         private Color _startColor;
 
         private void Start()
         {
-            _enemy = GetComponentInParent<Enemy>();
             _animator = GetComponent<Animator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _startColor = _spriteRenderer.color;
-
+            _weapon = transform.root.GetComponentInChildren<Weapons.Weapon>();
             // Instantiate an object that displays the direction of the enemy to the player
-            _direction = Instantiate(new GameObject("Direction Pointer"), transform).transform;
+            //_weapon = Instantiate(new GameObject("Direction Pointer"), transform).transform;
         }
 
         private void Update()
         {
-            _direction.up = _enemy.LookDirection;
-            _animator.SetFloat("Rotation", _direction.localEulerAngles.z);
-            //Debug.Log(_direction.localEulerAngles.z);
+            if (_weapon == null) { return; }
+
+            _animator.SetFloat("Rotation", _weapon.Rotation);
         }
 
         internal void PlayDamagedAnimation()

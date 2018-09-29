@@ -35,9 +35,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4365026775890520}
-  - component: {fileID: 114168588944951692}
   m_Layer: 0
-  m_Name: Weapon Holder
+  m_Name: Weapon Pivot
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +71,7 @@ GameObject:
   - component: {fileID: 4142353087181572}
   - component: {fileID: 114463726198286518}
   m_Layer: 0
-  m_Name: Bullet spawner
+  m_Name: Player Weapon
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1200620160409654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4494071749790500}
@@ -115,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344643800427090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.31, z: 0}
+  m_LocalPosition: {x: -0.1, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4365026775890520}
@@ -128,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1197859568751828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4821618081892410}
@@ -217,17 +216,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114168588944951692
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1197859568751828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c78d27c4f0e574bfc8e7a3112a126e4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114463726198286518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,10 +227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f98008846ae436c87d387a401df904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefabToSpawn: {fileID: 114026143446173018, guid: 6c4184d52bede4112847644ebfc50bc6,
+  BulletPrefabToSpawn: {fileID: 114026143446173018, guid: 6c4184d52bede4112847644ebfc50bc6,
     type: 2}
-  _bulletDamage: 2
-  _bulletSpeed: 30
+  BulletDamage: 2
+  BulletSpeed: 30
+  ShootCooldown: 0
 --- !u!114 &114564034676943210
 MonoBehaviour:
   m_ObjectHideFlags: 1

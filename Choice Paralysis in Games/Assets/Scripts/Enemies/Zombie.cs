@@ -9,11 +9,13 @@ namespace Scripts.Enemies
         [SerializeField] private float _repelRange = 3f;
         [SerializeField] private float _repelFactor = 0.2f;
 
+        private Vector2 _walkDirection;
+
         protected override void Move()
         {
             if (PlayerTransform == null) { return; }
-            LookDirection = (PlayerTransform.position - transform.position).normalized;
-            Rigidbody.velocity = (LookDirection + GetRepelForce()) * MovementSpeed;
+            _walkDirection = (PlayerTransform.position - transform.position).normalized;
+            Rigidbody.velocity = (_walkDirection + GetRepelForce()) * MovementSpeed;
         }
 
         /// <summary>Returns a force that is calculated depending on nearby enemies.</summary>
@@ -32,7 +34,7 @@ namespace Scripts.Enemies
             return repelForce * _repelFactor;
         }
 
-        // SHould maybe be sent to the weaponbehaviour of zombies
+        // Should maybe be sent to the weaponbehaviour of zombies
         private void OnCollisionEnter2D(Collision2D other)
         {
             var colRoot = other.collider.transform.root;

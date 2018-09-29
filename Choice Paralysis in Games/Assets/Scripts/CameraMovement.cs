@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using Scripts.Weapons;
 
 namespace Scripts
 {
@@ -16,7 +17,7 @@ namespace Scripts
 
         private UserInputController _userInput;
         private Transform _playerTransform;
-        private Transform _playerLookDirection;
+        private Weapon _playerWeapon;
 
         private Vector2 _velocity;
 
@@ -31,8 +32,8 @@ namespace Scripts
         private void Start()
         {
             _userInput = UserInputController.Instance;
-            _playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
-            _playerLookDirection = _playerTransform?.root.GetComponentInChildren<LookAtMouse>()?.transform;
+            _playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform.root;
+            _playerWeapon = _playerTransform?.root.GetComponentInChildren<Weapon>();
         }
 
         private void FixedUpdate()
@@ -55,7 +56,7 @@ namespace Scripts
             var camTransform = Camera.main.transform;
          
             // The point to put the camera at
-            var shakePoint = (_playerLookDirection.up * -1) * _smallShakeStrength;
+            Vector3 shakePoint = (_playerWeapon.AimDirection * -1) * _smallShakeStrength;
             shakePoint.z = camTransform.localPosition.z;
 
             // Move towards the shakepoint while far away from it

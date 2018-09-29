@@ -41,7 +41,24 @@ GameObject:
   - component: {fileID: 50356701743586494}
   - component: {fileID: 114550486873743068}
   m_Layer: 0
-  m_Name: Sniper
+  m_Name: Sniper Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1707969441427622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4437519692997466}
+  - component: {fileID: 114420378649179566}
+  - component: {fileID: 120438642132953878}
+  m_Layer: 0
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,8 +75,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4717277525169860}
+  - {fileID: 4437519692997466}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4437519692997466
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707969441427622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4398883075285304}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4717277525169860
 Transform:
@@ -85,7 +116,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -127,6 +158,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114420378649179566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707969441427622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee59bb9d4c57bf94dad1ca5a05ea5df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPrefabToSpawn: {fileID: 114026143446173018, guid: 6c4184d52bede4112847644ebfc50bc6,
+    type: 2}
+  BulletDamage: 2
+  BulletSpeed: 30
+  ShootCooldown: 1
+  _rotateSpeed: 0.5
+  _targetFoundColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &114550486873743068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,14 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdcb9601a851f5a45be23785acd24a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 0
   MaxHealth: 10
-  _lineRendererMaterial: {fileID: 2100000, guid: a65c06103d3bacf4d8e4df068e74648e,
-    type: 2}
-  _targetFoundColor: {r: 1, g: 0, b: 0, a: 1}
-  _bulletPrefab: {fileID: 114026143446173018, guid: 6c4184d52bede4112847644ebfc50bc6,
-    type: 2}
-  _rotateSpeed: 0.03
+  MovementSpeed: 1
+  _minimumWaitTime: 2
+  _maximumWaitTime: 4
 --- !u!114 &114641314304522940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,6 +202,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b45e910dee9d4c49ae718097dc1921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!120 &120438642132953878
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707969441427622}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: a65c06103d3bacf4d8e4df068e74648e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 6.63, y: 3.77, z: 0}
+  - {x: -70.90183, y: 66.92707, z: 0}
+  m_Parameters:
+    serializedVersion: 2
+    widthMultiplier: 0.45000005
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0.1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
 --- !u!212 &212311500322429970
 SpriteRenderer:
   m_ObjectHideFlags: 1
