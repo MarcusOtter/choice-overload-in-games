@@ -31,16 +31,16 @@ namespace Scripts.Weapons
         {
             UpdateLineRenderer();
 
-            if (IsShooting) { return; }
-
             RotateTowardsPlayer(_rotateSpeed);
+
+            if (IsShooting) { return; }
 
             if (_shootTarget == null)
             {
                 FindTarget();
 
-                _lineRenderer.startColor = Color.white;
-                _lineRenderer.endColor = Color.white;
+                _lineRenderer.startColor = Color.clear;
+                _lineRenderer.endColor = Color.clear;
             }
             else
             {
@@ -54,7 +54,7 @@ namespace Scripts.Weapons
 
         private void FindTarget()
         {
-            //Debug.DrawRay(transform.position, transform.up * 100f, Color.blue);
+            Debug.DrawRay(transform.position, transform.up * 100f, Color.blue);
 
             var raycastHit = Physics2D.Raycast(transform.position, transform.up, 100f);
             _shootTarget = raycastHit && raycastHit.transform.CompareTag("Player")

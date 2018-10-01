@@ -311,97 +311,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &964872234
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -6.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalRotation.w
+    - target: {fileID: 120438642132953878, guid: bf7a493583d045040b2418df0fbd12bd,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.r
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1457811709944388, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_Name
-      value: Sniper Enemy (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &972343472
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -5.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_LocalRotation.w
+    - target: {fileID: 120438642132953878, guid: bf7a493583d045040b2418df0fbd12bd,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.g
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4398883075285304, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
+    - target: {fileID: 120438642132953878, guid: bf7a493583d045040b2418df0fbd12bd,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1457811709944388, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
-      propertyPath: m_Name
-      value: Sniper Enemy (1)
+    - target: {fileID: 120438642132953878, guid: bf7a493583d045040b2418df0fbd12bd,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120438642132953878, guid: bf7a493583d045040b2418df0fbd12bd,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7a493583d045040b2418df0fbd12bd, type: 2}
@@ -444,11 +377,6 @@ Prefab:
     - target: {fileID: 4020778384097570, guid: d4f066d955debe143a37b698f8d8ff2e, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 50507575833464956, guid: d4f066d955debe143a37b698f8d8ff2e,
-        type: 2}
-      propertyPath: m_Mass
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4f066d955debe143a37b698f8d8ff2e, type: 2}

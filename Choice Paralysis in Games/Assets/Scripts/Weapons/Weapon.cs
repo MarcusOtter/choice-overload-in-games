@@ -6,7 +6,6 @@ namespace Scripts.Weapons
     public class Weapon : MonoBehaviour
     {
         public Vector2 AimDirection { get; protected set; }
-        public float Rotation => transform.rotation.z; //BUG: Debug what this actually prints.
 
         [Header("General Weapon Settings")]
         [SerializeField] protected Bullet BulletPrefabToSpawn;

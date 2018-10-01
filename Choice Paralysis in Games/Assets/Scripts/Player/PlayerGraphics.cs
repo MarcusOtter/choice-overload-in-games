@@ -17,14 +17,12 @@ namespace Scripts.Player
         [SerializeField] private string _rotationAnimationName = "Rotation";
 
         private Animator _bodyAnimator;
-        private SpriteRenderer _bodyRenderer;
 
         private float _rotationZ;
 
         private void Start()
         {
             _bodyAnimator = GetComponent<Animator>();
-            _bodyRenderer = GetComponent<SpriteRenderer>();
         }
 
         private void Update()
