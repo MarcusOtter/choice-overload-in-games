@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4809048309544742}
   - component: {fileID: 50827798877457336}
   - component: {fileID: 114026143446173018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4569730915272918}
   - component: {fileID: 212575096723747886}
   - component: {fileID: 61631551673899766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4017553585530612}
   - component: {fileID: 212772425591743214}
   - component: {fileID: 61436224315077192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

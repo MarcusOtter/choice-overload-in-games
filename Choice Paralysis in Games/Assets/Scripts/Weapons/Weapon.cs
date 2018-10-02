@@ -11,7 +11,7 @@ namespace Scripts.Weapons
         [SerializeField] protected Bullet BulletPrefabToSpawn;
         [SerializeField] protected int BulletDamage = 10;
         [SerializeField] protected float BulletSpeed = 10;
-        [SerializeField] protected float ShootCooldown = 0.2f;
+        [SerializeField] protected float ShootDelay = 0.2f;
 
         protected virtual void Update()
         {

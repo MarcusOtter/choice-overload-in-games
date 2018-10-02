@@ -9,15 +9,17 @@ namespace Scripts.Weapons
         internal bool IsShooting { get; private set; }
 
         [Header("Sniper settings")]
-        [SerializeField] private float _rotateSpeed = 0.03f;
+        [SerializeField] private Transform _shootPointsParent;
+        [SerializeField] private float _afterShotCooldown = 3;
+        [SerializeField] private float _rotateSpeed = 0.5f;
         [SerializeField] private Color _targetFoundColor = Color.red;
-
-        //[SerializeField] private Transform _shootPointsParent;
 
         private LineRenderer _lineRenderer;
 
         private Vector2? _shootTarget;
         private Transform _playerTransform;
+
+        private Coroutine _targetFoundBehaviour;
 
         private void Awake()
         {
@@ -29,37 +31,44 @@ namespace Scripts.Weapons
 
         protected override void WeaponBehaviour()
         {
-            UpdateLineRenderer();
+            SetLineRendererPosition();
 
-            RotateTowardsPlayer(_rotateSpeed);
+            var playerDirection = (_playerTransform.position - transform.position).normalized;
 
-            if (IsShooting) { return; }
+            var hit = Physics2D.Raycast(transform.position, playerDirection, 100f);
 
-            if (_shootTarget == null)
+            // Assure there is nothing between the sniper and the player
+            if (!hit) { return; }
+            if (!hit.transform.CompareTag("Player")) { return; }
+
+            // If the player isn't already found
+            if (_targetFoundBehaviour == null)
             {
-                FindTarget();
+                transform.up = playerDirection;
+                SetLineRendererPosition();
 
-                _lineRenderer.startColor = Color.clear;
-                _lineRenderer.endColor = Color.clear;
-            }
-            else
-            {
-                IsShooting = true;
-                StartCoroutine(WaitAndShoot());
-
-                _lineRenderer.startColor = _targetFoundColor;
-                _lineRenderer.endColor = _targetFoundColor;
+                _targetFoundBehaviour = StartCoroutine(TargetFoundBehaviour());
             }
         }
 
-        private void FindTarget()
+        private IEnumerator TargetFoundBehaviour()
         {
-            Debug.DrawRay(transform.position, transform.up * 100f, Color.blue);
+            EnableLineRenderer(true);
 
-            var raycastHit = Physics2D.Raycast(transform.position, transform.up, 100f);
-            _shootTarget = raycastHit && raycastHit.transform.CompareTag("Player")
-                ? raycastHit.point
-                : (Vector2?) null;
+            float elapsedTime = 0;
+            while (elapsedTime < ShootDelay)
+            {
+                RotateTowardsPlayer(_rotateSpeed);
+
+                elapsedTime += Time.deltaTime;
+                yield return new WaitForSeconds(Time.deltaTime);
+            }
+
+            Shoot();
+            EnableLineRenderer(false);
+
+            yield return new WaitForSeconds(_afterShotCooldown);
+            _targetFoundBehaviour = null;
         }
 
         private void RotateTowardsPlayer(float speed)
@@ -68,16 +77,30 @@ namespace Scripts.Weapons
             AimDirection = transform.up;
         }
 
-        private IEnumerator WaitAndShoot()
+        private void Shoot()
         {
-            yield return new WaitForSeconds(ShootCooldown);
-
-            Instantiate(BulletPrefabToSpawn, transform.position + transform.up * 2, transform.rotation).Shoot(BulletDamage, BulletSpeed);
-            IsShooting = false;
-            _shootTarget = null;
+            for (int i = 0; i < _shootPointsParent.childCount; i++)
+            {
+                var shootPoint = _shootPointsParent.GetChild(i);
+                Instantiate(BulletPrefabToSpawn, shootPoint.position + shootPoint.up * 2, shootPoint.rotation).Shoot(BulletDamage, BulletSpeed);
+            }
         }
 
-        private void UpdateLineRenderer()
+        private void EnableLineRenderer(bool enable)
+        {
+            if (enable)
+            {
+                _lineRenderer.startColor = _targetFoundColor;
+                _lineRenderer.endColor = _targetFoundColor;
+            }
+            else
+            {
+                _lineRenderer.startColor = Color.clear;
+                _lineRenderer.endColor = Color.clear;
+            }
+        }
+
+        private void SetLineRendererPosition()
         {
             _lineRenderer.SetPosition(0, transform.position);
             _lineRenderer.SetPosition(1, transform.up * 100f + transform.position);

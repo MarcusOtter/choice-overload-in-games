@@ -6,11 +6,21 @@ namespace Scripts.Enemies
     [RequireComponent(typeof(Animator), typeof(SpriteRenderer))]
     public class EnemyGraphics : MonoBehaviour
     {
+        [Header("Gun sprite settings")]
+        [SerializeField] private SpriteRenderer _gunSpriteRenderer;
+        [SerializeField] private int _sortInFrontNumber = 6;
+        [SerializeField] private int _sortBehindNumber = 4;
+
+        [Header("Body sprite settings")]
+        [SerializeField] private string _rotationAnimationName = "Rotation";
+
         private Animator _animator;
         private SpriteRenderer _spriteRenderer;
         private Transform _lookDirection;
 
         private Color _startColor;
+
+        private float _rotationZ;
 
         private void Start()
         {
@@ -22,7 +32,18 @@ namespace Scripts.Enemies
 
         private void Update()
         {
-            _animator.SetFloat("Rotation", _lookDirection.localEulerAngles.z);
+            _rotationZ = _lookDirection.localEulerAngles.z;
+            _animator.SetFloat(_rotationAnimationName, _rotationZ);
+
+            if (_gunSpriteRenderer == null) { return; }
+
+            // Set sorting order of gun
+            _gunSpriteRenderer.sortingOrder = _rotationZ > 90 && _rotationZ < 270
+                ? _sortInFrontNumber
+                : _sortBehindNumber;
+
+            // Set the flipY of gun sprite
+            _gunSpriteRenderer.flipY = _rotationZ < 180;
         }
 
         internal void PlayDamagedAnimation()
