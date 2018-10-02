@@ -26,6 +26,7 @@ namespace Scripts
         private void OnEnable()
         {
             _userInput = UserInputController.Instance;
+            if (_userInput == null) { return; }
             _userInput.OnAttackButtonDown += CameraShakeSmall;
         }
 
@@ -101,6 +102,7 @@ namespace Scripts
 
         private void OnDisable()
         {
+            if (_userInput == null) { return; }
             _userInput.OnAttackButtonDown -= CameraShakeSmall;
         }
     }
