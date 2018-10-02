@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 10
-  MovementSpeed: 3
+  MovementSpeed: 4
   _collisionDamage: 30
   _repelRange: 4
   _repelFactor: 0.2
@@ -196,6 +196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b45e910dee9d4c49ae718097dc1921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gunSpriteRenderer: {fileID: 0}
+  _sortInFrontNumber: 6
+  _sortBehindNumber: 4
+  _rotationAnimationName: Rotation
 --- !u!212 &212692242478770888
 SpriteRenderer:
   m_ObjectHideFlags: 1
