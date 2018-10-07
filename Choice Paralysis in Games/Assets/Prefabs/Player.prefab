@@ -195,8 +195,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.8, y: 1.2}
+  m_Offset: {x: 0, y: -0.04}
+  m_Size: {x: 1, y: 1}
   m_Direction: 0
 --- !u!95 &95774011969023720
 Animator:
@@ -231,7 +231,7 @@ MonoBehaviour:
     type: 2}
   BulletDamage: 2
   BulletSpeed: 30
-  ShootCooldown: 0
+  ShootDelay: 0.2
 --- !u!114 &114564034676943210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -341,7 +341,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: dd143267c77d4b64da8c6fe1efb7d954, type: 3}
+  m_Sprite: {fileID: 21300412, guid: c45ead0139f394e438118d84b4e8a511, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
