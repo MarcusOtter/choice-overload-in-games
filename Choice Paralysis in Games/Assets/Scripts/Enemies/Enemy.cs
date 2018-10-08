@@ -39,6 +39,7 @@ namespace Scripts.Enemies
         public virtual void TakeDamage(int incomingDamage)
         {
             Health -= incomingDamage;
+
             EnemyGraphics?.PlayDamagedAnimation();
 
             if (Health <= 0) { Die(); }

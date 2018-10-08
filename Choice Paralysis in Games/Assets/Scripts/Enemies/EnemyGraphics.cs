@@ -51,6 +51,8 @@ namespace Scripts.Enemies
             StartCoroutine(DamageAnimation());
         }
 
+        // This could probably be replaced with actual animation clips
+        // which would allow for more custom animation & reuseability
         private IEnumerator DamageAnimation()
         {
             _spriteRenderer.color = Color.red;

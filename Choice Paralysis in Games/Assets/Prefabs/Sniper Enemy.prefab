@@ -53,7 +53,6 @@ GameObject:
   - component: {fileID: 114641314304522940}
   - component: {fileID: 212311500322429970}
   - component: {fileID: 95684117047388516}
-  - component: {fileID: 61997080826414544}
   m_Layer: 0
   m_Name: Body graphics
   m_TagString: Untagged
@@ -71,6 +70,7 @@ GameObject:
   - component: {fileID: 4398883075285304}
   - component: {fileID: 50356701743586494}
   - component: {fileID: 114550486873743068}
+  - component: {fileID: 61971091759238230}
   m_Layer: 0
   m_Name: Sniper Enemy
   m_TagString: Untagged
@@ -301,12 +301,12 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &61997080826414544
+--- !u!61 &61971091759238230
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1348646240318454}
+  m_GameObject: {fileID: 1457811709944388}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -441,7 +441,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Positions:
   - {x: 6.63, y: 3.77, z: 0}
   - {x: 6.63, y: 66.92707, z: 0}
