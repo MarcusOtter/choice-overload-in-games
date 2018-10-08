@@ -33,7 +33,7 @@ namespace Scripts
         private void Start()
         {
             _userInput = UserInputController.Instance;
-            _playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform.root;
+            _playerTransform = GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)?.transform.root;
             _playerWeapon = _playerTransform?.root.GetComponentInChildren<Weapon>();
         }
 

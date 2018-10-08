@@ -28,7 +28,7 @@ namespace Scripts.Enemies
             {
                 if (col.transform.root.GetComponentInChildren<Enemy>() == null) { continue; }
 
-                repelForce += (Vector2)(transform.position - col.transform.position).normalized;
+                repelForce += (Vector2) (transform.position - col.transform.position).normalized;
             }
 
             return repelForce * _repelFactor;
@@ -39,7 +39,7 @@ namespace Scripts.Enemies
         {
             var colRoot = other.collider.transform.root;
 
-            if (colRoot.CompareTag("Player"))
+            if (colRoot.CompareTag(EnvironmentVariables.PlayerTag))
             {
                 colRoot.GetComponentInChildren<IDamageable>()?.TakeDamage((int)_collisionDamage);
             }

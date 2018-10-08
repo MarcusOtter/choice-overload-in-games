@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778439b3dd89a4ad4ba62c5d0f814c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointsRewardedOnDeath: 20
   MaxHealth: 10
   MovementSpeed: 4
   _collisionDamage: 30

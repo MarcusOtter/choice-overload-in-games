@@ -26,7 +26,7 @@ namespace Scripts.Weapons
             _lineRenderer = GetComponent<LineRenderer>();
             _lineRenderer.positionCount = 2;
 
-            _playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform.root;
+            _playerTransform = GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)?.transform.root;
         }
 
         protected override void WeaponBehaviour()
@@ -39,7 +39,7 @@ namespace Scripts.Weapons
 
             // Assure there is nothing between the sniper and the player
             if (!hit) { return; }
-            if (!hit.transform.CompareTag("Player")) { return; }
+            if (!hit.transform.CompareTag(EnvironmentVariables.PlayerTag)) { return; }
 
             // If the player isn't already found
             if (_targetFoundBehaviour == null)

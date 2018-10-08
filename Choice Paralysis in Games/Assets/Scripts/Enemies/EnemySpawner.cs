@@ -17,7 +17,7 @@ namespace Scripts.Enemies
 
         private void Start()
         {
-            _player = GameObject.FindGameObjectWithTag("Player")?.transform;
+            _player = GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)?.transform;
 
             // Order by spawn time (low --> high)
             _remainingWaves = _waves.OrderBy(x => x.SpawnTime).ToList();

@@ -7,6 +7,7 @@ namespace Scripts.Enemies
     public class Enemy : MonoBehaviour, IDamageable
     {
         [Header("General Enemy Settings")]
+        [SerializeField] private int _pointsRewardedOnDeath;
         [SerializeField] protected float MaxHealth;
         [SerializeField] protected float MovementSpeed;
 
@@ -19,7 +20,7 @@ namespace Scripts.Enemies
         protected virtual void Start()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
-            PlayerTransform = GameObject.FindGameObjectWithTag("Player")?.transform.root;
+            PlayerTransform = GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)?.transform.root;
             EnemyGraphics = GetComponentInChildren<EnemyGraphics>();
 
             Health = MaxHealth;
@@ -43,8 +44,12 @@ namespace Scripts.Enemies
             if (Health <= 0) { Die(); }
         }
 
-        protected virtual void Die()
+        protected void Die()
         {
+            GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)
+                ?.GetComponent<PlayerPoints>()
+                ?.ModifyPoints(_pointsRewardedOnDeath);
+
             Destroy(gameObject);
         }
     }

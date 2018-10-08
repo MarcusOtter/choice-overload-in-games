@@ -365,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdcb9601a851f5a45be23785acd24a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointsRewardedOnDeath: 50
   MaxHealth: 10
   MovementSpeed: 1
   _minimumWaitTime: 2
