@@ -37,8 +37,8 @@ GameObject:
   - component: {fileID: 4668009282184382}
   - component: {fileID: 114854416375246800}
   - component: {fileID: 212692242478770888}
-  - component: {fileID: 70243331002569224}
   - component: {fileID: 95643063003846010}
+  - component: {fileID: 61769634559571612}
   m_Layer: 0
   m_Name: Body graphics
   m_TagString: Untagged
@@ -124,8 +124,8 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &70243331002569224
-CapsuleCollider2D:
+--- !u!61 &61769634559571612
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -136,9 +136,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.04}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.63, y: 0.86}
+  m_EdgeRadius: 0
 --- !u!95 &95643063003846010
 Animator:
   serializedVersion: 3
@@ -236,7 +246,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300206, guid: c45ead0139f394e438118d84b4e8a511, type: 3}
+  m_Sprite: {fileID: 21300292, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
