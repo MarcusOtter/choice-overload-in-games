@@ -6,7 +6,8 @@ namespace Scripts.Enemies
 {
     public class EnemySpawner : MonoBehaviour
     {
-        [SerializeField] private List<EnemyWave> _waves;
+        [SerializeField] private Transform _spawnPositionParent;
+        [SerializeField] private EnemyWave[] _waves;
 
         private List<EnemyWave> _remainingWaves;
 
@@ -42,8 +43,8 @@ namespace Scripts.Enemies
 
             foreach (var enemy in waveToSpawn.EnemyPrefabs)
             {
-                var testPos = (Vector2) _player.position + Random.insideUnitCircle.normalized * 25f;
-                Instantiate(enemy, testPos, Quaternion.identity);
+                var spawnPoint = _spawnPositionParent.GetChild(Random.Range(0, _spawnPositionParent.childCount)).position;
+                Instantiate(enemy, spawnPoint, Quaternion.identity);
                 print($"Spawned {enemy.name}");
             }
 
