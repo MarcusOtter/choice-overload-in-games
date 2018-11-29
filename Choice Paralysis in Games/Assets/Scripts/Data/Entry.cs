@@ -1,6 +1,9 @@
-﻿[System.Serializable]
-public class Entry
+﻿namespace Scripts.Data
 {
-    private int _visitedTabs;
-    private float _customizationTime;
+    [System.Serializable]
+    public class Entry
+    {
+        private int _visitedTabs;
+        private float _customizationTime;
+    }
 }
