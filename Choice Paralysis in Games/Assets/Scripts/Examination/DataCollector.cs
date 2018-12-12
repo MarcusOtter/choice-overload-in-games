@@ -18,9 +18,18 @@ namespace Scripts.Examination
         // What are their game results?
         // How happy are they with their game results?
 
+        // TODO: Make an ExaminationEntry that holds this and game data
+        private CharacterData _characterData;
+
         private void Awake()
         {
             SingletonCheck();
+        }
+
+        internal void SetCharacterData(CharacterData characterData)
+        {
+            // CharacterData is a struct, so it is passed by value.
+            _characterData = characterData;
         }
 
         private void SingletonCheck()

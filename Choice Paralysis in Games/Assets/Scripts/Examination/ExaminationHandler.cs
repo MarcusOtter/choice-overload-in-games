@@ -10,7 +10,7 @@ namespace Scripts.Examination
     {
         internal static ExaminationHandler Instance { get; private set; }
 
-        [SerializeField] private AvailableSprites[] _modes; // 0: 0 sprites  | 1: 5 sprites  | 2: 15 sprites
+        [SerializeField] private AvailableSprites[] _modes; // 0: 2 sprites  | 1: 5 sprites  | 2: 15 sprites
                                                             // 3: 30 sprites | 4: 45 sprites | 5: 60 sprites
 
         private int _playerNumber;
@@ -26,11 +26,22 @@ namespace Scripts.Examination
             StartCoroutine(WebtaskIoRequest(WebtaskRequestType.IncrementCounter));
         }
 
+        private void Update()
+        {
+            // Temp
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+
         private IEnumerator WebtaskIoRequest(WebtaskRequestType requestType)
         {
-            Debug.Log($"[{DateTime.Now}]: Starting GET request to webtask.io");
-            using (UnityWebRequest www = UnityWebRequest.Post(EnvironmentVariables.WebTaskUri, ((int) requestType).ToString()))
+            var postData = ((int)requestType).ToString();
+
+            using (UnityWebRequest www = UnityWebRequest.Post(EnvironmentVariables.WebTaskUri, postData))
             {
+                Debug.Log($"[{DateTime.Now}]: Starting POST request to webtask.io (Post data: {postData}).");
                 yield return www.SendWebRequest();
 
                 if (www.isNetworkError || www.isHttpError)
@@ -40,7 +51,7 @@ namespace Scripts.Examination
                 }
                 else
                 {
-                    Debug.Log($"[{DateTime.Now}]: The download was successful from webtask.io");
+                    Debug.Log($"[{DateTime.Now}]: The download was successful from webtask.io.");
 
                     try
                     {
@@ -57,15 +68,20 @@ namespace Scripts.Examination
             }
 
             _examinationModeIndex = GetExaminationMode();
-            Debug.Log($"[{DateTime.Now}]: Loaded execution mode with an index of {_examinationModeIndex}.");
+            Debug.Log($"[{DateTime.Now}]: Loaded Mode {_examinationModeIndex + 1}.");
         }
 
         private int GetExaminationMode()
         {
-            if (_playerNumber % 5 == 0) { return 4; }
+            if (_playerNumber % 6 == 0) { return 5; }
 
-            return _playerNumber % 5 - 1;
-        } 
+            return _playerNumber % 6 - 1;
+        }
+
+        internal AvailableSprites GetAvailableSprites()
+        {
+            return _modes[_examinationModeIndex];
+        }
 
         private void SingletonCheck()
         {

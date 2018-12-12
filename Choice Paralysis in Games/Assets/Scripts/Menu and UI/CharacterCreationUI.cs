@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace Scripts.Menu_and_UI
 {
@@ -19,16 +20,14 @@ namespace Scripts.Menu_and_UI
         [SerializeField] private TextMeshProUGUI _bodyIndexText;
 
         [Header("Available sprites")]
-        [SerializeField] private AvailableSprites _availableSprites;
+        [SerializeField] private AvailableSprites _availableSprites; // TODO: Hide from inspector.
 
         private int _headIndex;
         private int _bodyIndex;
 
-        // TODO: Load x amount of sprite options depending on which mode & pick random ones (?)
-        // TODO: Add which indexes have been visited & send to some data collection thing
-
         private void Start()
         {
+            _availableSprites = ExaminationHandler.Instance.GetAvailableSprites();
             UpdateUi();
         }
 
@@ -54,6 +53,25 @@ namespace Scripts.Menu_and_UI
         {
             ModifyIndex(-1, CharacterSpriteType.Body);
             UpdateUi();
+        }
+
+        public void Done()
+        {
+            // TODO
+            var characterData = new CharacterData
+            {
+                HasChangedName = true,
+                CharacterName = "marcus",
+                SpriteChoices = 30,
+                VisitedHeads = 12,
+                VisitedBodies = 3,
+                IsMatchingSet = true,
+                TimeSpent = 35.51f,
+                SatisfactionScore = 9
+            };
+
+            DataCollector.Instance.SetCharacterData(characterData);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         private void ModifyIndex(int indexDelta, CharacterSpriteType spriteType)
@@ -105,5 +123,6 @@ namespace Scripts.Menu_and_UI
             _bodyIcon.sprite = newBody;
             _bodyIndexText.text = $"{_bodyIndex + 1}/{_availableSprites.BodySprites.Count}";
         }
+
     }
 }

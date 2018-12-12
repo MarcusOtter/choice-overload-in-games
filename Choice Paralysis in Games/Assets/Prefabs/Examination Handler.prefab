@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1492347922459796}
+  m_IsPrefabAsset: 1
+--- !u!1 &1492347922459796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4500210287761536}
+  - component: {fileID: 114720122362468658}
+  m_Layer: 0
+  m_Name: Examination Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4500210287761536
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1492347922459796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114720122362468658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1492347922459796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329293da9d9050540840ee9721e6c559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _modes:
+  - {fileID: 11400000, guid: 0d8f5c839a777314da8a4ab03424ae8f, type: 2}
+  - {fileID: 11400000, guid: 4eb01d0228c1a334ba9a35258de4a375, type: 2}
+  - {fileID: 11400000, guid: 466e1929a85a53544b94e994e5cd0e70, type: 2}
+  - {fileID: 11400000, guid: 95565386c19faea4c99a9856b30cc9cb, type: 2}
+  - {fileID: 11400000, guid: 247e0148ddf0f094d914ca11bc66c2df, type: 2}
+  - {fileID: 11400000, guid: a6bd0040b88c2b14797da1e1c4692124, type: 2}
