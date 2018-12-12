@@ -38,3 +38,6 @@ sysinfo.txt
 # Environment Variables (Create this script and follow EnvironmentVariables_example.cs)
 Choice Paralysis in Games/Assets/Scripts/EnvironmentVariables.cs
 Choice Paralysis in Games/Assets/Scripts/EnvironmentVariables.cs.meta
+
+# Mac
+*.DS_Store
