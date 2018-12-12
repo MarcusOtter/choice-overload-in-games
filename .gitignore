@@ -3,7 +3,7 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
-Assets/AssetStoreTools*
+Choice Paralysis in Games/Assets/AssetStoreTools*
 
 # Visual Studio cache directory
 .vs/
@@ -34,3 +34,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Environment Variables (Create this script and follow EnvironmentVariables_example.cs)
+Choice Paralysis in Games/Assets/Scripts/EnvironmentVariables.cs
+Choice Paralysis in Games/Assets/Scripts/EnvironmentVariables.cs.meta
