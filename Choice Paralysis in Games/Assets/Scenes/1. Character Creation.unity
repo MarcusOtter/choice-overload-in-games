@@ -537,7 +537,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 88de453a71c661b49a2b120dfedd627f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1664d73d78b63046bdf35385d5d829d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -606,7 +606,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Character name
+  m_text: "Character \nname"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -674,12 +674,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 316696028}
-    characterCount: 14
+    characterCount: 15
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 2
     wordCount: 2
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -896,8 +896,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -180}
-  m_SizeDelta: {x: -20, y: 50}
+  m_AnchoredPosition: {x: 0, y: -160}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &405128930
 CanvasRenderer:
@@ -1400,7 +1400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -90}
+  m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &675670392
@@ -1965,12 +1965,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 88de453a71c661b49a2b120dfedd627f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1664d73d78b63046bdf35385d5d829d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.18, y: 0.22}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2340,7 +2340,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 1/80
+  m_text: 1/60
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2849,8 +2849,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -90}
-  m_SizeDelta: {x: -20, y: 50}
+  m_AnchoredPosition: {x: 0, y: -80}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1448295867
 CanvasRenderer:
@@ -2973,7 +2973,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1630548684
 CanvasRenderer:
@@ -3369,7 +3369,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -20}
-  m_SizeDelta: {x: -10, y: 30}
+  m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1770780024
 MonoBehaviour:
@@ -3642,26 +3642,6 @@ MonoBehaviour:
   _bodyIcon: {fileID: 598496214}
   _bodyIndexText: {fileID: 830790840}
   _headSprites:
-  - {fileID: 21300000, guid: 88de453a71c661b49a2b120dfedd627f, type: 3}
-  - {fileID: 21300000, guid: ee0328a167e2417448b86383a991a8b9, type: 3}
-  - {fileID: 21300000, guid: 82905dafa2c5409479fd2f400fcd16c3, type: 3}
-  - {fileID: 21300000, guid: 8a3c48ae25cc78b459008c297fd1ad4e, type: 3}
-  - {fileID: 21300000, guid: 6eff4750df7aade40bc0e1defc2bd9c6, type: 3}
-  - {fileID: 21300000, guid: b7a2c892e28dabc4db9f04b3ca425b0c, type: 3}
-  - {fileID: 21300000, guid: 27f185558f039304a9994174f34c18bf, type: 3}
-  - {fileID: 21300000, guid: 474509fcedaa6d74abb9615baf0d9b49, type: 3}
-  - {fileID: 21300000, guid: c0dc58989c5150948840f8e0d462a00c, type: 3}
-  - {fileID: 21300000, guid: 0c8c98241647ac846ba4c0c12dd22d08, type: 3}
-  - {fileID: 21300000, guid: 6d806fffb5bb56740b442549550f104e, type: 3}
-  - {fileID: 21300000, guid: 13ca22af73a36f1498da37cc0353edb7, type: 3}
-  - {fileID: 21300000, guid: 7f2fe301e0f38ed4ea3514d3768e6420, type: 3}
-  - {fileID: 21300000, guid: d6e53e52506835146a094a18716d4023, type: 3}
-  - {fileID: 21300000, guid: 5da57427fffe32146a52b95f675f80e0, type: 3}
-  - {fileID: 21300000, guid: 408af3355fa4376408f492453a4e8038, type: 3}
-  - {fileID: 21300000, guid: fb1b14bb03950374da8338cb5e34c5c8, type: 3}
-  - {fileID: 21300000, guid: efad08008207f8a4b890d16e17318a1b, type: 3}
-  - {fileID: 21300000, guid: fd2311e6a2df48f46a6dd1d1dfe0a936, type: 3}
-  - {fileID: 21300000, guid: b1441fa91ce19d740a157f7aa778ce12, type: 3}
   - {fileID: 21300000, guid: e1664d73d78b63046bdf35385d5d829d, type: 3}
   - {fileID: 21300000, guid: 0f1a23e38b9a6544abefeec0a33e6ab2, type: 3}
   - {fileID: 21300000, guid: 1966c5b102e276c4284180a541626479, type: 3}
@@ -4064,7 +4044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -180}
+  m_AnchoredPosition: {x: 0, y: -160}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2005788672
