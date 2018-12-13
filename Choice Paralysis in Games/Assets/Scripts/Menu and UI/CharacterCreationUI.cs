@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 namespace Scripts.Menu_and_UI
 {
@@ -71,7 +70,7 @@ namespace Scripts.Menu_and_UI
             };
 
             DataCollector.Instance.SetCharacterData(characterData);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneTransitioner.Instance.LoadNextScene();
         }
 
         private void ModifyIndex(int indexDelta, CharacterSpriteType spriteType)

@@ -9,15 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/0. Introduction.unity
     guid: 30db9860a75b5054d9403ab6fa254d08
   - enabled: 1
-    path: Assets/Scenes/1. Main Menu.unity
+    path: Assets/Scenes/1. Instructions.unity
     guid: 45fca4027f7cd074f884a6a0ecba0fa1
   - enabled: 1
     path: Assets/Scenes/2. Character Creation.unity
     guid: 429cb91c5d5ba4f4fbae4372a8681cab
   - enabled: 1
-    path: Assets/Scenes/3. Game Scene.unity
+    path: Assets/Scenes/3. Satisfied.unity
+    guid: 50cdce20935105847a56bd99db552d6d
+  - enabled: 1
+    path: Assets/Scenes/4. Game Scene.unity
     guid: c484a1059eeafea48839fa4b8823fe1b
   - enabled: 1
-    path: Assets/Scenes/4. End of game.unity
+    path: Assets/Scenes/5. End of game.unity
     guid: e2a441e9744efc9488697ce5f7d36f42
   m_configObjects: {}

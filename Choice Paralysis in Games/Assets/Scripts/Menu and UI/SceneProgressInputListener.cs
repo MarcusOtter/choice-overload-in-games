@@ -17,8 +17,14 @@ namespace Scripts.Menu_and_UI
 
             if (Input.GetKeyDown(_progressButton))
             {
-                SceneTransitioner.Instance.LoadNextScene();
+                LoadNextScene();
             }
+        }
+
+        // Can be used by buttons directly
+        public void LoadNextScene()
+        {
+            SceneTransitioner.Instance.LoadNextScene();
         }
 
         public void ListenForInput(bool listen)
