@@ -26,15 +26,6 @@ namespace Scripts.Examination
             StartCoroutine(WebtaskIoRequest(WebtaskRequestType.IncrementCounter));
         }
 
-        private void Update()
-        {
-            // Temp
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
-            }
-        }
-
         private IEnumerator WebtaskIoRequest(WebtaskRequestType requestType)
         {
             var postData = ((int)requestType).ToString();
