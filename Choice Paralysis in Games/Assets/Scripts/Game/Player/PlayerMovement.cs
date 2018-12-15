@@ -24,7 +24,7 @@ namespace Scripts.Game.Player
 
         public void TakeDamage(int incomingDamage)
         {
-            Debug.Log($"Player took {incomingDamage} damage.");
+            Logger.Instance.Log($"Player took {incomingDamage} damage.");
         }
     }
 }

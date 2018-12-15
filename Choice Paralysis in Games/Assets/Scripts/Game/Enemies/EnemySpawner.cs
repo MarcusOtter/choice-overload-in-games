@@ -14,12 +14,8 @@ namespace Scripts.Game.Enemies
         private float _elapsedtime;
         private int _spawnedWavesAmount;
 
-        private Transform _player;
-
         private void Start()
         {
-            _player = GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)?.transform;
-
             // Order by spawn time (low --> high)
             _remainingWaves = _waves.OrderBy(x => x.SpawnTime).ToList();
         }
@@ -39,13 +35,13 @@ namespace Scripts.Game.Enemies
 
         private void SpawnWave(EnemyWave waveToSpawn)
         {
-            Debug.Log($"Spawning wave {_spawnedWavesAmount + 1}");
+            Logger.Instance.Log($"Spawning wave {_spawnedWavesAmount + 1}");
 
             foreach (var enemy in waveToSpawn.EnemyPrefabs)
             {
                 var spawnPoint = _spawnPositionParent.GetChild(Random.Range(0, _spawnPositionParent.childCount)).position;
                 Instantiate(enemy, spawnPoint, Quaternion.identity);
-                print($"Spawned {enemy.name}");
+                Logger.Instance.Log($"Spawned {enemy.name}");
             }
 
             _spawnedWavesAmount++;

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Scripts.Webtask.io;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -9,6 +8,8 @@ namespace Scripts.Examination
     public class ExaminationHandler : MonoBehaviour
     {
         internal static ExaminationHandler Instance { get; private set; }
+
+        internal int ExaminationModeNumber { get; private set; }
 
         [SerializeField] private AvailableSprites[] _modes; // 0: 2 sprites  | 1: 5 sprites  | 2: 15 sprites
                                                             // 3: 30 sprites | 4: 45 sprites | 5: 60 sprites
@@ -32,17 +33,17 @@ namespace Scripts.Examination
 
             using (UnityWebRequest www = UnityWebRequest.Post(EnvironmentVariables.WebTaskUri, postData))
             {
-                Debug.Log($"[{DateTime.Now}]: Starting POST request to webtask.io (Post data: {postData}).");
+                Logger.Instance.Log($"Starting POST request to webtask.io (Post data: {postData}).");
                 yield return www.SendWebRequest();
 
                 if (www.isNetworkError || www.isHttpError)
                 {
-                    Debug.LogWarning($"[{DateTime.Now}]: An error occured when attempting to download the examination number from webtask.io.\nDefaulting to 1.");
+                    Logger.Instance.LogWarning("An error occured when attempting to download the examination number from webtask.io.\nDefaulting to 1.");
                     _playerNumber = 1;
                 }
                 else
                 {
-                    Debug.Log($"[{DateTime.Now}]: The download was successful from webtask.io.");
+                    Logger.Instance.Log("The download was successful from webtask.io.");
 
                     try
                     {
@@ -50,16 +51,17 @@ namespace Scripts.Examination
                     }
                     catch
                     {
-                        Debug.LogWarning($"[{DateTime.Now}]: An error occured when attempting parse the reveiced examination number.\nDefaulting to 1.");
+                        Logger.Instance.LogWarning("An error occured when attempting parse the reveiced examination number.\nDefaulting to 1.");
                         _playerNumber = 1;
                     }
 
-                    Debug.Log($"[{DateTime.Now}]: The player is number {_playerNumber}.");
+                    Logger.Instance.Log($"The player is number {_playerNumber}.");
                 }
             }
 
             _examinationModeIndex = GetExaminationMode();
-            Debug.Log($"[{DateTime.Now}]: Loaded Mode {_examinationModeIndex + 1}.");
+            ExaminationModeNumber = _examinationModeIndex + 1;
+            Logger.Instance.Log($"Loaded Mode {ExaminationModeNumber}.");
         }
 
         private int GetExaminationMode()

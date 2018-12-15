@@ -1,4 +1,6 @@
-﻿using Scripts.Examination;
+﻿using System;
+using System.Collections.Generic;
+using Scripts.Examination;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -18,15 +20,28 @@ namespace Scripts.Menu_and_UI
         [SerializeField] private Image _bodyIcon;
         [SerializeField] private TextMeshProUGUI _bodyIndexText;
 
+        [Header("Other references")]
+        [SerializeField] private TMP_InputField _nameInput;
+
         [Header("Available sprites")]
         [SerializeField] private AvailableSprites _availableSprites; // TODO: Hide from inspector.
 
         private int _headIndex;
         private int _bodyIndex;
 
+        private readonly List<int> _visitedHeads = new List<int>();
+        private readonly List<int> _visitedBodies = new List<int>();
+
+        private float _startTime;
+
         private void Start()
         {
             _availableSprites = ExaminationHandler.Instance.GetAvailableSprites();
+
+            _visitedHeads.Add(1);
+            _visitedBodies.Add(1);
+            _startTime = Time.time;
+
             UpdateUi();
         }
 
@@ -56,18 +71,20 @@ namespace Scripts.Menu_and_UI
 
         public void Done()
         {
-            // TODO
+            var optionAmount = ExaminationHandler.Instance.GetAvailableSprites().OptionAmount;
+
             var characterData = new CharacterData
-            {
-                HasChangedName = true,
-                CharacterName = "marcus",
-                SpriteChoices = 30,
-                VisitedHeads = 12,
-                VisitedBodies = 3,
-                IsMatchingSet = true,
-                TimeSpent = 35.51f,
-                SatisfactionScore = 9
-            };
+            (
+                hasChangedName:           !string.IsNullOrWhiteSpace(_nameInput.text),
+                characterName:            _nameInput.text,
+                spriteOptionAmount:       optionAmount,
+                visitedHeadsPercentage:   Math.Round((_visitedHeads.Count / (double)optionAmount) * 100d, 2),
+                visitedBodiesPercentage:  Math.Round((_visitedBodies.Count / (double) optionAmount) * 100d, 2),
+                selectedHead:             _headIndex + 1,
+                selectedBody:             _bodyIndex + 1,
+                isMatchingSet:            _headIndex == _bodyIndex,
+                timeSpent:                Math.Round(Time.time - _startTime, 2)
+            );
 
             DataCollector.Instance.SetCharacterData(characterData);
             SceneTransitioner.Instance.LoadNextScene();
@@ -77,7 +94,7 @@ namespace Scripts.Menu_and_UI
         {
             if (indexDelta == 0) { return; }
 
-            var oldIndex = spriteType == CharacterSpriteType.Head 
+            var index = spriteType == CharacterSpriteType.Head 
                 ? _headIndex 
                 : _bodyIndex;
 
@@ -88,22 +105,24 @@ namespace Scripts.Menu_and_UI
             if (indexDelta > 0)
             {
                 // Increment and prevent index from falling out of bounds
-                oldIndex = oldIndex >= spriteListMax ? 0 : oldIndex + 1;
+                index = index >= spriteListMax ? 0 : index + 1;
             }
             else
             {
                 // Decrement and prevent index from falling out of bounds
-                oldIndex = oldIndex == 0 ? spriteListMax : oldIndex - 1;
+                index = index == 0 ? spriteListMax : index - 1;
             }
 
             switch (spriteType)
             {
                 case CharacterSpriteType.Head:
-                    _headIndex = oldIndex;
+                    _headIndex = index;
+                    if (!_visitedHeads.Contains(_headIndex + 1)) { _visitedHeads.Add(_headIndex + 1); }
                     break;
 
                 case CharacterSpriteType.Body:
-                    _bodyIndex = oldIndex;
+                    _bodyIndex = index;
+                    if (!_visitedBodies.Contains(_bodyIndex + 1)) { _visitedBodies.Add(_bodyIndex + 1); }
                     break;
             }
         }
@@ -122,6 +141,5 @@ namespace Scripts.Menu_and_UI
             _bodyIcon.sprite = newBody;
             _bodyIndexText.text = $"{_bodyIndex + 1}/{_availableSprites.BodySprites.Count}";
         }
-
     }
 }

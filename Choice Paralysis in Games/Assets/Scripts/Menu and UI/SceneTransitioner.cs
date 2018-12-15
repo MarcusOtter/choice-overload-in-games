@@ -39,8 +39,7 @@ namespace Scripts.Menu_and_UI
 
         private void ChangeSceneTo(int buildIndex)
         {
-            // Stop active coroutine
-            if (_activeLoadingSequence != null) { StopCoroutine(_activeLoadingSequence); }
+            if (_activeLoadingSequence != null) { return; }
 
             // Start new coroutine
             _activeLoadingSequence = LoadScene(buildIndex);
@@ -52,6 +51,7 @@ namespace Scripts.Menu_and_UI
             _animator.SetTrigger(_leavingSceneAnimation);
             yield return new WaitForSeconds(1f);
             SceneManager.LoadScene(buildIndex);
+            Logger.Instance.Log($"Changed scene from '{SceneManager.GetSceneByBuildIndex(buildIndex - 1).name}' to '{SceneManager.GetSceneByBuildIndex(buildIndex).name}'");
             yield return new WaitForSeconds(1f);
             _animator.SetTrigger(_enteringSceneAnimation);
 

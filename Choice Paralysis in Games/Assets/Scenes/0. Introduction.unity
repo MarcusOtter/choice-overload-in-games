@@ -253,7 +253,7 @@ Prefab:
     - target: {fileID: 114847880098579896, guid: 7750ac5d2f3545640a0095e87d360182,
         type: 2}
       propertyPath: m_Color.a
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7750ac5d2f3545640a0095e87d360182, type: 2}
@@ -358,6 +358,90 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1596392762}
   m_Script: {fileID: 11500000, guid: 5b558abbe94468147b15f01e4363cc50, type: 3}
+--- !u!1001 &817236863
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4535379076987436, guid: 9e0016953a44be64f9656b62386fc04f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535379076987436, guid: 9e0016953a44be64f9656b62386fc04f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535379076987436, guid: 9e0016953a44be64f9656b62386fc04f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535379076987436, guid: 9e0016953a44be64f9656b62386fc04f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535379076987436, guid: 9e0016953a44be64f9656b62386fc04f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535379076987436, guid: 9e0016953a44be64f9656b62386fc04f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535379076987436, guid: 9e0016953a44be64f9656b62386fc04f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535379076987436, guid: 9e0016953a44be64f9656b62386fc04f, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e0016953a44be64f9656b62386fc04f, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &839518032
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4142086861001602, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142086861001602, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142086861001602, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142086861001602, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142086861001602, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142086861001602, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142086861001602, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142086861001602, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1159447269
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1508775908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -629,8 +713,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -690,17 +774,17 @@ MonoBehaviour:
     textComponent: {fileID: 1508775909}
     characterCount: 28
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -904,12 +988,12 @@ MonoBehaviour:
   _onTextCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1508775907}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1875350866}
+        m_MethodName: FadeInTMPText
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1508775909}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1127,6 +1211,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792953559}
   m_CullTransparentMesh: 0
+--- !u!114 &1875350866 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114744428245216994, guid: 9e0016953a44be64f9656b62386fc04f,
+    type: 2}
+  m_PrefabInternal: {fileID: 817236863}
+  m_Script: {fileID: 11500000, guid: 101f2b06a542aa94aa3fe33b42889091, type: 3}
 --- !u!1 &2036579605
 GameObject:
   m_ObjectHideFlags: 0

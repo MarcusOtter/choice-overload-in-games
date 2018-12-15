@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833022ec4743ba14f8d5ae180b042b70, type: 3}
   m_Name: Mode 3
   m_EditorClassIdentifier: 
+  OptionAmount: 15
   HeadSprites:
   - {fileID: 21300000, guid: 7d1e4b907e468b649946832c5e38b8f1, type: 3}
   - {fileID: 21300000, guid: 4e38a0719aa07bc41b88a05deeec61e2, type: 3}

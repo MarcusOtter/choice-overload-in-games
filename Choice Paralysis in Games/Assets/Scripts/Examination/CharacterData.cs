@@ -3,17 +3,31 @@
     [System.Serializable]
     public struct CharacterData
     {
-        internal bool HasChangedName { get; set; }
-        internal string CharacterName { get; set; }
+        public bool HasChangedName;
+        public string CharacterName;
 
-        internal int SpriteChoices { get; set; } // Per area (30 heads & 30 body choices = 30)
-        internal int VisitedHeads { get; set; }
-        internal int VisitedBodies { get; set; }
+        public int SpriteOptionAmount; // Per section (30 heads & 30 body choices = 30)
 
-        internal bool IsMatchingSet { get; set; }
-        internal float TimeSpent { get; set; }
+        public double VisitedHeadsPercentage;
+        public double VisitedBodiesPercentage;
 
-        internal int SatisfactionScore { get; set; }
+        public int SelectedHead;
+        public int SelectedBody;
 
+        public bool IsMatchingSet;
+        public double TimeSpent;
+       
+        public CharacterData(bool hasChangedName, string characterName, int spriteOptionAmount, double visitedHeadsPercentage, double visitedBodiesPercentage, int selectedHead, int selectedBody, bool isMatchingSet, double timeSpent)
+        {
+            HasChangedName = hasChangedName;
+            CharacterName = characterName;
+            SpriteOptionAmount = spriteOptionAmount;
+            VisitedHeadsPercentage = visitedHeadsPercentage;
+            VisitedBodiesPercentage = visitedBodiesPercentage;
+            SelectedHead = selectedHead;
+            SelectedBody = selectedBody;
+            IsMatchingSet = isMatchingSet;
+            TimeSpent = timeSpent;
+        }
     }
 }
