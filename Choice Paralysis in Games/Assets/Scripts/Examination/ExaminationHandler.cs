@@ -14,6 +14,8 @@ namespace Scripts.Examination
         [SerializeField] private AvailableSprites[] _modes; // 0: 2 sprites  | 1: 5 sprites  | 2: 15 sprites
                                                             // 3: 30 sprites | 4: 45 sprites | 5: 60 sprites
 
+        [SerializeField] private WebtaskRequestType _requestType;
+
         private int _playerNumber;
         private int _examinationModeIndex;
 
@@ -24,7 +26,7 @@ namespace Scripts.Examination
 
         private void Start()
         {
-            StartCoroutine(WebtaskIoRequest(WebtaskRequestType.IncrementCounter));
+            StartCoroutine(WebtaskIoRequest(_requestType));
         }
 
         private IEnumerator WebtaskIoRequest(WebtaskRequestType requestType)
