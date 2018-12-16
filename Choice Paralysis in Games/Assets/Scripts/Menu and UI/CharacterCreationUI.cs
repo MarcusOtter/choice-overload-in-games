@@ -71,6 +71,7 @@ namespace Scripts.Menu_and_UI
 
         public void Done()
         {
+            /*
             var optionAmount = ExaminationHandler.Instance.GetAvailableSprites().OptionAmount;
 
             var characterData = new CharacterData
@@ -85,8 +86,8 @@ namespace Scripts.Menu_and_UI
                 isMatchingSet:            _headIndex == _bodyIndex,
                 timeSpent:                Math.Round(Time.time - _startTime, 2)
             );
-
             DataCollector.Instance.SetCharacterData(characterData);
+            */
             SceneTransitioner.Instance.LoadNextScene();
         }
 
