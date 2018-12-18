@@ -7,7 +7,7 @@ using TMPro;
 
 namespace Scripts.Menu_and_UI
 {
-    public class CharacterCreationUI : MonoBehaviour
+    public class CharacterCreation : MonoBehaviour
     {
         [Header("Big character preview")]
         [SerializeField] private Image _headRenderer;
@@ -34,15 +34,25 @@ namespace Scripts.Menu_and_UI
 
         private float _startTime;
 
+        private float _timeSpentOnName;
+
         private void Start()
         {
-            _availableSprites = ExaminationHandler.Instance.GetAvailableSprites();
+            _availableSprites = ExaminationHandler.Instance?.GetAvailableSprites();
 
             _visitedHeads.Add(1);
             _visitedBodies.Add(1);
             _startTime = Time.time;
 
             UpdateUi();
+        }
+
+        private void Update()
+        {
+            if (_nameInput.isFocused)
+            {
+                _timeSpentOnName += Time.deltaTime;
+            }
         }
 
         public void IncrementHead()
@@ -71,23 +81,30 @@ namespace Scripts.Menu_and_UI
 
         public void Done()
         {
-            /*
+            if (ExaminationHandler.Instance == null)
+            {
+                Logger.Instance.LogError("Couldn't find the Examination Handler");
+                SceneTransitioner.Instance.LoadNextScene();
+                return;
+            }
+
             var optionAmount = ExaminationHandler.Instance.GetAvailableSprites().OptionAmount;
 
             var characterData = new CharacterData
             (
-                hasChangedName:           !string.IsNullOrWhiteSpace(_nameInput.text),
-                characterName:            _nameInput.text,
-                spriteOptionAmount:       optionAmount,
-                visitedHeadsPercentage:   Math.Round((_visitedHeads.Count / (double)optionAmount) * 100d, 2),
-                visitedBodiesPercentage:  Math.Round((_visitedBodies.Count / (double) optionAmount) * 100d, 2),
-                selectedHead:             _headIndex + 1,
-                selectedBody:             _bodyIndex + 1,
-                isMatchingSet:            _headIndex == _bodyIndex,
-                timeSpent:                Math.Round(Time.time - _startTime, 2)
+                hasChangedName:             !string.IsNullOrWhiteSpace(_nameInput.text),
+                characterName:              _nameInput.text,
+                timeSpentOnName:            Math.Round(_timeSpentOnName, 2),
+                spriteOptionAmount:         optionAmount,
+                visitedHeadsPercentage:     Math.Round((_visitedHeads.Count / (double)optionAmount) * 100d, 2),
+                visitedBodiesPercentage:    Math.Round((_visitedBodies.Count / (double) optionAmount) * 100d, 2),
+                selectedHead:               _headIndex + 1,
+                selectedBody:               _bodyIndex + 1,
+                isMatchingSet:              _headIndex == _bodyIndex,
+                timeSpentOnCharacter:       Math.Round(Time.time - _startTime, 2)
             );
             DataCollector.Instance.SetCharacterData(characterData);
-            */
+
             SceneTransitioner.Instance.LoadNextScene();
         }
 

@@ -870,8 +870,8 @@ MonoBehaviour:
     anonymous and no personal information will be collected.
 
 
-    By pressing [SPACE] to continue, you are giving me permission to collect your
-    game data for research purposes.'
+    By pressing [SPACE] to continue, you are agreeing that you have not played this
+    game before and giving me permission to collect game data for resarch purposes.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -898,7 +898,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 22.95
+  m_fontSize: 23.6
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -939,12 +939,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1538716868}
-    characterCount: 341
+    characterCount: 390
     spriteCount: 0
-    spaceCount: 58
-    wordCount: 56
+    spaceCount: 67
+    wordCount: 65
     linkCount: 0
-    lineCount: 10
+    lineCount: 12
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
