@@ -24,7 +24,7 @@ namespace Scripts.Menu_and_UI
         [SerializeField] private TMP_InputField _nameInput;
 
         [Header("Available sprites")]
-        [SerializeField] private AvailableSprites _availableSprites; // TODO: Hide from inspector.
+        private AvailableSprites _availableSprites; // TODO: Hide from inspector.
 
         private int _headIndex;
         private int _bodyIndex;

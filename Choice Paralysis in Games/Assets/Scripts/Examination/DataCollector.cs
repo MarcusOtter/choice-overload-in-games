@@ -12,7 +12,7 @@ namespace Scripts.Examination
 
         // TODO: Make an ExaminationEntry that holds this and game data
 
-        private CharacterData? _characterData;
+        internal CharacterData? CharacterData { get; private set; }
         private CharacterQuestions? _characterQuestions;
 
         private void Awake()
@@ -22,11 +22,11 @@ namespace Scripts.Examination
 
         internal void SetCharacterData(CharacterData characterData)
         {
-            if (_characterData != null) { Logger.Instance.LogWarning("CharacterData overriden!"); }
+            if (CharacterData != null) { Logger.Instance.LogWarning("CharacterData overriden!"); }
             
-            _characterData = characterData;
+            CharacterData = characterData;
 
-            Logger.Instance.Log($"Set character data. Data:\n{JsonUtility.ToJson(_characterData, true)}");
+            Logger.Instance.Log($"Set character data. Data:\n{JsonUtility.ToJson(CharacterData, true)}");
         }
 
         internal void SetCharacterQuestions(CharacterQuestions characterQuestions)
