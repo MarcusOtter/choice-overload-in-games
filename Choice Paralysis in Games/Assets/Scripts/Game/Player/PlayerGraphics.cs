@@ -14,10 +14,13 @@ namespace Scripts.Game.Player
         [SerializeField] private int _sortBehindNumber = 9;
         [SerializeField] private Transform _bulletSpawnPoint;
 
-        [Header("Body sprite settings")]
-        [SerializeField] private string _rotationAnimationName = "Rotation";
+        [Header("Movement animation settings")]
+        [SerializeField] private string _speedAnimationParameter = "Speed";
+
+        private int _speedParameterHash;
 
         private Animator _bodyAnimator;
+        private Rigidbody2D _rigidbody;
 
         private float _rotationZ;
 
@@ -26,8 +29,10 @@ namespace Scripts.Game.Player
         private void Start()
         {
             _bodyAnimator = GetComponent<Animator>();
+            _rigidbody = transform.root.GetComponent<Rigidbody2D>();
 
             _bulletSpawnPointXOffset = _bulletSpawnPoint.position.x;
+            _speedParameterHash = Animator.StringToHash(_speedAnimationParameter);
         }
 
         private void Update()
@@ -41,12 +46,14 @@ namespace Scripts.Game.Player
 
             // Set the flipY of gun sprite
             _weaponSpriteRenderer.flipY = _rotationZ < 180;
+
+            // Flip the weapon spawner offset (for weapons that don't spawn from the middle of the sprite)
             _bulletSpawnPoint.localPosition =
                 new Vector3(_rotationZ < 180 ? -_bulletSpawnPointXOffset : _bulletSpawnPointXOffset,
                     _bulletSpawnPoint.localPosition.y, 0);
 
             // Update the float in the animator
-            _bodyAnimator.SetFloat(_rotationAnimationName, _rotationZ);
+            _bodyAnimator.SetFloat(_speedParameterHash, Mathf.Abs(_rigidbody.velocity.x));
         }
     }
 }
