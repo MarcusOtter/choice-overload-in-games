@@ -898,7 +898,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 23.6
+  m_fontSize: 21.8
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -944,7 +944,7 @@ MonoBehaviour:
     spaceCount: 67
     wordCount: 65
     linkCount: 0
-    lineCount: 12
+    lineCount: 11
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0

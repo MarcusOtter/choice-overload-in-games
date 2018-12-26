@@ -50,7 +50,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4076420932209370}
-  - component: {fileID: 212741809396826724}
   - component: {fileID: 114733619643892566}
   - component: {fileID: 95774011969023720}
   - component: {fileID: 114726464055900654}
@@ -163,7 +162,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344643800427090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.077, y: 1, z: 0}
+  m_LocalPosition: {x: -0.08, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4365026775890520}
@@ -176,7 +175,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1197859568751828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4821618081892410}
@@ -207,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 1182619456322462}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children: []
   m_Father: {fileID: 4365026775890520}
   m_RootOrder: 0
@@ -299,11 +298,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f98008846ae436c87d387a401df904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefabToSpawn: {fileID: 114382383224017682, guid: c202235a490114595bd484dc921dd835,
+  BulletPrefabToSpawn: {fileID: 114748382307207352, guid: 6c4184d52bede4112847644ebfc50bc6,
     type: 2}
   BulletDamage: 2
-  BulletSpeed: 30
+  BulletSpeed: 40
   ShootDelay: 0.2
+  _muzzleFlashPrefab: {fileID: 1001987374481926, guid: e3b2cfe0c2ec96941b8542af50bee9ca,
+    type: 2}
 --- !u!114 &114564034676943210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -355,9 +356,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunRotation: {fileID: 4365026775890520}
-  _gunSpriteRenderer: {fileID: 212239883783079828}
+  _weaponSpriteRenderer: {fileID: 212239883783079828}
   _sortInFrontNumber: 11
   _sortBehindNumber: 9
+  _bulletSpawnPoint: {fileID: 4142353087181572}
   _rotationAnimationName: Rotation
 --- !u!212 &212146593669979726
 SpriteRenderer:
@@ -440,7 +442,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: 21300000, guid: 6070e9c32541978478c82292da4354e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d60623e1731bd9547b740f4dbf32d0ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -492,52 +494,6 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!212 &212741809396826724
-SpriteRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1200620160409654}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300422, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

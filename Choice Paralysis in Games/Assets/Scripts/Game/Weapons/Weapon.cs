@@ -3,7 +3,7 @@
 namespace Scripts.Game.Weapons
 {
     /// <summary>Base class for all weapons</summary>
-    public class Weapon : MonoBehaviour
+    public abstract class Weapon : MonoBehaviour
     {
         public Vector2 AimDirection { get; protected set; }
 

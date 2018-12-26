@@ -5,6 +5,9 @@ namespace Scripts.Game.Weapons
 {
     public class PlayerWeapon : Weapon
     {
+        [Header("Player Weapon Settings")]
+        [SerializeField] private GameObject _muzzleFlashPrefab;
+
         private PlayerPoints _playerPoints;
         private Transform _parentTransform;
 
@@ -30,6 +33,7 @@ namespace Scripts.Game.Weapons
         private void SpawnBullet(object sender, EventArgs e)
         {
             Instantiate(BulletPrefabToSpawn, transform.position, transform.rotation).Shoot(BulletDamage, BulletSpeed);
+            Instantiate(_muzzleFlashPrefab, transform.position, transform.rotation);
             _playerPoints.ModifyPoints(-1);
         }
 

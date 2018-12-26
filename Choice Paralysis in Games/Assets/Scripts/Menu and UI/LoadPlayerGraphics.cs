@@ -19,14 +19,20 @@ namespace Scripts.Menu_and_UI
 
         private void Start()
         {
-            _characterData = DataCollector.Instance.CharacterData;
-            _availableSprites = ExaminationHandler.Instance.GetAvailableSprites();
+            _characterData = DataCollector.Instance?.CharacterData;
+            _availableSprites = ExaminationHandler.Instance?.GetAvailableSprites();
 
             SetGraphics();
         }
 
         private void SetGraphics()
         {
+            if (!_characterData.HasValue)
+            {
+                Logger.Instance.LogWarning("Character Data doesn't have any data.");
+                return;
+            }
+
             if (_headImage != null)
             {
                 _headImage.sprite = _availableSprites.HeadSprites[_characterData.Value.SelectedHead - 1];
