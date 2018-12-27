@@ -47,10 +47,6 @@ namespace Scripts.Game.Enemies
 
         protected void Die()
         {
-            GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)
-                ?.GetComponent<PlayerPoints>()
-                ?.ModifyPoints(_pointsRewardedOnDeath);
-
             Destroy(gameObject);
         }
     }

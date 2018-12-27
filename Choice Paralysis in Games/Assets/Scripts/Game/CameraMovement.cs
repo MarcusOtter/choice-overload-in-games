@@ -25,9 +25,7 @@ namespace Scripts.Game
 
         private void OnEnable()
         {
-            _userInput = UserInputController.Instance;
-            if (_userInput == null) { return; }
-            _userInput.OnAttackKeyDown += CameraShakeSmall;
+            PlayerWeapon.OnWeaponFire += CameraShakeSmall;
         }
 
         private void Start()
@@ -102,8 +100,7 @@ namespace Scripts.Game
 
         private void OnDisable()
         {
-            if (_userInput == null) { return; }
-            _userInput.OnAttackKeyDown -= CameraShakeSmall;
+            PlayerWeapon.OnWeaponFire -= CameraShakeSmall;
         }
     }
 }

@@ -5,10 +5,8 @@ namespace Scripts.Game.Weapons
 {
     public class PlayerWeapon : Weapon
     {
-        [Header("Player Weapon Settings")]
-        [SerializeField] private GameObject _muzzleFlashPrefab;
+        internal static event EventHandler OnWeaponFire;
 
-        private PlayerPoints _playerPoints;
         private Transform _parentTransform;
 
         private UserInputController _userInputController;
@@ -27,28 +25,29 @@ namespace Scripts.Game.Weapons
             _userInputController = UserInputController.Instance;
 
             _parentTransform = transform.parent;
-            _userInputController.OnAttackKeyDown += RegisterAttackHoldStart;
-            _userInputController.OnAttackKeyUp += RegisterAttackHoldEnd;
-        }
-
-        private void Start()
-        {
-            _playerPoints = transform.root.GetComponent<PlayerPoints>();
+            _userInputController.OnAttackKeyDown += RegisterAttackKeyDown;
+            _userInputController.OnAttackKeyUp += RegisterAttackKeyUp;
         }
 
         protected override void WeaponBehaviour()
         {
-            // Rotate towards the mouse
-            AimDirection = (_userInputController.MouseWorldPosition - _parentTransform.position).normalized;
-            _parentTransform.up = AimDirection;
+            RotateTowardsMouse();
 
+            // Spawn a bullet if there is one that is queued to be spawned
             if (_fireWhenPossible && _lastBulletSpawnTime + ShootDelay < Time.time)
             {
                 SpawnBullet();
+                _fireWhenPossible = false;
             }
 
             if (!_attackBeingHeld) { return; }
 
+            SprayBullets();
+        }
+
+        /// <summary>Spawns a bullet when the attack key is being held </summary>
+        private void SprayBullets()
+        {
             if (Time.time - (_holdStartTime + _bulletsFiredThisHold * ShootDelay) > ShootDelay)
             {
                 SpawnBullet();
@@ -56,21 +55,30 @@ namespace Scripts.Game.Weapons
             }
         }
 
-        private void RegisterAttackHoldStart(object sender, EventArgs args)
+        private void RotateTowardsMouse()
+        {
+            AimDirection = (_userInputController.MouseWorldPosition - _parentTransform.position).normalized;
+            _parentTransform.up = AimDirection;
+        }
+
+        private void RegisterAttackKeyDown(object sender, EventArgs args)
         {
             _holdStartTime = Time.time;
             _attackBeingHeld = true;
 
             if (_lastBulletSpawnTime + ShootDelay > Time.time)
             {
+                // The player has pressed the attack key prematurely. 
+                // This bullet will automatically be spawned when it can be.
                 _fireWhenPossible = true;
-                return; 
             }
-
-            SpawnBullet();
+            else
+            {
+                SpawnBullet();
+            }
         }
 
-        private void RegisterAttackHoldEnd(object sender, EventArgs args)
+        private void RegisterAttackKeyUp(object sender, EventArgs args)
         {
             _attackBeingHeld = false;
             _bulletsFiredThisHold = 0;
@@ -78,17 +86,16 @@ namespace Scripts.Game.Weapons
 
         private void SpawnBullet()
         {
+            OnWeaponFire?.Invoke(this, EventArgs.Empty);
+
             Instantiate(BulletPrefabToSpawn, transform.position, transform.rotation).Shoot(BulletDamage, BulletSpeed);
-            Instantiate(_muzzleFlashPrefab, transform.position, transform.rotation);
-            _playerPoints.ModifyPoints(-1);
             _lastBulletSpawnTime = Time.time;
-            _fireWhenPossible = false;
         }
 
         private void OnDisable()
         {
-            _userInputController.OnAttackKeyDown -= RegisterAttackHoldStart;
-            _userInputController.OnAttackKeyUp -= RegisterAttackHoldEnd;
+            _userInputController.OnAttackKeyDown -= RegisterAttackKeyDown;
+            _userInputController.OnAttackKeyUp -= RegisterAttackKeyUp;
         }
     }
 }
