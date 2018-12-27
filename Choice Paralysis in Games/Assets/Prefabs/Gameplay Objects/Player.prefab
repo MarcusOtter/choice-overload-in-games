@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4821618081892410}
   - component: {fileID: 212239883783079828}
+  - component: {fileID: 95011371851253440}
   m_Layer: 0
   m_Name: Gun Sprite
   m_TagString: Untagged
@@ -268,6 +269,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.58}
   m_EdgeRadius: 0
+--- !u!95 &95011371851253440
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182619456322462}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f0f38e5259e82b48bfbb9ae81533a90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95774011969023720
 Animator:
   serializedVersion: 3
@@ -342,11 +361,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunRotation: {fileID: 4365026775890520}
+  _weaponAnimator: {fileID: 95011371851253440}
+  _recoilTriggerName: TriggerRecoil
   _weaponSpriteRenderer: {fileID: 212239883783079828}
   _sortInFrontNumber: 11
   _sortBehindNumber: 9
   _bulletSpawnPoint: {fileID: 4142353087181572}
   _speedParameterName: Speed
+  _skipTriggerName: TriggerSkip
 --- !u!212 &212146593669979726
 SpriteRenderer:
   m_ObjectHideFlags: 1

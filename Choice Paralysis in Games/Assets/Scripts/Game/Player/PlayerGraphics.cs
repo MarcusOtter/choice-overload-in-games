@@ -10,7 +10,9 @@ namespace Scripts.Game.Player
         [Header("Necessary references")]
         [SerializeField] private Transform _gunRotation;
 
-        [Header("Weapon sprite settings")]
+        [Header("Weapon graphics")]
+        [SerializeField] private Animator _weaponAnimator;
+        [SerializeField] private string _recoilTriggerName = "TriggerRecoil";
         [SerializeField] private SpriteRenderer _weaponSpriteRenderer;
         [SerializeField] private int _sortInFrontNumber = 11;
         [SerializeField] private int _sortBehindNumber = 9;
@@ -20,6 +22,7 @@ namespace Scripts.Game.Player
         [SerializeField] private string _speedParameterName = "Speed";
         [SerializeField] private string _skipTriggerName = "TriggerSkip";
 
+        private int _recoilTriggerHash;
         private int _speedParameterHash;
         private int _skipTriggerHash;
 
@@ -33,6 +36,7 @@ namespace Scripts.Game.Player
         private void OnEnable()
         {
             PlayerWeapon.OnWeaponFire += TriggerSkip;
+            PlayerWeapon.OnWeaponFire += TriggerWeaponRecoil;
         }
 
         private void Start()
@@ -43,6 +47,7 @@ namespace Scripts.Game.Player
             _bodyAnimator = GetComponent<Animator>();
             _speedParameterHash = Animator.StringToHash(_speedParameterName);
             _skipTriggerHash = Animator.StringToHash(_skipTriggerName);
+            _recoilTriggerHash = Animator.StringToHash(_recoilTriggerName);
         }
 
         private void Update()
@@ -67,16 +72,20 @@ namespace Scripts.Game.Player
         }
 
         // Makes the player jump whenever a bullet is fired from the player weapon
-        private void TriggerSkip(object sender, EventArgs e)
+        private void TriggerSkip(object sender, EventArgs args)
         {
             _bodyAnimator.SetTrigger(_skipTriggerHash);
         }
 
-        // TODO: Weapon knockback
+        private void TriggerWeaponRecoil(object sender, EventArgs args)
+        {
+            _weaponAnimator.SetTrigger(_recoilTriggerHash);
+        }
 
         private void OnDisable()
         {
             PlayerWeapon.OnWeaponFire -= TriggerSkip;
+            PlayerWeapon.OnWeaponFire -= TriggerWeaponRecoil;
         }
     }
 }
