@@ -8,7 +8,9 @@ namespace Scripts.Game
 	{
 	    internal static UserInputController Instance { get; private set; }
 
-		internal event EventHandler OnAttackButtonDown = delegate { };
+	    internal event EventHandler OnAttackKeyDown;
+	    internal event EventHandler OnAttackKeyUp;
+
         internal float HorizontalAxis { get; private set; }
 	    internal float VerticalAxis { get; private set; }
         internal Vector3 MouseWorldPosition { get; private set; }
@@ -29,8 +31,15 @@ namespace Scripts.Game
 	    {
 	        MouseWorldPosition = GetMouseWorldPosition();
 
-            // Invokes the OnAttackButtonDown event if the _attackKey is pressed and something is subscribed to the event.
-            if (Input.GetKeyDown(_attackKey)) OnAttackButtonDown?.Invoke(this, EventArgs.Empty);
+	        if (Input.GetKeyDown(_attackKey))
+	        {
+	            OnAttackKeyDown?.Invoke(this, EventArgs.Empty);
+            }
+
+	        if (Input.GetKeyUp(_attackKey))
+	        {
+                OnAttackKeyUp?.Invoke(this, EventArgs.Empty);
+            }
 
 	        HorizontalAxis = Input.GetAxis(_horizontalAxisName);
 	        VerticalAxis = Input.GetAxis(_verticalAxisName);

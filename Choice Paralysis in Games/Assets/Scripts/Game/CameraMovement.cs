@@ -27,7 +27,7 @@ namespace Scripts.Game
         {
             _userInput = UserInputController.Instance;
             if (_userInput == null) { return; }
-            _userInput.OnAttackButtonDown += CameraShakeSmall;
+            _userInput.OnAttackKeyDown += CameraShakeSmall;
         }
 
         private void Start()
@@ -45,7 +45,7 @@ namespace Scripts.Game
         }
 
 
-        private void CameraShakeSmall(object sender, EventArgs e)
+        private void CameraShakeSmall(object sender, EventArgs args)
         {
             if (_runningCameraShake != null) { return; }
 
@@ -103,7 +103,7 @@ namespace Scripts.Game
         private void OnDisable()
         {
             if (_userInput == null) { return; }
-            _userInput.OnAttackButtonDown -= CameraShakeSmall;
+            _userInput.OnAttackKeyDown -= CameraShakeSmall;
         }
     }
 }

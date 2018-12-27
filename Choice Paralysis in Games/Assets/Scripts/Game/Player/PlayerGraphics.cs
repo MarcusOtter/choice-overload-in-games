@@ -15,7 +15,7 @@ namespace Scripts.Game.Player
         [SerializeField] private Transform _bulletSpawnPoint;
 
         [Header("Movement animation settings")]
-        [SerializeField] private string _speedAnimationParameter = "Speed";
+        [SerializeField] private string _speedParameterName = "Speed";
 
         private int _speedParameterHash;
 
@@ -32,7 +32,7 @@ namespace Scripts.Game.Player
             _rigidbody = transform.root.GetComponent<Rigidbody2D>();
 
             _bulletSpawnPointXOffset = _bulletSpawnPoint.position.x;
-            _speedParameterHash = Animator.StringToHash(_speedAnimationParameter);
+            _speedParameterHash = Animator.StringToHash(_speedParameterName);
         }
 
         private void Update()
@@ -53,7 +53,7 @@ namespace Scripts.Game.Player
                     _bulletSpawnPoint.localPosition.y, 0);
 
             // Update the float in the animator
-            _bodyAnimator.SetFloat(_speedParameterHash, Mathf.Abs(_rigidbody.velocity.x));
+            _bodyAnimator.SetFloat(_speedParameterHash, Mathf.Abs(_rigidbody.velocity.x) + Mathf.Abs(_rigidbody.velocity.y));
         }
     }
 }
