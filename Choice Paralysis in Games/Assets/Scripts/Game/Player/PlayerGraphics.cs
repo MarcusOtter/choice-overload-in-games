@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using Scripts.Game.Weapons;
+using UnityEngine;
 
 namespace Scripts.Game.Player
 {
@@ -16,8 +18,10 @@ namespace Scripts.Game.Player
 
         [Header("Movement animation settings")]
         [SerializeField] private string _speedParameterName = "Speed";
+        [SerializeField] private string _skipTriggerName = "TriggerSkip";
 
         private int _speedParameterHash;
+        private int _skipTriggerHash;
 
         private Animator _bodyAnimator;
         private Rigidbody2D _rigidbody;
@@ -26,13 +30,19 @@ namespace Scripts.Game.Player
 
         private float _bulletSpawnPointXOffset;
 
+        private void OnEnable()
+        {
+            PlayerWeapon.OnWeaponFire += TriggerSkip;
+        }
+
         private void Start()
         {
-            _bodyAnimator = GetComponent<Animator>();
             _rigidbody = transform.root.GetComponent<Rigidbody2D>();
-
             _bulletSpawnPointXOffset = _bulletSpawnPoint.position.x;
+
+            _bodyAnimator = GetComponent<Animator>();
             _speedParameterHash = Animator.StringToHash(_speedParameterName);
+            _skipTriggerHash = Animator.StringToHash(_skipTriggerName);
         }
 
         private void Update()
@@ -54,6 +64,19 @@ namespace Scripts.Game.Player
 
             // Update the float in the animator
             _bodyAnimator.SetFloat(_speedParameterHash, Mathf.Abs(_rigidbody.velocity.x) + Mathf.Abs(_rigidbody.velocity.y));
+        }
+
+        // Makes the player jump whenever a bullet is fired from the player weapon
+        private void TriggerSkip(object sender, EventArgs e)
+        {
+            _bodyAnimator.SetTrigger(_skipTriggerHash);
+        }
+
+        // TODO: Weapon knockback
+
+        private void OnDisable()
+        {
+            PlayerWeapon.OnWeaponFire -= TriggerSkip;
         }
     }
 }

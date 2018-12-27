@@ -8,6 +8,7 @@ namespace Scripts.Game.Weapons
         public Vector2 AimDirection { get; protected set; }
 
         [Header("General Weapon Settings")]
+        [SerializeField] internal float KnockbackForce = 10;
         [SerializeField] protected Bullet BulletPrefabToSpawn;
         [SerializeField] protected int BulletDamage = 10;
         [SerializeField] protected float BulletSpeed = 10;
