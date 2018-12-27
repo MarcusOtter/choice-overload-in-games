@@ -13,6 +13,7 @@ namespace Scripts.Game.Weapons
         [SerializeField] protected int BulletDamage = 10;
         [SerializeField] protected float BulletSpeed = 10;
         [SerializeField] protected float ShootDelay = 0.2f;
+        [SerializeField] [Range(0f, 1f)] protected float Accuracy = 0.9f;
 
         protected virtual void Update()
         {

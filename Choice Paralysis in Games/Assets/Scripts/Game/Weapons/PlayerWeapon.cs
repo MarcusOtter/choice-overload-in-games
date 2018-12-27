@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Scripts.Game.Weapons
 {
@@ -88,8 +89,24 @@ namespace Scripts.Game.Weapons
         {
             OnWeaponFire?.Invoke(this, EventArgs.Empty);
 
-            Instantiate(BulletPrefabToSpawn, transform.position, transform.rotation).Shoot(BulletDamage, BulletSpeed);
+            Instantiate(BulletPrefabToSpawn, transform.position, GetRandomOffsetBulletRotation()).Shoot(BulletDamage, BulletSpeed);
             _lastBulletSpawnTime = Time.time;
+        }
+
+        /// <summary>
+        /// Calculates a random offset of the rotation of this object's rotation
+        /// that depends on the <see cref="Weapon.Accuracy"/>
+        /// </summary>
+        private Quaternion GetRandomOffsetBulletRotation()
+        {
+            // If the accuracy is 1, the bullet will always go in a straight line.
+            if (Mathf.Approximately(Accuracy, 1f))
+            {
+                return transform.rotation;
+            }
+
+            var randomOffsetDegrees = Random.Range((1 - Accuracy) * -45, (1 - Accuracy) * 45);
+            return Quaternion.AngleAxis(randomOffsetDegrees, Vector3.forward) * transform.rotation;
         }
 
         private void OnDisable()
