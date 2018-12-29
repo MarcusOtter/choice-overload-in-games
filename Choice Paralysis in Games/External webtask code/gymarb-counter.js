@@ -1,7 +1,5 @@
-// This file needs to be commented out for unity to compile.
 // Create this webtask at https://webtask.io/make, and modify the 
 // string EnvironmentVariables.WebTaskUri to be equal to the link provided at webtask.io.
-/*
 module.exports = function(context, callback)
 {
   // Get data
@@ -39,4 +37,3 @@ module.exports = function(context, callback)
     callback(null, data.count);
   });
 };
-*/

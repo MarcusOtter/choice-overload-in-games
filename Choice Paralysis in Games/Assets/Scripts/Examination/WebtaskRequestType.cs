@@ -1,4 +1,4 @@
-﻿namespace Scripts.Webtask.io
+﻿namespace Scripts.Examination
 {
     public enum WebtaskRequestType
     {
