@@ -8,6 +8,9 @@ namespace Scripts.Game.Weapons
     {
         internal static event EventHandler OnWeaponFire;
 
+        [Header("Player Weapon Settings")]
+        [SerializeField] internal Transform ShellCasingSpawnPoint;
+
         private Transform _parentTransform;
 
         private UserInputController _userInputController;
