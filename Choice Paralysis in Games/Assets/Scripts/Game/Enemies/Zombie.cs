@@ -21,13 +21,14 @@ namespace Scripts.Game.Enemies
         /// <summary>Returns a force that is calculated depending on nearby enemies.</summary>
         private Vector2 GetRepelForce()
         {
-            Collider2D[] collidersWithinRepelRange = Physics2D.OverlapCircleAll(transform.position, _repelRange);
+            var collidersWithinRepelRange = Physics2D.OverlapCircleAll(transform.position, _repelRange);
 
             var repelForce = Vector2.zero;
             foreach (var col in collidersWithinRepelRange)
             {
                 if (col.transform.root.GetComponentInChildren<Enemy>() == null) { continue; }
 
+                // ReSharper disable once RedundantCast (it is not redundant)
                 repelForce += (Vector2) (transform.position - col.transform.position).normalized;
             }
 

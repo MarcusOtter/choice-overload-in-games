@@ -12,7 +12,7 @@ namespace Scripts.Game.Weapons
 
         private UserInputController _userInputController;
 
-        private int _bulletsFiredThisHold; // How many bullets have been fired during this mouse button hold?
+        private int _bulletsFiredThisHold; // How many bullets that have been fired during this mouse press
 
         private float _holdStartTime;
         private bool _attackBeingHeld;
@@ -94,8 +94,7 @@ namespace Scripts.Game.Weapons
         }
 
         /// <summary>
-        /// Calculates a random offset of the rotation of this object's rotation
-        /// that depends on the <see cref="Weapon.Accuracy"/>
+        /// Calculates a rotation with a random offset that depends on the <see cref="Weapon.Accuracy"/>.
         /// </summary>
         private Quaternion GetRandomOffsetBulletRotation()
         {
@@ -105,6 +104,9 @@ namespace Scripts.Game.Weapons
                 return transform.rotation;
             }
 
+            // With 0 accuracy, the offset can be between -45 degrees and + 45 degrees.
+            // With 0.5 accuracy, the offset can be between -22.5 degrees and + 22.5 degrees.
+            // (etc)
             var randomOffsetDegrees = Random.Range((1 - Accuracy) * -45, (1 - Accuracy) * 45);
             return Quaternion.AngleAxis(randomOffsetDegrees, Vector3.forward) * transform.rotation;
         }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Scripts.Game.Enemies
 {
@@ -7,27 +8,34 @@ namespace Scripts.Game.Enemies
     public class Enemy : MonoBehaviour, IDamageable
     {
         [Header("General Enemy Settings")]
-        [SerializeField] private int _pointsRewardedOnDeath;
         [SerializeField] protected float MaxHealth;
         [SerializeField] protected float MovementSpeed;
+        [SerializeField] protected UnityEvent OnDeath;
 
+        protected bool IsDead;
         protected float Health;
 
         protected Rigidbody2D Rigidbody;
         protected Transform PlayerTransform;
         protected EnemyGraphics EnemyGraphics;
 
-        protected virtual void Start()
+        protected virtual void Awake()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
-            PlayerTransform = GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)?.transform.root;
             EnemyGraphics = GetComponentInChildren<EnemyGraphics>();
 
             Health = MaxHealth;
         }
 
+        protected virtual void Start()
+        {
+            PlayerTransform = GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)?.transform.root;
+        }
+
         protected virtual void FixedUpdate()
         {
+            if (IsDead) { return; }
+
             Move();
         }
 
@@ -47,7 +55,8 @@ namespace Scripts.Game.Enemies
 
         protected void Die()
         {
-            Destroy(gameObject);
+            IsDead = true;
+            OnDeath.Invoke();
         }
     }
 }

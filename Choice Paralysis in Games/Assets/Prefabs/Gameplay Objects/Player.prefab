@@ -322,6 +322,7 @@ MonoBehaviour:
   BulletDamage: 2
   BulletSpeed: 40
   ShootDelay: 0.15
+  Accuracy: 0.925
 --- !u!114 &114564034676943210
 MonoBehaviour:
   m_ObjectHideFlags: 1

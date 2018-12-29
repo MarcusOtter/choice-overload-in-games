@@ -14,8 +14,9 @@ namespace Scripts.Game.Enemies
 
         private Sniper _sniper;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _sniper = GetComponentInChildren<Sniper>();
         }
 

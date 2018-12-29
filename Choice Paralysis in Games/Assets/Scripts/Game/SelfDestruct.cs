@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 
-public class SelfDestruct : MonoBehaviour
+namespace Scripts.Game
 {
-    [SerializeField] private float _selfDestructDelay = 5;
-
-    private void Awake ()
+    public class SelfDestruct : MonoBehaviour
     {
-        Destroy(gameObject, _selfDestructDelay);
-    }
+        [SerializeField] private float _selfDestructDelay = 5;
 
-    public void Destroy()
-    {
-        Destroy(gameObject);
+        private void Awake ()
+        {
+            Destroy(gameObject, _selfDestructDelay);
+        }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
+        }
     }
 }
