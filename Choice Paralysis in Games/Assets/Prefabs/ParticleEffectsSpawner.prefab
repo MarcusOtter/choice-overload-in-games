@@ -53,3 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _muzzleFlash: {fileID: 1001987374481926, guid: e3b2cfe0c2ec96941b8542af50bee9ca,
     type: 2}
+  _shellCasing: {fileID: 1176418404021610, guid: 00e352f160db42b469cbc12577e81bb7,
+    type: 2}
