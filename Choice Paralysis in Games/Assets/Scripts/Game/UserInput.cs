@@ -4,9 +4,9 @@ using UnityEngine;
 namespace Scripts.Game
 {
     /// <summary>Singleton class that tracks the user's input.</summary>
-	public class UserInputController : MonoBehaviour
+	public class UserInput : MonoBehaviour
 	{
-	    internal static UserInputController Instance { get; private set; }
+	    internal static UserInput Instance { get; private set; }
 
 	    internal event EventHandler OnAttackKeyDown;
 	    internal event EventHandler OnAttackKeyUp;

@@ -9,7 +9,7 @@ namespace Scripts.Game.Player
     {
         [SerializeField] private float _movementSpeed;
 
-        private UserInputController _inputController;
+        private UserInput _input;
         private Rigidbody2D _rigidbody;
 
         private Vector2 _knockbackVector;
@@ -21,14 +21,14 @@ namespace Scripts.Game.Player
 
         private void Start()
         {
-            _inputController = UserInputController.Instance;
+            _input = UserInput.Instance;
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
         private void FixedUpdate()
         {
-            _rigidbody.velocity = new Vector2(_inputController.HorizontalAxis * _movementSpeed,
-                _inputController.VerticalAxis * _movementSpeed) + _knockbackVector;
+            _rigidbody.velocity = new Vector2(_input.HorizontalAxis * _movementSpeed,
+                _input.VerticalAxis * _movementSpeed) + _knockbackVector;
 
             // Reset knockback vector after applying it
             _knockbackVector = Vector2.zero;

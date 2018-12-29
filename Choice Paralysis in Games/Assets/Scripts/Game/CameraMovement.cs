@@ -15,7 +15,7 @@ namespace Scripts.Game
         [SerializeField] [Range(0.01f, 1f)] private float _smallShakeStrength = 0.12f;
         [SerializeField] [Range(0, 1)] private float _shakeSpeed = 0.5f;
 
-        private UserInputController _userInput;
+        private UserInput _userInput;
         private Transform _playerTransform;
         private Weapon _playerWeapon;
 
@@ -30,7 +30,7 @@ namespace Scripts.Game
 
         private void Start()
         {
-            _userInput = UserInputController.Instance;
+            _userInput = UserInput.Instance;
             _playerTransform = GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)?.transform.root;
             _playerWeapon = _playerTransform?.root.GetComponentInChildren<Weapon>();
         }

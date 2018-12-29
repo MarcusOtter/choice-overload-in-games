@@ -13,7 +13,7 @@ namespace Scripts.Game.Weapons
 
         private Transform _parentTransform;
 
-        private UserInputController _userInputController;
+        private UserInput _userInput;
 
         private int _bulletsFiredThisHold; // How many bullets that have been fired during this mouse press
 
@@ -26,11 +26,11 @@ namespace Scripts.Game.Weapons
 
         private void OnEnable()
         {
-            _userInputController = UserInputController.Instance;
+            _userInput = UserInput.Instance;
 
             _parentTransform = transform.parent;
-            _userInputController.OnAttackKeyDown += RegisterAttackKeyDown;
-            _userInputController.OnAttackKeyUp += RegisterAttackKeyUp;
+            _userInput.OnAttackKeyDown += RegisterAttackKeyDown;
+            _userInput.OnAttackKeyUp += RegisterAttackKeyUp;
         }
 
         protected override void WeaponBehaviour()
@@ -61,7 +61,7 @@ namespace Scripts.Game.Weapons
 
         private void RotateTowardsMouse()
         {
-            AimDirection = (_userInputController.MouseWorldPosition - _parentTransform.position).normalized;
+            AimDirection = (_userInput.MouseWorldPosition - _parentTransform.position).normalized;
             _parentTransform.up = AimDirection;
         }
 
@@ -116,8 +116,8 @@ namespace Scripts.Game.Weapons
 
         private void OnDisable()
         {
-            _userInputController.OnAttackKeyDown -= RegisterAttackKeyDown;
-            _userInputController.OnAttackKeyUp -= RegisterAttackKeyUp;
+            _userInput.OnAttackKeyDown -= RegisterAttackKeyDown;
+            _userInput.OnAttackKeyUp -= RegisterAttackKeyUp;
         }
     }
 }
