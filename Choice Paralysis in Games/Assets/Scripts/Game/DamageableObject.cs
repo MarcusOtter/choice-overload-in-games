@@ -1,11 +1,17 @@
 ﻿using System.Collections;
+using Scripts.Audio;
 using UnityEngine;
 
 namespace Scripts.Game
 {
     public class DamageableObject : MonoBehaviour, IDamageable
     {
+        [Header("General settings")]
         [SerializeField] private int _maxHp;
+
+        [Header("Audio settings")]
+        [SerializeField] internal bool HasCustomImpactSound;
+        [SerializeField] private SoundEffect _impactSound;
 
         private int _hp;
 
@@ -23,6 +29,11 @@ namespace Scripts.Game
             if (_hitAnimation == null)
             {
                 _hitAnimation = StartCoroutine(DamagedAnimation());
+            }
+
+            if (HasCustomImpactSound)
+            {
+                AudioPlayer.Instance.PlaySoundEffect3D(_impactSound, transform.position);
             }
 
             CheckDeath();

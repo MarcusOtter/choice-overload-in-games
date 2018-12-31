@@ -19,9 +19,9 @@ namespace Scripts.Game.Weapons
             _rigidbody.AddForce(transform.up * speed, ForceMode2D.Impulse);
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            HandleCollision(other);
+            HandleCollision(collider);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -32,6 +32,8 @@ namespace Scripts.Game.Weapons
         private void HandleCollision(Collider2D collider)
         {
             collider.GetComponentInChildren<IDamageable>()?.TakeDamage(_damage);
+
+            Audio.AudioPlayer.Instance.PlaySoundEffect3D(Audio.SoundEffect.BulletImpact, transform.position);
 
             // Spawn bullet effect
 

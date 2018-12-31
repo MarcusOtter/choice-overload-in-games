@@ -230,7 +230,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 66bf77226fe711046bb61b7eacb7eaf0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -325,7 +325,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 598261666c3034f42b6cb0da1ffd9a67, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -420,7 +420,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4940c01469000fc46997bf605843a46c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -610,7 +610,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1d70b7f7c83916f4ba342aa441e9c2d4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -705,7 +705,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d541a4ff828d24abb6d5d0c3535293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainVolume: 1
+  _playerMaxHearingDistance: 30
   _soundEffectSource: {fileID: 82808781995643118}
+  _musicSources:
+  - {fileID: 82408758236134622}
+  - {fileID: 82959917048964982}
+  - {fileID: 82228130862815642}
+  - {fileID: 82076608498186876}
   _skipClip: {fileID: 8300000, guid: 018afd534a124ad4c8c60e035c32cb4b, type: 3}
   _playerWeaponShotClip: {fileID: 8300000, guid: d17db17d4629b454fa9708038d2bc5f0,
     type: 3}
+  _bulletImpactClip: {fileID: 8300000, guid: 488c3d4f89656b645aae5334eae6c1aa, type: 3}

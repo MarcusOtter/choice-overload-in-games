@@ -85,7 +85,7 @@ namespace Scripts.Game.Player
         // Called by animation event
         public void PlaySkipSound()
         {
-            Audio.AudioPlayer.Instance?.PlaySoundEffect(Audio.AudioIdentifier.PlayerSkip);
+            Audio.AudioPlayer.Instance?.PlaySoundEffect(Audio.SoundEffect.PlayerSkip);
         }
 
         private void OnDisable()
