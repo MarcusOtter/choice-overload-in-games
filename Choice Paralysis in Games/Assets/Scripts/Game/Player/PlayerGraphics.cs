@@ -82,6 +82,12 @@ namespace Scripts.Game.Player
             _weaponAnimator.SetTrigger(_recoilTriggerHash);
         }
 
+        // Called by animation event
+        public void PlaySkipSound()
+        {
+            Audio.AudioPlayer.Instance?.PlaySoundEffect(Audio.AudioIdentifier.PlayerSkip);
+        }
+
         private void OnDisable()
         {
             PlayerWeapon.OnWeaponFire -= TriggerSkip;

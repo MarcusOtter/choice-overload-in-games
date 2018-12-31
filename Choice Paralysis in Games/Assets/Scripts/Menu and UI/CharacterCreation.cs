@@ -23,14 +23,13 @@ namespace Scripts.Menu_and_UI
         [Header("Other references")]
         [SerializeField] private TMP_InputField _nameInput;
 
-        [Header("Available sprites")]
-        private AvailableSprites _availableSprites; // TODO: Hide from inspector.
+        private AvailableSprites _availableSprites;
 
-        private int _headIndex;
-        private int _bodyIndex;
+        private int _headIndex; // 0-based index
+        private int _bodyIndex; // 0-based index
 
-        private readonly List<int> _visitedHeads = new List<int>();
-        private readonly List<int> _visitedBodies = new List<int>();
+        private readonly List<int> _visitedHeads = new List<int>(); // 1-based index
+        private readonly List<int> _visitedBodies = new List<int>(); // 1-based index
 
         private float _startTime;
 
@@ -49,33 +48,20 @@ namespace Scripts.Menu_and_UI
 
         private void Update()
         {
-            if (_nameInput.isFocused)
-            {
-                _timeSpentOnName += Time.deltaTime;
-            }
+            if (!_nameInput.isFocused) { return; }
+
+            _timeSpentOnName += Time.deltaTime;
         }
 
-        public void IncrementHead()
+        public void ModifyHeadIndex(int delta)
         {
-            ModifyIndex(1, CharacterSpriteType.Head);
+            ModifyIndex(delta, CharacterSpriteType.Head);
             UpdateUi();
         }
 
-        public void DecrementHead()
+        public void ModifyBodyIndex(int delta)
         {
-            ModifyIndex(-1, CharacterSpriteType.Head);
-            UpdateUi();
-        }
-
-        public void IncrementBody()
-        {
-            ModifyIndex(1, CharacterSpriteType.Body);
-            UpdateUi();
-        }
-
-        public void DecrementBody()
-        {
-            ModifyIndex(-1, CharacterSpriteType.Body);
+            ModifyIndex(delta, CharacterSpriteType.Body);
             UpdateUi();
         }
 

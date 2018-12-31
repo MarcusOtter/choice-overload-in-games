@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.Game.Enemies
 {
@@ -16,10 +15,7 @@ namespace Scripts.Game.Enemies
         [SerializeField] private string _damagedTriggerName = "TriggerDamaged";
 
         private Animator _animator;
-        //private SpriteRenderer _spriteRenderer;
         private Transform _lookDirection;
-
-        //private Color _startColor;
 
         private float _rotationZ;
         private int _damagedTriggerHash;
@@ -27,8 +23,6 @@ namespace Scripts.Game.Enemies
         private void Start()
         {
             _animator = GetComponent<Animator>();
-            //_spriteRenderer = GetComponent<SpriteRenderer>();
-            //_startColor = _spriteRenderer.color;
             _lookDirection = transform.root.GetComponentInChildren<LookDirection>()?.transform;
             _damagedTriggerHash = Animator.StringToHash(_damagedTriggerName);
         }
@@ -57,20 +51,7 @@ namespace Scripts.Game.Enemies
         internal void PlayDamagedAnimation()
         {
             _animator.SetTrigger(_damagedTriggerHash);
-            //StartCoroutine(DamageAnimation());
         }
-
-        /*
-        // This could probably be replaced with actual animation clips
-        // which would allow for more custom animation & reusability
-        private IEnumerator DamageAnimation()
-        {
-            _spriteRenderer.color = Color.red;
-            Debug.Log("are you even called");
-            yield return new WaitForSeconds(0.1f);
-            _spriteRenderer.color = _startColor;
-        }
-        */
     }
 }
 

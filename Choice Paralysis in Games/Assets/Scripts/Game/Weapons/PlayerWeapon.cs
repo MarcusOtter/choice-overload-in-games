@@ -92,6 +92,9 @@ namespace Scripts.Game.Weapons
         {
             OnWeaponFire?.Invoke(this, EventArgs.Empty);
 
+            // Play sound effect if the audio player exists
+            Audio.AudioPlayer.Instance?.PlaySoundEffect(Audio.AudioIdentifier.PlayerWeaponShot);
+
             Instantiate(BulletPrefabToSpawn, transform.position, GetRandomOffsetBulletRotation()).Shoot(BulletDamage, BulletSpeed);
             _lastBulletSpawnTime = Time.time;
         }
