@@ -102,7 +102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dcc935bcaaf98442b226d8b6f815808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingVelocity: 4
+  _spawnRotationMin: -45
+  _spawnRotationMax: 45
+  _velocityMin: 3
+  _velocityMax: 5
+  _rotationSpeedMin: -50
+  _rotationSpeedMax: 50
 --- !u!212 &212428933935084046
 SpriteRenderer:
   m_ObjectHideFlags: 1

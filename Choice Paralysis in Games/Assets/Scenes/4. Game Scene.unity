@@ -6232,6 +6232,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114015497225582036, guid: 0fa190c386a5fe24da6f5b78b454c07d,
+        type: 2}
+      propertyPath: _bulletImpactClip
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa190c386a5fe24da6f5b78b454c07d, type: 2}
   m_IsPrefabAsset: 0

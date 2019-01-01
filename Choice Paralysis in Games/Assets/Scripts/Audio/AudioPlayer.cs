@@ -36,6 +36,12 @@ namespace Scripts.Audio
             }
         }
 
+        /// <summary>Plays an <see cref="AudioClip"/> with a volume (scaled with <see cref="_mainVolume"/>.</summary>
+        internal void PlaySoundEffect(AudioClip audioClip, float volume)
+        {
+            _soundEffectSource.PlayOneShot(audioClip, volume * _mainVolume);
+        }
+
         /// <summary>Plays a <see cref="SoundEffect"/> with it's volume.</summary>
         internal void PlaySoundEffect(SoundEffect soundEffect)
         {
