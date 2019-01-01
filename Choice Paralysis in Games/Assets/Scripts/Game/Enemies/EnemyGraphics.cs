@@ -13,18 +13,21 @@ namespace Scripts.Game.Enemies
         [Header("Body sprite settings")]
         [SerializeField] private string _rotationAnimationName = "Rotation";
         [SerializeField] private string _damagedTriggerName = "TriggerDamaged";
+        [SerializeField] private string _deadBoolName = "IsDead";
 
         private Animator _animator;
         private Transform _lookDirection;
 
         private float _rotationZ;
         private int _damagedTriggerHash;
+        private int _deadBoolHash;
 
         private void Start()
         {
             _animator = GetComponent<Animator>();
             _lookDirection = transform.root.GetComponentInChildren<LookDirection>()?.transform;
             _damagedTriggerHash = Animator.StringToHash(_damagedTriggerName);
+            _deadBoolHash = Animator.StringToHash(_deadBoolName);
         }
 
         private void Update()
@@ -43,12 +46,14 @@ namespace Scripts.Game.Enemies
             _gunSpriteRenderer.flipY = _rotationZ < 180;
         }
 
+        // Called by UnityEvent OnDeath in Enemy.cs
         public void PlayDeathAnimation()
         {
-            _animator.SetBool("IsDead", true);
+            _animator.SetBool(_deadBoolHash, true);
         }
 
-        internal void PlayDamagedAnimation()
+        // Called by UnityEvent OnDamaged in Enemy.cs
+        public void PlayDamagedAnimation()
         {
             _animator.SetTrigger(_damagedTriggerHash);
         }

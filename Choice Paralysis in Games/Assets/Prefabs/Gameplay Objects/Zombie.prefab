@@ -212,6 +212,7 @@ MonoBehaviour:
   _sortBehindNumber: 4
   _rotationAnimationName: Rotation
   _damagedTriggerName: TriggerDamaged
+  _deadBoolName: IsDead
 --- !u!114 &114463671332438412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 10
   MovementSpeed: 2
+  _damagedAudio: {fileID: 8300000, guid: 62f242f625415304592ba8d210ce6ce0, type: 3}
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -275,6 +277,22 @@ MonoBehaviour:
       - m_Target: {fileID: 114463671332438412}
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114209055074302908}
+        m_MethodName: PlayDamagedAnimation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
