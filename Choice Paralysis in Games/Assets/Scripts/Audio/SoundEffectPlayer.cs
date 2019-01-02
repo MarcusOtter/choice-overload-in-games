@@ -23,7 +23,7 @@ namespace Scripts.Audio
 
             if (_scaleVolumeWithPlayerDistance)
             {
-                _playerTransform = GameObject.FindGameObjectWithTag("Player").transform.root;
+                _playerTransform = GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag).transform.root;
             }
         }
 

@@ -14,6 +14,9 @@ namespace Scripts.Game.Weapons
         [SerializeField] private float _rotateSpeed = 0.5f;
         [SerializeField] private Color _targetFoundColor = Color.red;
 
+        [Header("Sniper audio")]
+        [SerializeField] private Audio.SoundEffect _chargeUpSound;
+
         private LineRenderer _lineRenderer;
 
         private Vector2? _shootTarget;
@@ -54,6 +57,8 @@ namespace Scripts.Game.Weapons
         private IEnumerator TargetFoundBehaviour()
         {
             EnableLineRenderer(true);
+            Audio.SoundEffectPlayer.PlaySoundEffect(_chargeUpSound, transform);
+            IsShooting = true;
 
             float elapsedTime = 0;
             while (elapsedTime < ShootDelay)
@@ -84,6 +89,9 @@ namespace Scripts.Game.Weapons
                 var shootPoint = _shootPointsParent.GetChild(i);
                 Instantiate(BulletPrefabToSpawn, shootPoint.position + shootPoint.up * 2, shootPoint.rotation).Shoot(BulletDamage, BulletSpeed);
             }
+
+            Audio.SoundEffectPlayer.PlaySoundEffect(ShootSound, transform);
+            IsShooting = false;
         }
 
         private void EnableLineRenderer(bool enable)
