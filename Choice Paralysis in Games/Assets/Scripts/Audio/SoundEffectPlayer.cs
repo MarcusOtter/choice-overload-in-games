@@ -81,11 +81,15 @@ namespace Scripts.Audio
                 ? Random.Range(soundEffect.MinPitch, soundEffect.MaxPitch)
                 : 1;
 
+            AudioClip clip = soundEffect.RandomizeClip
+                ? soundEffect.Clips[Random.Range(0, soundEffect.Clips.Length)]
+                : soundEffect.Clips[0];
+
             _activeSoundEffectVolume = volume; // Must be assigned before CalculateVolume() is called.
 
             _source.pitch = pitch;
             _source.volume = CalculateVolume();
-            _source.clip = soundEffect.Clip;
+            _source.clip = clip;
             _source.loop = soundEffect.ShouldLoop;
 
             _source.Play();

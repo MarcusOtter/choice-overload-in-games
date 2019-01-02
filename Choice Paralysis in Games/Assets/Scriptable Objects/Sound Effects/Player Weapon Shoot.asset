@@ -11,8 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28d68b89480a9240b320f8027969fdb, type: 3}
   m_Name: Player Weapon Shoot
   m_EditorClassIdentifier: 
-  Clip: {fileID: 8300000, guid: d17db17d4629b454fa9708038d2bc5f0, type: 3}
   ShouldLoop: 0
+  RandomizeClip: 0
+  Clips:
+  - {fileID: 8300000, guid: d17db17d4629b454fa9708038d2bc5f0, type: 3}
   RandomizeVolume: 1
   MinVolume: 0.5
   MaxVolume: 0.6

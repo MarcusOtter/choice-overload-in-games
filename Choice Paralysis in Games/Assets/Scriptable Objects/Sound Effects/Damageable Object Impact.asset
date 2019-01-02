@@ -11,8 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28d68b89480a9240b320f8027969fdb, type: 3}
   m_Name: Damageable Object Impact
   m_EditorClassIdentifier: 
-  Clip: {fileID: 8300000, guid: 8a6a17a8d70c52649b7675155bdbbfec, type: 3}
   ShouldLoop: 0
+  RandomizeClip: 0
+  Clips:
+  - {fileID: 8300000, guid: 8a6a17a8d70c52649b7675155bdbbfec, type: 3}
   RandomizeVolume: 1
   MinVolume: 0.25
   MaxVolume: 0.35
