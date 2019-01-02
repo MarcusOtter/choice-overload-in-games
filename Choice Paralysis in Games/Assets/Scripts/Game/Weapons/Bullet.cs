@@ -34,9 +34,17 @@ namespace Scripts.Game.Weapons
 
         private void HandleCollision(Collider2D collider)
         {
-            collider.GetComponentInChildren<IDamageable>()?.TakeDamage(_damage);
+            var damageable = collider.GetComponentInChildren<IDamageable>();
 
-            Audio.SoundEffectPlayer.PlaySoundEffect(_impactSound, transform);
+            if (damageable != null)
+            {
+                damageable.TakeDamage(_damage);
+            }
+            else
+            {
+                // Play default impact sound if no IDamageable is hit
+                Audio.SoundEffectPlayer.PlaySoundEffect(_impactSound, transform);
+            }
 
             // Spawn bullet effect?
 

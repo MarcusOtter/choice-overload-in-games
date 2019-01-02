@@ -11,11 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28d68b89480a9240b320f8027969fdb, type: 3}
   m_Name: Player Bullet Impact
   m_EditorClassIdentifier: 
-  Clip: {fileID: 8300000, guid: 488c3d4f89656b645aae5334eae6c1aa, type: 3}
   ShouldLoop: 0
+  RandomizeClip: 1
+  Clips:
+  - {fileID: 8300000, guid: abea02aaf2c976745a162cc0f7d95fd2, type: 3}
+  - {fileID: 8300000, guid: 385fe6e9943d1144ba92a1dd67cf0a52, type: 3}
   RandomizeVolume: 1
-  MinVolume: 0.7
-  MaxVolume: 0.8
+  MinVolume: 0.05
+  MaxVolume: 0.075
   RandomizePitch: 1
   MinPitch: 0.95
   MaxPitch: 1.05
