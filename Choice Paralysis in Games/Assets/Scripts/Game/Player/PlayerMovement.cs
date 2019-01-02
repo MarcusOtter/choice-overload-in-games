@@ -12,11 +12,11 @@ namespace Scripts.Game.Player
         private UserInput _input;
         private Rigidbody2D _rigidbody;
 
-        private Vector2 _knockbackVector;
+        private Vector2 _recoilKnockbackVector;
 
         private void OnEnable()
         {
-            PlayerWeapon.OnWeaponFire += AddKnockback;
+            PlayerWeapon.OnWeaponFire += AddRecoilKnockback;
         }
 
         private void Start()
@@ -28,18 +28,18 @@ namespace Scripts.Game.Player
         private void FixedUpdate()
         {
             _rigidbody.velocity = new Vector2(_input.HorizontalAxis * _movementSpeed,
-                _input.VerticalAxis * _movementSpeed) + _knockbackVector;
+                _input.VerticalAxis * _movementSpeed) + _recoilKnockbackVector;
 
-            // Reset knockback vector after applying it
-            _knockbackVector = Vector2.zero;
+            // Reset recoil knockback vector after applying it
+            _recoilKnockbackVector = Vector2.zero;
         }
 
-        private void AddKnockback(object sender, EventArgs args)
+        private void AddRecoilKnockback(object sender, EventArgs args)
         {
             var weapon = (PlayerWeapon) sender;
             var knockbackDirection = weapon.AimDirection * -1;
 
-            _knockbackVector = knockbackDirection * weapon.KnockbackForce;
+            _recoilKnockbackVector = knockbackDirection * weapon.RecoilKnockbackForce;
         }
 
         // TODO: Move outside of PlayerMovement
@@ -50,7 +50,7 @@ namespace Scripts.Game.Player
 
         private void OnDisable()
         {
-            PlayerWeapon.OnWeaponFire -= AddKnockback;
+            PlayerWeapon.OnWeaponFire -= AddRecoilKnockback;
         }
     }
 }

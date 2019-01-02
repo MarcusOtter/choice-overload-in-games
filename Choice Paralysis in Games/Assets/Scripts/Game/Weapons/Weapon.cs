@@ -7,22 +7,24 @@ namespace Scripts.Game.Weapons
     {
         public Vector2 AimDirection { get; protected set; }
 
-        [Header("General Weapon Settings")]
-        [SerializeField] internal float KnockbackForce = 10;
+        [Header("Bullet settings")]
         [SerializeField] protected Bullet BulletPrefabToSpawn;
-        [SerializeField] protected int BulletDamage = 10;
-        [SerializeField] protected float BulletSpeed = 10;
-        [SerializeField] protected float ShootDelay = 0.2f;
-        [SerializeField] [Range(0f, 1f)] protected float Accuracy = 0.9f;
+        [SerializeField] protected int BulletDamage = 2;
+        [SerializeField] protected float BulletSpeed = 40;
+
+        [Header("Weapon settings")]
+        [SerializeField] protected float ShootDelay = 0.15f;
+        [SerializeField] [Range(0f, 1f)] protected float Accuracy = 0.925f;
+
+        [Header("Audio settings")]
+        [SerializeField] protected Audio.SoundEffectPlayer SoundPlayer;
+        [SerializeField] protected Audio.SoundEffect ShootSound;
 
         protected virtual void Update()
         {
             WeaponBehaviour();
         }
 
-        protected virtual void WeaponBehaviour()
-        {
-            // Overwritten in weapons that inherit from this class.
-        }
+        protected abstract void WeaponBehaviour();
     }
 }

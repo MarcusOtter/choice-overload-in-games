@@ -11,16 +11,22 @@ namespace Scripts.Game.Player
         [SerializeField] private Transform _gunRotation;
 
         [Header("Weapon graphics")]
-        [SerializeField] private Animator _weaponAnimator;
-        [SerializeField] private string _recoilTriggerName = "TriggerRecoil";
         [SerializeField] private SpriteRenderer _weaponSpriteRenderer;
         [SerializeField] private int _sortInFrontNumber = 11;
         [SerializeField] private int _sortBehindNumber = 9;
         [SerializeField] private Transform _bulletSpawnPoint;
 
-        [Header("Movement animation settings")]
+        [Header("Weapon animation")]
+        [SerializeField] private Animator _weaponAnimator;
+        [SerializeField] private string _recoilTriggerName = "TriggerRecoil";
+
+        [Header("Movement animation")]
         [SerializeField] private string _speedParameterName = "Speed";
         [SerializeField] private string _skipTriggerName = "TriggerSkip";
+
+        [Header("Audio settings")]
+        [SerializeField] private Audio.SoundEffectPlayer _soundPlayer;
+        [SerializeField] private Audio.SoundEffect _skipSound;
 
         private int _recoilTriggerHash;
         private int _speedParameterHash;
@@ -85,7 +91,7 @@ namespace Scripts.Game.Player
         // Called by animation event
         public void PlaySkipSound()
         {
-            Audio.AudioPlayer.Instance?.PlaySoundEffect(Audio.SoundEffect.PlayerSkip);
+            _soundPlayer?.PlaySoundEffect(_skipSound);
         }
 
         private void OnDisable()

@@ -5,16 +5,20 @@ namespace Scripts.Game.Enemies
 {
     /// <summary>Base class for enemies</summary>
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Enemy : MonoBehaviour, IDamageable
+    public abstract class Enemy : MonoBehaviour, IDamageable
     {
         [Header("General Enemy Settings")]
         [SerializeField] protected float MaxHealth;
         [SerializeField] protected float MovementSpeed;
-        [SerializeField] private AudioClip _damagedAudio;
+
+        [Header("Audio settings")]
+        [SerializeField] private Audio.SoundEffectPlayer _soundPlayer;
+        [SerializeField] private Audio.SoundEffect _damagedSound;
 
         [Header("Enemy events")]
         [SerializeField] protected UnityEvent OnDeath;
         [SerializeField] protected UnityEvent OnDamageTaken;
+
 
         protected bool IsDead;
         protected float Health;
@@ -40,15 +44,9 @@ namespace Scripts.Game.Enemies
             Move();
         }
 
-        protected virtual void Move()
-        {
-            // Overwritten
-
-            //ThisDoesntExist.Something();
-            //ExaminationHandler.ExaminationModeNumber = 1;
-        }
+        protected abstract void Move();
         
-        public virtual void TakeDamage(int incomingDamage)
+        public void TakeDamage(int incomingDamage)
         {
             Health -= incomingDamage;
             OnDamageTaken?.Invoke();
@@ -59,8 +57,7 @@ namespace Scripts.Game.Enemies
 
         private void PlayDamagedSound()
         {
-            // TODO: Remake audio player
-            Audio.AudioPlayer.Instance.PlaySoundEffect(_damagedAudio, 1f);
+            _soundPlayer?.PlaySoundEffect(_damagedSound);
         }
 
         protected void Die()

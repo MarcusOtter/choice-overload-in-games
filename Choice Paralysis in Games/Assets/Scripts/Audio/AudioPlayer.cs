@@ -4,6 +4,7 @@ namespace Scripts.Audio
 {
     public class AudioPlayer : MonoBehaviour
     {
+        /*
         internal static AudioPlayer Instance { get; private set; }
 
         [Header("Audio Settings")]
@@ -104,5 +105,6 @@ namespace Scripts.Audio
                 Destroy(gameObject);
             }
         }
+        */
     }
 }

@@ -1,12 +1,26 @@
-﻿namespace Scripts.Audio
+﻿using UnityEngine;
+
+namespace Scripts.Audio
 {
-    // While this isn't the best implementation it does make it easier for other scripts to play sound effects.
-    // The limitations of this is that the volume of two clips cannot be *exactly* the same
-    /// <summary>The integer value of the sound effects represent the volume. 100 = full volume</summary>
-    public enum SoundEffect
+    [CreateAssetMenu(menuName = "Sound Effect")]
+    public class SoundEffect : ScriptableObject
     {
-        PlayerSkip = 30,
+        [Header("General settings")]
+        [SerializeField] internal AudioClip Clip;
+        [SerializeField] internal bool ShouldLoop;
+
+        [Header("Volume")]
+        [SerializeField] [Tooltip("Defaults to MinVolume if false")] internal bool RandomizeVolume = true;
+        [SerializeField] internal float MinVolume = 0.4f;
+        [SerializeField] internal float MaxVolume = 0.6f;
+
+        [Header("Pitch")]
+        [SerializeField] [Tooltip("Defaults to 1 if false")] internal bool RandomizePitch = true;
+        [SerializeField] internal float MinPitch = 0.95f;
+        [SerializeField] internal float MaxPitch = 1.05f;
+
+        /*PlayerSkip = 30,
         PlayerWeaponShot = 20,
-        BulletImpact = 100
+        BulletImpact = 100*/
     }
 }

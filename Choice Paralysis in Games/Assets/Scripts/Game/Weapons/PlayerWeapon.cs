@@ -8,8 +8,9 @@ namespace Scripts.Game.Weapons
     {
         internal static event EventHandler OnWeaponFire;
 
-        [Header("Player Weapon Settings")]
+        [Header("Player weapon settings")]
         [SerializeField] internal Transform ShellCasingSpawnPoint;
+        [SerializeField] internal float RecoilKnockbackForce = 10;
 
         private Transform _parentTransform;
 
@@ -48,7 +49,7 @@ namespace Scripts.Game.Weapons
 
             SprayBullets();
         }
-
+        
         /// <summary>Spawns a bullet when the attack key is being held </summary>
         private void SprayBullets()
         {
@@ -92,8 +93,7 @@ namespace Scripts.Game.Weapons
         {
             OnWeaponFire?.Invoke(this, EventArgs.Empty);
 
-            // Play sound effect if the audio player exists
-            Audio.AudioPlayer.Instance?.PlaySoundEffect(Audio.SoundEffect.PlayerWeaponShot);
+            SoundPlayer?.PlaySoundEffect(ShootSound);
 
             Instantiate(BulletPrefabToSpawn, transform.position, GetRandomOffsetBulletRotation()).Shoot(BulletDamage, BulletSpeed);
             _lastBulletSpawnTime = Time.time;

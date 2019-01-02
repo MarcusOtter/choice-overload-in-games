@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Scripts.Audio;
 using UnityEngine;
 
 namespace Scripts.Game
@@ -10,8 +9,8 @@ namespace Scripts.Game
         [SerializeField] private int _maxHp;
 
         [Header("Audio settings")]
-        [SerializeField] internal bool HasCustomImpactSound;
-        [SerializeField] private SoundEffect _impactSound;
+        [SerializeField] private Audio.SoundEffectPlayer _soundPlayer;
+        [SerializeField] private Audio.SoundEffect _impactSound;
 
         private int _hp;
 
@@ -31,10 +30,7 @@ namespace Scripts.Game
                 _hitAnimation = StartCoroutine(DamagedAnimation());
             }
 
-            if (HasCustomImpactSound)
-            {
-                AudioPlayer.Instance.PlaySoundEffect3D(_impactSound, transform.position);
-            }
+            _soundPlayer?.PlaySoundEffect(_impactSound);
 
             CheckDeath();
         }

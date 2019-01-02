@@ -37,7 +37,7 @@ namespace Scripts.Game.Weapons
             _damage = damage;
             _speed = speed;
             StartCoroutine(TravelInRandomDirection());
-            Audio.AudioPlayer.Instance.PlaySoundEffect(_shotClip, 1f);
+            //Audio.AudioPlayer.Instance.PlaySoundEffect(_shotClip, 1f);
         }
 
         private IEnumerator TravelInRandomDirection()
@@ -77,7 +77,7 @@ namespace Scripts.Game.Weapons
         {
             collider.GetComponentInChildren<IDamageable>()?.TakeDamage(_damage);
 
-            Audio.AudioPlayer.Instance.PlaySoundEffect(_explosionClip, 1f);
+            //Audio.AudioPlayer.Instance.PlaySoundEffect(_explosionClip, 1f);
             //Audio.AudioPlayer.Instance.PlaySoundEffect3D(Audio.SoundEffect.BulletImpact, transform.position);
 
             int projectileAmount = Random.Range(_minProjectileAmount, _maxProjectileAmount + 1);
