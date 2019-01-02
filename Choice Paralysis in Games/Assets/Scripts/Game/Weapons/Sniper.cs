@@ -57,7 +57,7 @@ namespace Scripts.Game.Weapons
         private IEnumerator TargetFoundBehaviour()
         {
             EnableLineRenderer(true);
-            Audio.SoundEffectPlayer.PlaySoundEffect(_chargeUpSound, transform);
+            Audio.SoundEffectPlayer.PlaySoundEffect(_chargeUpSound, transform, false);
             IsShooting = true;
 
             float elapsedTime = 0;
@@ -90,7 +90,7 @@ namespace Scripts.Game.Weapons
                 Instantiate(BulletPrefabToSpawn, shootPoint.position + shootPoint.up * 2, shootPoint.rotation).Shoot(BulletDamage, BulletSpeed);
             }
 
-            Audio.SoundEffectPlayer.PlaySoundEffect(ShootSound, transform);
+            Audio.SoundEffectPlayer.PlaySoundEffect(ShootSound, transform, false);
             IsShooting = false;
         }
 
