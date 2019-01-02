@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Scripts.Game.Enemies
 {
@@ -9,7 +10,18 @@ namespace Scripts.Game.Enemies
         [SerializeField] private float _repelRange = 3f;
         [SerializeField] private float _repelFactor = 0.2f;
 
+        [Header("Zombie audio")]
+        [SerializeField] private Audio.SoundEffect _zombieGruntAudio;
+        [SerializeField] private float _gruntDelayMin = 5f;
+        [SerializeField] private float _gruntDelayMax = 20f;
+
         private Vector2 _walkDirection;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            StartCoroutine(PlayOccasionalGruntSound());
+        }
 
         protected override void Move()
         {
@@ -33,6 +45,15 @@ namespace Scripts.Game.Enemies
             }
 
             return repelForce * _repelFactor;
+        }
+
+        private IEnumerator PlayOccasionalGruntSound()
+        {
+            while (!IsDead)
+            {
+                Audio.SoundEffectPlayer.PlaySoundEffect(_zombieGruntAudio, transform);
+                yield return new WaitForSeconds(Random.Range(_gruntDelayMin, _gruntDelayMax));
+            }
         }
 
         // Should maybe be sent to the weaponbehaviour of zombies

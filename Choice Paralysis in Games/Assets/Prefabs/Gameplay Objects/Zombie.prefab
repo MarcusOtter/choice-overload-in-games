@@ -306,6 +306,9 @@ MonoBehaviour:
   _collisionDamage: 30
   _repelRange: 4
   _repelFactor: 0.2
+  _zombieGruntAudio: {fileID: 11400000, guid: 002ec2da62df1b84188f8fe9e6df6248, type: 2}
+  _gruntDelayMin: 5
+  _gruntDelayMax: 20
 --- !u!114 &114469816844821764
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d28d68b89480a9240b320f8027969fdb, type: 3}
-  m_Name: Zombie Normal Hurt
+  m_Name: Zombie Hurt
   m_EditorClassIdentifier: 
   ShouldLoop: 0
   RandomizeClip: 0

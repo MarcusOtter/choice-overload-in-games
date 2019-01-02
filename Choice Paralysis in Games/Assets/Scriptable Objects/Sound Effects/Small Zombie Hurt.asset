@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d28d68b89480a9240b320f8027969fdb, type: 3}
+  m_Name: Small Zombie Hurt
+  m_EditorClassIdentifier: 
+  ShouldLoop: 0
+  RandomizeClip: 0
+  Clips:
+  - {fileID: 8300000, guid: 434e58850c9e08941abedf850ad49073, type: 3}
+  RandomizeVolume: 1
+  MinVolume: 0.4
+  MaxVolume: 0.5
+  RandomizePitch: 1
+  MinPitch: 0.95
+  MaxPitch: 1.05

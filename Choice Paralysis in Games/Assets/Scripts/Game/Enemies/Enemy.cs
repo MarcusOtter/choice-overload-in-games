@@ -18,7 +18,6 @@ namespace Scripts.Game.Enemies
         [SerializeField] protected UnityEvent OnDeath;
         [SerializeField] protected UnityEvent OnDamageTaken;
 
-
         protected bool IsDead;
         protected float Health;
 
