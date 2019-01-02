@@ -415,7 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 10
   MovementSpeed: 1
-  _damagedSound: {fileID: 0}
+  _damagedSound: {fileID: 11400000, guid: 86e918f34ba6535428b681b6c95c1646, type: 2}
   OnDeath:
     m_PersistentCalls:
       m_Calls:

@@ -9,15 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d28d68b89480a9240b320f8027969fdb, type: 3}
-  m_Name: Damageable Object Impact
+  m_Name: Sniper Hurt
   m_EditorClassIdentifier: 
   ShouldLoop: 0
   RandomizeClip: 0
   Clips:
-  - {fileID: 8300000, guid: 8a6a17a8d70c52649b7675155bdbbfec, type: 3}
+  - {fileID: 8300000, guid: 06660225cd261e2458ca378a55e93c0d, type: 3}
   RandomizeVolume: 1
-  MinVolume: 0.15
-  MaxVolume: 0.25
+  MinVolume: 0.6
+  MaxVolume: 0.7
   RandomizePitch: 1
-  MinPitch: 0.98
-  MaxPitch: 1.02
+  MinPitch: 0.8
+  MaxPitch: 1
