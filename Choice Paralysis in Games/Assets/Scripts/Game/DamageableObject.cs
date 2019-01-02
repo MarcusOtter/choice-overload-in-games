@@ -9,7 +9,6 @@ namespace Scripts.Game
         [SerializeField] private int _maxHp;
 
         [Header("Audio settings")]
-        [SerializeField] private Audio.SoundEffectPlayer _soundPlayer;
         [SerializeField] private Audio.SoundEffect _impactSound;
 
         private int _hp;
@@ -30,7 +29,7 @@ namespace Scripts.Game
                 _hitAnimation = StartCoroutine(DamagedAnimation());
             }
 
-            _soundPlayer?.PlaySoundEffect(_impactSound);
+            Audio.SoundEffectPlayer.PlaySoundEffect(_impactSound, transform);
 
             CheckDeath();
         }

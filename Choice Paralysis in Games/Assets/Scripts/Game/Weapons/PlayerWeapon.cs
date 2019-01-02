@@ -93,7 +93,7 @@ namespace Scripts.Game.Weapons
         {
             OnWeaponFire?.Invoke(this, EventArgs.Empty);
 
-            SoundPlayer?.PlaySoundEffect(ShootSound);
+            Audio.SoundEffectPlayer.PlaySoundEffect(ShootSound, transform, false);
 
             Instantiate(BulletPrefabToSpawn, transform.position, GetRandomOffsetBulletRotation()).Shoot(BulletDamage, BulletSpeed);
             _lastBulletSpawnTime = Time.time;

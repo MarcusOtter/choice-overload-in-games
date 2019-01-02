@@ -415,7 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 10
   MovementSpeed: 1
-  _damagedAudio: {fileID: 0}
+  _damagedSound: {fileID: 0}
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -527,13 +527,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee59bb9d4c57bf94dad1ca5a05ea5df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KnockbackForce: 10
   BulletPrefabToSpawn: {fileID: 114101838162379956, guid: 6c4184d52bede4112847644ebfc50bc6,
     type: 2}
   BulletDamage: 2
   BulletSpeed: 30
   ShootDelay: 1
   Accuracy: 1
+  ShootSound: {fileID: 0}
   _shootPointsParent: {fileID: 4383225125745456}
   _afterShotCooldown: 3
   _rotateSpeed: 0.9

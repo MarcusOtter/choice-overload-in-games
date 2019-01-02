@@ -5,19 +5,17 @@ namespace Scripts.Audio
     [RequireComponent(typeof(AudioSource))]
     public class SoundEffectPlayer : MonoBehaviour
     {
-        internal const float MainVolume = 0.5f;
+        internal const float MainVolume = 1f;
         internal const float PlayerHearingDistance = 20f;
 
-        [Tooltip("Should the volume be dependant on how far away the player is?")]
-        [SerializeField] private bool _scaleVolumeWithPlayerDistance = true;
-
-        [Tooltip("Should the volume scale it's pitch depending on the Time.timeScale?")]
-        [SerializeField] private bool _scalePitchWithTimeScale = true;
+        private bool _scaleVolumeWithPlayerDistance = true;
+        private bool _scalePitchWithTimeScale = true;
 
         private float _activeSoundEffectVolume;
 
         private AudioSource _source;
         private Transform _playerTransform;
+        private Transform _creatorTransform; // The transform of the object that created this sound
 
         private void Awake()
         {
@@ -32,7 +30,8 @@ namespace Scripts.Audio
         private void Update()
         {
             if (_scaleVolumeWithPlayerDistance)
-            {             
+            {
+                FollowCreatorObject();
                 _source.volume = CalculateVolume();
             }
 
@@ -40,10 +39,40 @@ namespace Scripts.Audio
             {
                 _source.pitch = Time.timeScale;
             }
+
+            if (!_source.isPlaying)
+            {
+                Destroy(gameObject);
+            }
         }
 
-        internal void PlaySoundEffect(SoundEffect soundEffect)
+        private void FollowCreatorObject()
         {
+            if (_creatorTransform != null)
+            {
+                transform.position = _creatorTransform.position;
+            }
+        }
+
+        internal static void PlaySoundEffect(SoundEffect soundEffect, Transform sender, bool scaleVolumeWithPlayerDistance = true, bool scalePitchWithTimeScale = true)
+        {
+            var player = new GameObject($"{sender.name} Sound Player", typeof(SoundEffectPlayer)).GetComponent<SoundEffectPlayer>();
+            player.Initialize(soundEffect, sender, scaleVolumeWithPlayerDistance, scalePitchWithTimeScale);
+        }
+
+        private void Initialize(SoundEffect soundEffect, Transform sender, bool scaleVolumeWithDistance, bool scalePitchWithTimeScale)
+        {
+            _creatorTransform = sender;
+            _scaleVolumeWithPlayerDistance = scaleVolumeWithDistance;
+            _scalePitchWithTimeScale = scalePitchWithTimeScale;
+
+            if (soundEffect == null)
+            {
+                Logger.Instance.LogWarning($"{sender.name} does not have a sound effect.");
+                Destroy(gameObject);
+                return;
+            }
+
             float volume = soundEffect.RandomizeVolume
                 ? Random.Range(soundEffect.MinVolume, soundEffect.MaxVolume)
                 : soundEffect.MinVolume;

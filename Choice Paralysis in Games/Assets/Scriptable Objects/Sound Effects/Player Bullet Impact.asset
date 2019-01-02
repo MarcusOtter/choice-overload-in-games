@@ -14,8 +14,8 @@ MonoBehaviour:
   Clip: {fileID: 8300000, guid: 488c3d4f89656b645aae5334eae6c1aa, type: 3}
   ShouldLoop: 0
   RandomizeVolume: 1
-  MinVolume: 0.4
-  MaxVolume: 0.6
+  MinVolume: 0.7
+  MaxVolume: 0.8
   RandomizePitch: 1
   MinPitch: 0.95
   MaxPitch: 1.05

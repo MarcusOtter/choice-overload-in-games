@@ -12,7 +12,6 @@ namespace Scripts.Game.Enemies
         [SerializeField] protected float MovementSpeed;
 
         [Header("Audio settings")]
-        [SerializeField] private Audio.SoundEffectPlayer _soundPlayer;
         [SerializeField] private Audio.SoundEffect _damagedSound;
 
         [Header("Enemy events")]
@@ -57,7 +56,7 @@ namespace Scripts.Game.Enemies
 
         private void PlayDamagedSound()
         {
-            _soundPlayer?.PlaySoundEffect(_damagedSound);
+            Audio.SoundEffectPlayer.PlaySoundEffect(_damagedSound, transform);
         }
 
         protected void Die()

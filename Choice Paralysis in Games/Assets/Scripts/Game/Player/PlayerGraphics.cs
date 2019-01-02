@@ -25,7 +25,6 @@ namespace Scripts.Game.Player
         [SerializeField] private string _skipTriggerName = "TriggerSkip";
 
         [Header("Audio settings")]
-        [SerializeField] private Audio.SoundEffectPlayer _soundPlayer;
         [SerializeField] private Audio.SoundEffect _skipSound;
 
         private int _recoilTriggerHash;
@@ -91,7 +90,7 @@ namespace Scripts.Game.Player
         // Called by animation event
         public void PlaySkipSound()
         {
-            _soundPlayer?.PlaySoundEffect(_skipSound);
+            Audio.SoundEffectPlayer.PlaySoundEffect(_skipSound, transform, false);
         }
 
         private void OnDisable()

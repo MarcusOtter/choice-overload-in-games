@@ -18,9 +18,5 @@ namespace Scripts.Audio
         [SerializeField] [Tooltip("Defaults to 1 if false")] internal bool RandomizePitch = true;
         [SerializeField] internal float MinPitch = 0.95f;
         [SerializeField] internal float MaxPitch = 1.05f;
-
-        /*PlayerSkip = 30,
-        PlayerWeaponShot = 20,
-        BulletImpact = 100*/
     }
 }

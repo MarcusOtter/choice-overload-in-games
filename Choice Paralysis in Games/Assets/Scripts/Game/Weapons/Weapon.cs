@@ -17,7 +17,6 @@ namespace Scripts.Game.Weapons
         [SerializeField] [Range(0f, 1f)] protected float Accuracy = 0.925f;
 
         [Header("Audio settings")]
-        [SerializeField] protected Audio.SoundEffectPlayer SoundPlayer;
         [SerializeField] protected Audio.SoundEffect ShootSound;
 
         protected virtual void Update()

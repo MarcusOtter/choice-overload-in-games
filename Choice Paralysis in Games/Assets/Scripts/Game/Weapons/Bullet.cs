@@ -6,7 +6,6 @@ namespace Scripts.Game.Weapons
     public class Bullet : MonoBehaviour
     {
         [Header("Audio settings")]
-        [SerializeField] private Audio.SoundEffectPlayer _soundPlayer;
         [SerializeField] private Audio.SoundEffect _impactSound;
 
         private int _damage;
@@ -37,9 +36,9 @@ namespace Scripts.Game.Weapons
         {
             collider.GetComponentInChildren<IDamageable>()?.TakeDamage(_damage);
 
-            _soundPlayer.PlaySoundEffect(_impactSound);
+            Audio.SoundEffectPlayer.PlaySoundEffect(_impactSound, transform);
 
-            // Spawn bullet effect
+            // Spawn bullet effect?
 
             Destroy(gameObject);
         }
