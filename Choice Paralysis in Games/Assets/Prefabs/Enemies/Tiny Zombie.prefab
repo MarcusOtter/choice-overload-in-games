@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4191924286819542}
   - component: {fileID: 114735898530600060}
   - component: {fileID: 50539273386304666}
-  - component: {fileID: 61948711223479218}
+  - component: {fileID: 70894632444777362}
   m_Layer: 0
   m_Name: Tiny Zombie
   m_TagString: Untagged
@@ -153,8 +153,8 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &61948711223479218
-BoxCollider2D:
+--- !u!70 &70894632444777362
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -165,19 +165,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.060000002, y: 0.312}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.63, y: 0.624}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.06, y: 0.32}
+  m_Size: {x: 0.63, y: 0.63}
+  m_Direction: 0
 --- !u!95 &95516264448946560
 Animator:
   serializedVersion: 3
@@ -264,7 +254,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 61948711223479218}
+      - m_Target: {fileID: 70894632444777362}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
