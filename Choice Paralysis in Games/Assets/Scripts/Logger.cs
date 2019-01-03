@@ -13,17 +13,17 @@ namespace Scripts
             SingletonCheck();
         }
 
-        internal void Log(string messageToLog)
+        public void Log(string messageToLog)
         {
             Debug.Log($"[{DateTime.Now:HH:mm:ss}]: {messageToLog}");
         }
 
-        internal void LogWarning(string messageToLog)
+        public void LogWarning(string messageToLog)
         {
             Debug.LogWarning($"[{DateTime.Now:HH:mm:ss}]: {messageToLog}");
         }
 
-        internal void LogError(string messageToLog)
+        public void LogError(string messageToLog)
         {
             Debug.LogError($"[{DateTime.Now:HH:mm:ss}]: {messageToLog}");
         }
