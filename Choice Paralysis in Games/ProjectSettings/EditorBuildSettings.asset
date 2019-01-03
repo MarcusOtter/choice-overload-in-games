@@ -18,9 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/3. Creation Questions.unity
     guid: 50cdce20935105847a56bd99db552d6d
   - enabled: 1
-    path: Assets/Scenes/4. Game Scene.unity
+    path: Assets/Scenes/4. Tutorial.unity
     guid: c484a1059eeafea48839fa4b8823fe1b
   - enabled: 1
-    path: Assets/Scenes/5. End of game.unity
+    path: Assets/Scenes/5. Game Scene.unity
+    guid: c841fd312fb410241a50dda7cdbf07dd
+  - enabled: 1
+    path: Assets/Scenes/6. End of game.unity
     guid: e2a441e9744efc9488697ce5f7d36f42
   m_configObjects: {}

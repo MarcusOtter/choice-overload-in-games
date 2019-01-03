@@ -7973,6 +7973,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114306662719686534, guid: 81306088f39c14bd19374f594289f108,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81306088f39c14bd19374f594289f108, type: 2}
   m_IsPrefabAsset: 0
@@ -8065,7 +8070,12 @@ Prefab:
     - target: {fileID: 114463726198286518, guid: acf5bdf2d7fed470a9fb242dd652116f,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114564034676943210, guid: acf5bdf2d7fed470a9fb242dd652116f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61363885394265308, guid: acf5bdf2d7fed470a9fb242dd652116f, type: 2}
@@ -8243,7 +8253,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -8401,7 +8411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1959592793
 RectTransform:
   m_ObjectHideFlags: 0
