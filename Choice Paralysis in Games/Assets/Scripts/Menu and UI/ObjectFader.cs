@@ -27,6 +27,7 @@ namespace Scripts.Menu_and_UI
 
         private IEnumerator FadeImage(Image imageToFade)
         {
+            imageToFade.color = new Color(imageToFade.color.r, imageToFade.color.b, imageToFade.color.b, 0);
             var imageColor = imageToFade.color;
 
             while (imageToFade.color.a < 1)
@@ -39,6 +40,8 @@ namespace Scripts.Menu_and_UI
 
         private IEnumerator FadeTMPText(TextMeshProUGUI textToFade)
         {
+            textToFade.alpha = 0;
+
             while (textToFade.alpha < 1)
             {
                 textToFade.alpha += _animationUpdateDelay / _secondsToFadeIn;
@@ -48,6 +51,8 @@ namespace Scripts.Menu_and_UI
 
         private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroupToFade)
         {
+            canvasGroupToFade.alpha = 0;
+
             while (canvasGroupToFade.alpha < 1)
             {
                 canvasGroupToFade.alpha += _animationUpdateDelay / _secondsToFadeIn;
