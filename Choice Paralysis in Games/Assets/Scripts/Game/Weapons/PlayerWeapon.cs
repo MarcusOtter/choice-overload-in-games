@@ -25,6 +25,8 @@ namespace Scripts.Game.Weapons
 
         private bool _fireWhenPossible;
 
+        private bool _canShoot = true;
+
         private void OnEnable()
         {
             _userInput = UserInput.Instance;
@@ -37,6 +39,8 @@ namespace Scripts.Game.Weapons
         protected override void WeaponBehaviour()
         {
             RotateTowardsMouse();
+
+            if (!_canShoot) { return; }
 
             // Spawn a bullet if there is one that is queued to be spawned
             if (_fireWhenPossible && _lastBulletSpawnTime + ShootDelay < Time.time)
@@ -91,12 +95,28 @@ namespace Scripts.Game.Weapons
 
         private void SpawnBullet()
         {
+            if (!_canShoot) { return; }
+
             OnWeaponFire?.Invoke(this, EventArgs.Empty);
 
             Audio.SoundEffectPlayer.PlaySoundEffect(ShootSound, transform, false);
 
             Instantiate(BulletPrefabToSpawn, transform.position, GetRandomOffsetBulletRotation()).Shoot(BulletDamage, BulletSpeed);
             _lastBulletSpawnTime = Time.time;
+        }
+
+        // Enable or disable shooting (called by unity events in tutorial)
+        public void EnableShooting(bool enable)
+        {
+            if (_canShoot == enable) { return; }
+
+            _canShoot = enable;
+
+            if (!_canShoot)
+            {
+                _fireWhenPossible = false;
+                _attackBeingHeld = false;
+            }
         }
 
         /// <summary>

@@ -2,13 +2,14 @@
 
 namespace Scripts.Menu_and_UI
 {
-    /// <summary>
-    /// Listens for player input and progresses to the next scene if the correct input is given.
-    /// </summary>
-    public class SceneProgressInputListener : MonoBehaviour
+    public class SceneProgresser : MonoBehaviour
     {
+        [Header("Triggers")]
+        [SerializeField] private bool _progressOnTriggerEnter;
+        [SerializeField] private bool _progressOnCollisionEnter;
+
         [SerializeField] private KeyCode _progressButton = KeyCode.Space;
-    
+        
         private bool _listeningForInput;
 
         private void Update()
@@ -30,6 +31,18 @@ namespace Scripts.Menu_and_UI
         public void ListenForInput(bool listen)
         {
             _listeningForInput = listen;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!_progressOnTriggerEnter) { return; }
+            LoadNextScene();
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (!_progressOnCollisionEnter) { return; }
+            LoadNextScene();
         }
     }
 }
