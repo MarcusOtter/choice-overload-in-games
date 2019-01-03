@@ -49,13 +49,46 @@ namespace Scripts.Menu_and_UI
         private IEnumerator LoadScene(int buildIndex)
         {
             _animator.SetTrigger(_leavingSceneAnimation);
+            StartCoroutine(FadeOutAllAudioSources());
             yield return new WaitForSeconds(1f);
+
             SceneManager.LoadScene(buildIndex);
             Logger.Instance.Log($"Changed scene from '{SceneManager.GetSceneByBuildIndex(buildIndex - 1).name}' to '{SceneManager.GetSceneByBuildIndex(buildIndex).name}'");
             yield return new WaitForSeconds(1f);
-            _animator.SetTrigger(_enteringSceneAnimation);
 
+            _animator.SetTrigger(_enteringSceneAnimation);
             _activeLoadingSequence = null;
+        }
+
+        // Potentially super expensive? idk.
+        // It really only matters on the cave sound audio. So TODO!
+        private IEnumerator FadeOutAllAudioSources()
+        {
+            var audioSources = FindObjectsOfType<AudioSource>();
+            
+            var startingVolumes = new float[audioSources.Length];
+
+            for (var i = 0; i < audioSources.Length; i++)
+            {
+                if (audioSources[i] == null) { continue; }
+
+                startingVolumes[i] = audioSources[i].volume;
+            }
+
+            var timer = 1f;
+
+            while (timer > 0)
+            {
+                for (var i = 0; i < audioSources.Length; i++)
+                {
+                    if (audioSources[i] == null) { continue; }
+
+                    audioSources[i].volume = startingVolumes[i] * timer;
+                }
+
+                timer -= 0.02f;
+                yield return new WaitForSeconds(0.02f);
+            }
         }
 
         private void SingletonCheck()
