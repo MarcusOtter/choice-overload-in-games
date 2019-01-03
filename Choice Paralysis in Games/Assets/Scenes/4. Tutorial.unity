@@ -1970,7 +1970,7 @@ MonoBehaviour:
   _instructionTextFader: {fileID: 1559935627}
   _messages:
   - Click your left mouse button to shoot.
-  - You can destroy some boxes and pillars.
+  - Most boxes and pillars can be destroyed.
   _initialDelay: 0
   _letterDelay: 0.025
   _onTextLoaded:
@@ -37625,11 +37625,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4815878482983608, guid: e48033a9064a040438ec898a80160283, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.06
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 4815878482983608, guid: e48033a9064a040438ec898a80160283, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.95
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 4815878482983608, guid: e48033a9064a040438ec898a80160283, type: 2}
       propertyPath: m_LocalPosition.z
@@ -37666,11 +37666,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4036177321342134, guid: e48033a9064a040438ec898a80160283, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.23
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4036177321342134, guid: e48033a9064a040438ec898a80160283, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.05
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48033a9064a040438ec898a80160283, type: 2}
@@ -38133,6 +38133,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _secondsToFadeIn: 1
   _animationUpdateDelay: 0.02
+--- !u!1001 &1250958431
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1430447836}
+    m_Modifications:
+    - target: {fileID: 4998649513848384, guid: b1d51d547b33ca24382037c585f252f1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998649513848384, guid: b1d51d547b33ca24382037c585f252f1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998649513848384, guid: b1d51d547b33ca24382037c585f252f1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998649513848384, guid: b1d51d547b33ca24382037c585f252f1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998649513848384, guid: b1d51d547b33ca24382037c585f252f1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998649513848384, guid: b1d51d547b33ca24382037c585f252f1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998649513848384, guid: b1d51d547b33ca24382037c585f252f1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998649513848384, guid: b1d51d547b33ca24382037c585f252f1, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 212245590685318658, guid: b1d51d547b33ca24382037c585f252f1,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446485880008150, guid: b1d51d547b33ca24382037c585f252f1, type: 2}
+      propertyPath: m_Name
+      value: Double Box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388524995409022, guid: b1d51d547b33ca24382037c585f252f1,
+        type: 2}
+      propertyPath: _maxHp
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1d51d547b33ca24382037c585f252f1, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1250958432 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4998649513848384, guid: b1d51d547b33ca24382037c585f252f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1250958431}
 --- !u!1 &1257626304
 GameObject:
   m_ObjectHideFlags: 0
@@ -39456,6 +39517,7 @@ Transform:
   - {fileID: 1209371977}
   - {fileID: 793188776}
   - {fileID: 1565158000}
+  - {fileID: 1250958432}
   m_Father: {fileID: 1135828475}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41206,6 +41268,11 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388524995409022, guid: b1d51d547b33ca24382037c585f252f1,
+        type: 2}
+      propertyPath: _maxHp
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1d51d547b33ca24382037c585f252f1, type: 2}

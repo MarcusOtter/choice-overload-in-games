@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379ff95fbcbc8df42b5e494b270a7fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 6
+  _maxHp: 8
   _impactSound: {fileID: 11400000, guid: 9cbd742fb2456344d891bd848a9e200f, type: 2}
 --- !u!212 &212245590685318658
 SpriteRenderer:
