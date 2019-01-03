@@ -47,7 +47,7 @@ namespace Scripts.Game.Player
         private void Start()
         {
             _rigidbody = transform.root.GetComponent<Rigidbody2D>();
-            _bulletSpawnPointXOffset = _bulletSpawnPoint.position.x;
+            _bulletSpawnPointXOffset = _bulletSpawnPoint.localPosition.x;
 
             _bodyAnimator = GetComponent<Animator>();
             _speedParameterHash = Animator.StringToHash(_speedParameterName);
