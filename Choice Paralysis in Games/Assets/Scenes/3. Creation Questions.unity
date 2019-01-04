@@ -1796,8 +1796,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _useMultipleMessages: 0
+  _nextMessageKey: 32
+  _progressInstructions: {fileID: 0}
+  _instructionTextFader: {fileID: 0}
+  _messages: []
   _initialDelay: 2
   _letterDelay: 0.025
+  _onTextLoaded:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   _onTextCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -1806,17 +1816,6 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 246219111}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 886284439}
-        m_MethodName: FadeInCanvasGroup
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1417258374}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -3303,6 +3302,11 @@ Prefab:
     - target: {fileID: 224906029445487080, guid: 7750ac5d2f3545640a0095e87d360182,
         type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847880098579896, guid: 7750ac5d2f3545640a0095e87d360182,
+        type: 2}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
