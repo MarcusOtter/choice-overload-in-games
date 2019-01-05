@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114463671332438412}
   - component: {fileID: 50163406305967302}
   - component: {fileID: 70519101286245780}
+  - component: {fileID: 210865811173946392}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -311,6 +312,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lookDirectionSource: 1
+--- !u!210 &210865811173946392
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200985387212944}
+  m_Enabled: 1
+  m_SortingLayerID: 1265065561
+  m_SortingLayer: 6
+  m_SortingOrder: 0
 --- !u!212 &212880550809171804
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -343,9 +354,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: 1265065561
+  m_SortingLayer: 6
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300292, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

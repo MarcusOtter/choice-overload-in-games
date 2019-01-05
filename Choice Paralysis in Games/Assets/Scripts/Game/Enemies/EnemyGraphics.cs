@@ -10,10 +10,14 @@ namespace Scripts.Game.Enemies
         [SerializeField] private int _sortInFrontNumber = 6;
         [SerializeField] private int _sortBehindNumber = 4;
 
-        [Header("Body sprite settings")]
+        [Header("Animator variables")]
         [SerializeField] private string _rotationAnimationName = "Rotation";
         [SerializeField] private string _damagedTriggerName = "TriggerDamaged";
         [SerializeField] private string _deadBoolName = "IsDead";
+
+        [Header("Sorting group settings on death")]
+        [SerializeField] private string _deathSortingLayerName = "Ground";
+        [SerializeField] private int _deathSortingOrder = 1;
 
         private Animator _animator;
         private Transform _lookDirection;
@@ -50,6 +54,19 @@ namespace Scripts.Game.Enemies
         public void PlayDeathAnimation()
         {
             _animator.SetBool(_deadBoolHash, true);
+            ChangeToDeathSortingLayer();
+        }
+
+
+        private void ChangeToDeathSortingLayer()
+        {
+            var sortingGroup = transform.root.GetComponentInChildren<UnityEngine.Rendering.SortingGroup>();
+
+            if (sortingGroup != null)
+            {
+                sortingGroup.sortingLayerName = _deathSortingLayerName;
+                sortingGroup.sortingOrder = _deathSortingOrder;
+            }
         }
 
         // Called by UnityEvent OnDamaged in Enemy.cs
@@ -57,6 +74,6 @@ namespace Scripts.Game.Enemies
         {
             _animator.SetTrigger(_damagedTriggerHash);
         }
+
     }
 }
-

@@ -41,3 +41,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 52995661
+    locked: 0
+  - name: Shell casings
+    uniqueID: 204583291
+    locked: 0
+  - name: Coverup void
+    uniqueID: 2425795993
+    locked: 0
+  - name: Back wall
+    uniqueID: 281489103
+    locked: 0
+  - name: Decoration
+    uniqueID: 1542689465
+    locked: 0
+  - name: Dynamic objects
+    uniqueID: 1265065561
+    locked: 0
+  - name: Foreground
+    uniqueID: 2218007053
+    locked: 0

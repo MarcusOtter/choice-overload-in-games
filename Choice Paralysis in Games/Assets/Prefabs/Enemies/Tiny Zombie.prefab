@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 114735898530600060}
   - component: {fileID: 50539273386304666}
   - component: {fileID: 70894632444777362}
+  - component: {fileID: 210651235608473222}
   m_Layer: 0
   m_Name: Tiny Zombie
   m_TagString: Untagged
@@ -311,6 +312,16 @@ MonoBehaviour:
   _zombieGruntAudio: {fileID: 11400000, guid: e7f972efdd8491744a010f045240501d, type: 2}
   _gruntDelayMin: 5
   _gruntDelayMax: 20
+--- !u!210 &210651235608473222
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669232883261502}
+  m_Enabled: 1
+  m_SortingLayerID: 1265065561
+  m_SortingLayer: 6
+  m_SortingOrder: 0
 --- !u!212 &212546054786723718
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -343,9 +354,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: 1265065561
+  m_SortingLayer: 6
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300282, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
