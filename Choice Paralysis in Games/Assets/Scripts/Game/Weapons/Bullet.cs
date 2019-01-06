@@ -22,6 +22,7 @@ namespace Scripts.Game.Weapons
             _rigidbody.AddForce(transform.up * speed, ForceMode2D.Impulse);
         }
 
+        // Doesn't need to do this at all
         private void OnTriggerEnter2D(Collider2D collider)
         {
             HandleCollision(collider);
