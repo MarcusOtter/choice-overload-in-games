@@ -601,6 +601,14 @@ Prefab:
       propertyPath: m_Name
       value: Manhole (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
   m_IsPrefabAsset: 0
@@ -806,6 +814,14 @@ Prefab:
       propertyPath: m_Name
       value: Manhole (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
   m_IsPrefabAsset: 0
@@ -886,7 +902,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &346409736
 Transform:
@@ -2287,6 +2303,14 @@ Prefab:
       propertyPath: m_Name
       value: Manhole (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
   m_IsPrefabAsset: 0
@@ -2388,6 +2412,14 @@ Prefab:
     - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_Name
       value: Manhole (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
@@ -2509,7 +2541,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &660767255
 Transform:
@@ -4137,6 +4169,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1090632978271896, guid: 8569c8dccadf6044cbb3e222bee2e3c2, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8569c8dccadf6044cbb3e222bee2e3c2, type: 2}
   m_IsPrefabAsset: 0
@@ -4567,7 +4603,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!156049354 &783248486
 Grid:
@@ -4732,7 +4768,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &955157187
 MonoBehaviour:
@@ -4828,7 +4864,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &976264394
 Transform:
@@ -4942,6 +4978,14 @@ Prefab:
     - target: {fileID: 4644966362572242, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
@@ -5154,7 +5198,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1257626305
 Transform:
@@ -13789,6 +13833,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1413181096082798, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
   m_IsPrefabAsset: 0
@@ -13858,7 +13906,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1358803734
 MonoBehaviour:
@@ -13919,7 +13967,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &1380650688
 RectTransform:
@@ -14115,6 +14163,14 @@ Prefab:
     - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_Name
       value: Manhole (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
@@ -14315,6 +14371,14 @@ Prefab:
       propertyPath: m_Name
       value: Manhole (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
   m_IsPrefabAsset: 0
@@ -14338,7 +14402,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &1506943039
 RectTransform:
@@ -14521,6 +14585,14 @@ Prefab:
       propertyPath: m_Name
       value: Manhole (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
   m_IsPrefabAsset: 0
@@ -14695,6 +14767,14 @@ Prefab:
     - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_Name
       value: Manhole (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
@@ -14891,6 +14971,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1555904810203502, guid: 2e46ff880aa90d749858e03b6a46282d, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e46ff880aa90d749858e03b6a46282d, type: 2}
   m_IsPrefabAsset: 0
@@ -14979,6 +15063,10 @@ Prefab:
     - target: {fileID: 4777028515489492, guid: 29b662dda1650d44190f07856ceb3cac, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332576775928530, guid: 29b662dda1650d44190f07856ceb3cac, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29b662dda1650d44190f07856ceb3cac, type: 2}
@@ -15128,6 +15216,14 @@ Prefab:
       propertyPath: m_Name
       value: Manhole (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
   m_IsPrefabAsset: 0
@@ -15151,7 +15247,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1699502865
 Transform:
@@ -15713,6 +15809,14 @@ Prefab:
       propertyPath: m_Name
       value: Manhole (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
   m_IsPrefabAsset: 0
@@ -15822,6 +15926,14 @@ Prefab:
       propertyPath: m_Name
       value: Manhole (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
   m_IsPrefabAsset: 0
@@ -15891,7 +16003,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!224 &1871932740
 RectTransform:
@@ -16013,7 +16125,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1897115238
 Transform:
@@ -18240,6 +18352,14 @@ Prefab:
       propertyPath: m_Name
       value: Manhole (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
   m_IsPrefabAsset: 0
@@ -18285,6 +18405,14 @@ Prefab:
     - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_Name
       value: Manhole (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
@@ -18355,7 +18483,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1966144436
 Transform:
@@ -23366,6 +23494,14 @@ Prefab:
       propertyPath: m_Name
       value: Manhole (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675917401010672, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
   m_IsPrefabAsset: 0
@@ -23671,6 +23807,10 @@ Prefab:
       propertyPath: _spawnPositionParent
       value: 
       objectReference: {fileID: 2122723307}
+    - target: {fileID: 1460393598105626, guid: a5f27c67725e56b4abea13f2fb3eeb05, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5f27c67725e56b4abea13f2fb3eeb05, type: 2}
   m_IsPrefabAsset: 0
@@ -23718,6 +23858,34 @@ Prefab:
       propertyPath: _bulletImpactClip
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1606505505872030, guid: 0fa190c386a5fe24da6f5b78b454c07d, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095489090307550, guid: 0fa190c386a5fe24da6f5b78b454c07d, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850045352938350, guid: 0fa190c386a5fe24da6f5b78b454c07d, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919245555721880, guid: 0fa190c386a5fe24da6f5b78b454c07d, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141411988162634, guid: 0fa190c386a5fe24da6f5b78b454c07d, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325451373002656, guid: 0fa190c386a5fe24da6f5b78b454c07d, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831971302063928, guid: 0fa190c386a5fe24da6f5b78b454c07d, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa190c386a5fe24da6f5b78b454c07d, type: 2}
   m_IsPrefabAsset: 0
@@ -23734,7 +23902,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2122723307
 Transform:

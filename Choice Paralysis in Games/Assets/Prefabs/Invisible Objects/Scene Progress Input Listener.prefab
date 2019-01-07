@@ -25,7 +25,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4393484658339374
 Transform:
@@ -51,4 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b558abbe94468147b15f01e4363cc50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _progressOnTriggerEnter: 0
+  _progressOnCollisionEnter: 0
   _progressButton: 32
