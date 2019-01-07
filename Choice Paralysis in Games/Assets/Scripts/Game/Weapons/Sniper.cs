@@ -35,8 +35,6 @@ namespace Scripts.Game.Weapons
 
         protected override void WeaponBehaviour()
         {
-            SetLineRendererPosition();
-
             var playerDirection = (_playerTransform.position - transform.position).normalized;
 
             var hit = Physics2D.Raycast(transform.position, playerDirection, 100f, 1 << (int) _raycastLayerMask);
@@ -49,8 +47,7 @@ namespace Scripts.Game.Weapons
             if (_targetFoundBehaviour == null)
             {
                 transform.up = playerDirection;
-                SetLineRendererPosition();
-
+                SetLineRendererTargetPosition(hit.point);
                 _targetFoundBehaviour = StartCoroutine(TargetFoundBehaviour());
             }
         }
@@ -65,6 +62,10 @@ namespace Scripts.Game.Weapons
             while (elapsedTime < ShootDelay)
             {
                 RotateTowardsPlayer(_rotateSpeed);
+
+                // Raycast up from the weapon and draw a line to the object that was hit
+                var hit = Physics2D.Raycast(transform.position, transform.up, 100f, 1 << (int) _raycastLayerMask);
+                SetLineRendererTargetPosition(hit.point);
 
                 elapsedTime += Time.deltaTime;
                 yield return new WaitForSeconds(Time.deltaTime);
@@ -109,10 +110,10 @@ namespace Scripts.Game.Weapons
             }
         }
 
-        private void SetLineRendererPosition()
+        private void SetLineRendererTargetPosition(Vector3 targetPosition)
         {
             _lineRenderer.SetPosition(0, transform.position);
-            _lineRenderer.SetPosition(1, transform.up * 100f + transform.position);
+            _lineRenderer.SetPosition(1, targetPosition);
         }
     }
 }

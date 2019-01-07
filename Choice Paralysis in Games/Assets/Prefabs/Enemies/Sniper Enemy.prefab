@@ -567,9 +567,9 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingLayerID: 1265065561
+  m_SortingLayer: 6
+  m_SortingOrder: -1
   m_Positions:
   - {x: 6.63, y: 3.77, z: 0}
   - {x: 6.63, y: 66.92707, z: 0}
