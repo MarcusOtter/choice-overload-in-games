@@ -10,6 +10,7 @@ namespace Scripts.Game.Weapons
 
         [Header("Sniper settings")]
         [SerializeField] private Transform _shootPointsParent;
+        [SerializeField] private LayerMask _raycastLayerMask;
         [SerializeField] private float _afterShotCooldown = 3;
         [SerializeField] private float _rotateSpeed = 0.5f;
         [SerializeField] private Color _targetFoundColor = Color.red;
@@ -38,7 +39,7 @@ namespace Scripts.Game.Weapons
 
             var playerDirection = (_playerTransform.position - transform.position).normalized;
 
-            var hit = Physics2D.Raycast(transform.position, playerDirection, 100f);
+            var hit = Physics2D.Raycast(transform.position, playerDirection, 100f, 1 << (int) _raycastLayerMask);
 
             // Assure there is nothing between the sniper and the player
             if (!hit) { return; }

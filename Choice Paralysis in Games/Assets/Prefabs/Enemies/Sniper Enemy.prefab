@@ -393,6 +393,8 @@ MonoBehaviour:
   _rotationAnimationName: Rotation
   _damagedTriggerName: TriggerDamaged
   _deadBoolName: IsDead
+  _deathSortingLayerName: Ground
+  _deathSortingOrder: 1
 --- !u!114 &114672382467337648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -526,6 +528,9 @@ MonoBehaviour:
   Accuracy: 1
   ShootSound: {fileID: 11400000, guid: 80fa70f609696c7498b7c0da1f556619, type: 2}
   _shootPointsParent: {fileID: 4383225125745456}
+  _raycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
   _afterShotCooldown: 3
   _rotateSpeed: 0.9
   _targetFoundColor: {r: 0.6539712, g: 0, b: 1, a: 1}

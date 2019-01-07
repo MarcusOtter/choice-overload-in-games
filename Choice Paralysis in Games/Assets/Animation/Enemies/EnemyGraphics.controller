@@ -300,7 +300,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: Rotation
-    m_EventTreshold: 180
+    m_EventTreshold: 179
   - m_ConditionMode: 4
     m_ConditionEvent: Rotation
     m_EventTreshold: 360
@@ -381,7 +381,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: Rotation
-    m_EventTreshold: 180
+    m_EventTreshold: 179
   - m_ConditionMode: 4
     m_ConditionEvent: Rotation
     m_EventTreshold: 360
