@@ -53,7 +53,7 @@ namespace Scripts
             yield return new WaitForSeconds(1f);
 
             SceneManager.LoadScene(buildIndex);
-            Logger.Instance.Log($"Changed scene from '{SceneManager.GetSceneByBuildIndex(buildIndex - 1).name}' to '{SceneManager.GetSceneByBuildIndex(buildIndex).name}'");
+            Logger.Instance.Log($"Changed scene from '{SceneManager.GetSceneByBuildIndex(buildIndex - 1).name}' to '{SceneManager.GetSceneByBuildIndex(buildIndex).name}'", gameObject);
             yield return new WaitForSeconds(1f);
 
             _animator.SetTrigger(_enteringSceneAnimation);

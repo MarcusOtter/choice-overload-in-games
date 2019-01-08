@@ -35,13 +35,13 @@ namespace Scripts.Game.Enemies
 
         private void SpawnWave(EnemyWave waveToSpawn)
         {
-            Logger.Instance.Log($"Spawning wave {_spawnedWavesAmount + 1}");
+            Logger.Instance.Log($"Spawning wave {_spawnedWavesAmount + 1}", gameObject);
 
             foreach (var enemy in waveToSpawn.EnemyPrefabs)
             {
                 var spawnPoint = _spawnPositionParent.GetChild(Random.Range(0, _spawnPositionParent.childCount)).position;
                 Instantiate(enemy, spawnPoint, Quaternion.identity);
-                Logger.Instance.Log($"Spawned {enemy.name}");
+                Logger.Instance.Log($"Spawned {enemy.name}", gameObject);
             }
 
             _spawnedWavesAmount++;

@@ -29,7 +29,7 @@ namespace Scripts.Menu_and_UI
         {
             if (!_characterData.HasValue)
             {
-                Logger.Instance.LogWarning("Character Data doesn't have any data.");
+                Logger.Instance.LogWarning("Character Data doesn't have any data.", gameObject);
                 return;
             }
 

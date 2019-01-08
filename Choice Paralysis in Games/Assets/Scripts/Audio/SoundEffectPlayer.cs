@@ -68,7 +68,7 @@ namespace Scripts.Audio
 
             if (soundEffect == null)
             {
-                Logger.Instance.LogWarning($"{sender.name} does not have a sound effect.");
+                Logger.Instance.LogWarning($"{sender.name} does not have a sound effect.", gameObject);
                 Destroy(gameObject);
                 return;
             }

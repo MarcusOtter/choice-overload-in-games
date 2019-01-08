@@ -34,17 +34,17 @@ namespace Scripts.Examination
 
             using (UnityWebRequest www = UnityWebRequest.Post(EnvironmentVariables.WebTaskUri, postData))
             {
-                Logger.Instance.Log($"Starting POST request to webtask.io (Post data: {postData}).");
+                Logger.Instance.Log($"Starting POST request to webtask.io (Post data: {postData}).", gameObject);
                 yield return www.SendWebRequest();
 
                 if (www.isNetworkError || www.isHttpError)
                 {
-                    Logger.Instance.LogWarning("An error occured when attempting to download the examination number from webtask.io.\nDefaulting to 1.");
+                    Logger.Instance.LogWarning("An error occured when attempting to download the examination number from webtask.io.\nDefaulting to 1.", gameObject);
                     _playerNumber = 1;
                 }
                 else
                 {
-                    Logger.Instance.Log("The download was successful from webtask.io.");
+                    Logger.Instance.Log("The download was successful from webtask.io.", gameObject);
 
                     try
                     {
@@ -52,17 +52,17 @@ namespace Scripts.Examination
                     }
                     catch
                     {
-                        Logger.Instance.LogWarning("An error occured when attempting parse the reveiced examination number.\nDefaulting to 1.");
+                        Logger.Instance.LogWarning("An error occured when attempting parse the reveiced examination number.\nDefaulting to 1.", gameObject);
                         _playerNumber = 1;
                     }
 
-                    Logger.Instance.Log($"The player is number {_playerNumber}.");
+                    Logger.Instance.Log($"The player is number {_playerNumber}.", gameObject);
                 }
             }
 
             _examinationModeIndex = GetExaminationMode();
             ExaminationModeNumber = _examinationModeIndex + 1;
-            Logger.Instance.Log($"Loaded Mode {ExaminationModeNumber}.");
+            Logger.Instance.Log($"Loaded Mode {ExaminationModeNumber}.", gameObject);
         }
 
         private int GetExaminationMode()

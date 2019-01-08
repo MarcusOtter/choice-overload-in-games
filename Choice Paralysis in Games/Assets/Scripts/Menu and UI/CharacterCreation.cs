@@ -69,7 +69,7 @@ namespace Scripts.Menu_and_UI
         {
             if (ExaminationHandler.Instance == null)
             {
-                Logger.Instance.LogError("Couldn't find the Examination Handler");
+                Logger.Instance.LogError("Couldn't find the Examination Handler", gameObject);
                 SceneTransitioner.Instance.LoadNextScene();
                 return;
             }
