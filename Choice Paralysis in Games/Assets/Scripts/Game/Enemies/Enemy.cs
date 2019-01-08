@@ -33,6 +33,9 @@ namespace Scripts.Game.Enemies
         protected virtual void Start()
         {
             PlayerTransform = GameObject.FindGameObjectWithTag(EnvironmentVariables.PlayerTag)?.transform.root;
+
+            // Ensure this script is disabled when the player dies.
+            FindObjectOfType<Player.PlayerDeathBehaviour>()?.OnDeath.AddListener(() => enabled = false);
         }
 
         protected virtual void FixedUpdate()

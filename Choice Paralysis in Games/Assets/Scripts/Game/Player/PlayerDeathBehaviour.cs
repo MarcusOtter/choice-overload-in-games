@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Scripts.Game.Player
 {
@@ -11,40 +12,35 @@ namespace Scripts.Game.Player
         // 0 deaths: set time to 0, see if that works, then enable the death canvas & reload scene
         // 1 death: change to next scene
 
-        [SerializeField] private MonoBehaviour[] _componentsToDisable;
-
-        private void Start()
-        {
-            
-        }
-
+        [SerializeField] internal UnityEvent OnDeath;
+        [SerializeField] private PlayerGraphics _playerGraphics;
+        [SerializeField] private float _gameOverTextDelay;
+        [SerializeField] private Menu_and_UI.ObjectFader _gameOverTextFader;
+        
         public void TakeDamage(int incomingDamage)
         {
-            Logger.Instance.Log($"Player took {incomingDamage} damage.");
+            Logger.Instance.Log($"Player took {incomingDamage} damage.", gameObject);
             StartCoroutine(DeathBehaviour());
         }
 
         private IEnumerator DeathBehaviour()
         {
-            Time.timeScale = 0.5f;
+            OnDeath?.Invoke();
 
-            foreach (var component in _componentsToDisable)
+            if (_playerGraphics != null)
             {
-                component.enabled = false;
+                _playerGraphics.PlayDeathAnimation();
+                yield return new WaitForSeconds(_gameOverTextDelay);
             }
-
-            // Play player death animation
-
-            // Wait some amount of time
-
-            // Enable the death canvas
+            
+            _gameOverTextFader.FadeComponentsOnFader();
+            yield return new WaitForSeconds(2f);
 
             // If 0 deaths
             SceneTransitioner.Instance.ReloadScene();
 
             // Else if 1 death
             //SceneTransitioner.Instance.LoadNextScene();
-            yield break;
         }
     } 
 }

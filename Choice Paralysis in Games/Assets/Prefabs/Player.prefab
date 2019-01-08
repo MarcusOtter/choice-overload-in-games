@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 114733619643892566}
   - component: {fileID: 95774011969023720}
   - component: {fileID: 114726464055900654}
+  - component: {fileID: 114584940915247902}
   m_Layer: 0
   m_Name: Body graphics
   m_TagString: Untagged
@@ -221,7 +222,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1636866815663510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.19, y: 1.5, z: 0}
+  m_LocalPosition: {x: -21.5, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4076420932209370}
@@ -357,6 +358,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40c37dd54a3a41f6a5c979527fb6c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114564034676943210}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 50758007386510452}
+        m_MethodName: set_simulated
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 70507399100605866}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114463726198286518}
+        m_MethodName: EnableShooting
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114463726198286518}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 212239883783079828}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _playerGraphics: {fileID: 114733619643892566}
+  _deathCanvas: {fileID: 0}
 --- !u!114 &114564034676943210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -369,6 +443,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 8
+--- !u!114 &114584940915247902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200620160409654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e06453eea3dfc7409e655396ca08023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeScale: 1
 --- !u!114 &114726464055900654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,6 +490,8 @@ MonoBehaviour:
   _recoilTriggerName: TriggerRecoil
   _speedParameterName: Speed
   _skipTriggerName: TriggerSkip
+  DeathAnimationDuration: 2
+  _deathTriggerName: TriggerDeath
   _skipSound: {fileID: 11400000, guid: 2dd8966b712f1f24498f91e535f3952c, type: 2}
 --- !u!210 &210057628395354174
 SortingGroup:

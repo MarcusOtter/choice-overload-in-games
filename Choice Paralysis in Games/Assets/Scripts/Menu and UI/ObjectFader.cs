@@ -25,8 +25,20 @@ namespace Scripts.Menu_and_UI
             StartCoroutine(FadeCanvasGroup(canvasGroupToFade));
         }
 
+        /// <summary>
+        /// Fades in all the components that are on the same object as this ObjectFader
+        /// </summary>
+        public void FadeComponentsOnFader()
+        {
+            StartCoroutine(FadeImage(GetComponent<Image>()));
+            StartCoroutine(FadeTMPText(GetComponent<TextMeshProUGUI>()));
+            StartCoroutine(FadeCanvasGroup(GetComponent<CanvasGroup>()));
+        }
+
         private IEnumerator FadeImage(Image imageToFade)
         {
+            if (imageToFade == null) { yield break; }
+
             imageToFade.color = new Color(imageToFade.color.r, imageToFade.color.b, imageToFade.color.b, 0);
             var imageColor = imageToFade.color;
 
@@ -40,6 +52,8 @@ namespace Scripts.Menu_and_UI
 
         private IEnumerator FadeTMPText(TextMeshProUGUI textToFade)
         {
+            if (textToFade == null) { yield break; }
+
             textToFade.alpha = 0;
 
             while (textToFade.alpha < 1)
@@ -51,6 +65,8 @@ namespace Scripts.Menu_and_UI
 
         private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroupToFade)
         {
+            if (canvasGroupToFade == null) { yield break; }
+            
             canvasGroupToFade.alpha = 0;
 
             while (canvasGroupToFade.alpha < 1)

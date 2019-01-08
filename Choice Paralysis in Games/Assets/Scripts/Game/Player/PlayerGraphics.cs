@@ -24,12 +24,16 @@ namespace Scripts.Game.Player
         [SerializeField] private string _speedParameterName = "Speed";
         [SerializeField] private string _skipTriggerName = "TriggerSkip";
 
+        [Header("Death animation")]
+        [SerializeField] private string _deathTriggerName = "TriggerDeath";
+
         [Header("Audio settings")]
         [SerializeField] private Audio.SoundEffect _skipSound;
 
         private int _recoilTriggerHash;
         private int _speedParameterHash;
         private int _skipTriggerHash;
+        private int _deathTriggerHash;
 
         private Animator _bodyAnimator;
         private Rigidbody2D _rigidbody;
@@ -53,6 +57,7 @@ namespace Scripts.Game.Player
             _speedParameterHash = Animator.StringToHash(_speedParameterName);
             _skipTriggerHash = Animator.StringToHash(_skipTriggerName);
             _recoilTriggerHash = Animator.StringToHash(_recoilTriggerName);
+            _deathTriggerHash = Animator.StringToHash(_deathTriggerName);
         }
 
         private void Update()
@@ -85,6 +90,12 @@ namespace Scripts.Game.Player
         private void TriggerWeaponRecoil(object sender, EventArgs args)
         {
             _weaponAnimator.SetTrigger(_recoilTriggerHash);
+        }
+
+        // Called by PlayerDeathBehaviour
+        internal void PlayDeathAnimation()
+        {
+            _bodyAnimator.SetTrigger(_deathTriggerHash);
         }
 
         // Called by animation event
