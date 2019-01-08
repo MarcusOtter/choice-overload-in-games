@@ -117,6 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4494071749790500}
   - component: {fileID: 114564034676943210}
+  - component: {fileID: 114557121958645442}
   - component: {fileID: 50758007386510452}
   - component: {fileID: 70507399100605866}
   - component: {fileID: 210057628395354174}
@@ -345,6 +346,17 @@ MonoBehaviour:
   ShootSound: {fileID: 11400000, guid: 4536751f6d025494ab610d7bd4de6d90, type: 2}
   ShellCasingSpawnPoint: {fileID: 4191527175606776}
   RecoilKnockbackForce: 10
+--- !u!114 &114557121958645442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636866815663510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40c37dd54a3a41f6a5c979527fb6c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114564034676943210
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Scripts.Game.Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class PlayerMovement : MonoBehaviour, IDamageable
+    public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float _movementSpeed;
 
@@ -41,12 +41,6 @@ namespace Scripts.Game.Player
             var knockbackDirection = weapon.AimDirection * -1;
 
             _recoilKnockbackVector = knockbackDirection * weapon.RecoilKnockbackForce;
-        }
-
-        // TODO: Move outside of PlayerMovement
-        public void TakeDamage(int incomingDamage)
-        {
-            Logger.Instance.Log($"Player took {incomingDamage} damage.");
         }
 
         private void OnDisable()

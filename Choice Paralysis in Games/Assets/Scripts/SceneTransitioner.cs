@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Scripts.Menu_and_UI
+namespace Scripts
 {
     [RequireComponent(typeof(Animator))]
     public class SceneTransitioner : MonoBehaviour
@@ -62,6 +62,7 @@ namespace Scripts.Menu_and_UI
 
         // Potentially super expensive? idk.
         // It really only matters on the cave sound audio. So TODO!
+        // Should also fade in all the audio sources when you enter a scene
         private IEnumerator FadeOutAllAudioSources()
         {
             var audioSources = FindObjectsOfType<AudioSource>();
