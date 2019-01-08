@@ -27,8 +27,8 @@ namespace Scripts.Game.Player
 
         private void FixedUpdate()
         {
-            _rigidbody.velocity = new Vector2(_input.HorizontalAxis * _movementSpeed,
-                _input.VerticalAxis * _movementSpeed) + _recoilKnockbackVector;
+            _rigidbody.velocity = new Vector2(_input.HorizontalAxis,
+                _input.VerticalAxis).normalized * _movementSpeed + _recoilKnockbackVector;
 
             // Reset recoil knockback vector after applying it
             _recoilKnockbackVector = Vector2.zero;
