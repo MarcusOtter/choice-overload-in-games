@@ -89,7 +89,7 @@ namespace Scripts.Game.Weapons
             for (int i = 0; i < _shootPointsParent.childCount; i++)
             {
                 var shootPoint = _shootPointsParent.GetChild(i);
-                Instantiate(BulletPrefabToSpawn, shootPoint.position + shootPoint.up * 2, shootPoint.rotation).Shoot(BulletDamage, BulletSpeed);
+                Instantiate(BulletPrefabToSpawn, shootPoint.position, shootPoint.rotation).Shoot(BulletDamage, BulletSpeed);
             }
 
             Audio.SoundEffectPlayer.PlaySoundEffect(ShootSound, transform, false);
