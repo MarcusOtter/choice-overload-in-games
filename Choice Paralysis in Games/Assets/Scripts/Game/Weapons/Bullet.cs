@@ -5,6 +5,9 @@ namespace Scripts.Game.Weapons
     [RequireComponent(typeof(Rigidbody2D))]
     public class Bullet : MonoBehaviour
     {
+        [Header("Bullet settings")]
+        [SerializeField] private bool _isPlayerBullet;
+
         [Header("Audio settings")]
         [SerializeField] private Audio.SoundEffect _impactSound;
 
@@ -22,12 +25,6 @@ namespace Scripts.Game.Weapons
             _rigidbody.AddForce(transform.up * speed, ForceMode2D.Impulse);
         }
 
-        // Doesn't need to do this at all
-        private void OnTriggerEnter2D(Collider2D collider)
-        {
-            HandleCollision(collider);
-        }
-
         private void OnCollisionEnter2D(Collision2D collision)
         {
             HandleCollision(collision.collider);
@@ -35,6 +32,13 @@ namespace Scripts.Game.Weapons
 
         private void HandleCollision(Collider2D collider)
         {
+            // If a player bullet collides with the player
+            if (_isPlayerBullet && collider.CompareTag(EnvironmentVariables.PlayerTag))
+            {
+                Destroy(gameObject);
+                return;
+            }
+
             var damageable = collider.GetComponentInChildren<IDamageable>();
 
             if (damageable != null)

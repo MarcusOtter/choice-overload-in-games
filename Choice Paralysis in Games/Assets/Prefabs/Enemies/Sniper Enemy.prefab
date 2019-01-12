@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee59bb9d4c57bf94dad1ca5a05ea5df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefabToSpawn: {fileID: 114101838162379956, guid: 6c4184d52bede4112847644ebfc50bc6,
+  BulletPrefabToSpawn: {fileID: 114845533568694924, guid: 00017131233e50f488fc913e3c152db4,
     type: 2}
   BulletDamage: 2
   BulletSpeed: 30
