@@ -7,17 +7,10 @@ namespace Scripts.Game.Player
     [RequireComponent(typeof(Collider2D))]
     public class PlayerDeathBehaviour : MonoBehaviour, IDamageable
     {
-        // Grab deathcount from DataCollector
-        // Make the death behaviour depend on the deathcount
-        // 0 deaths: set time to 0, see if that works, then enable the death canvas & reload scene
-        // 1 death: change to next scene
-
-        private static int _deathCount;
+        internal static int DeathCount { get; private set; }
 
         [SerializeField] internal UnityEvent OnDeath;
         [SerializeField] private PlayerGraphics _playerGraphics;
-        [SerializeField] private float _gameOverTextDelay;
-        [SerializeField] private Menu_and_UI.ObjectFader _gameOverTextFader;
         
         public void TakeDamage(int incomingDamage)
         {
@@ -29,16 +22,10 @@ namespace Scripts.Game.Player
         {
             OnDeath?.Invoke();
 
-            if (_playerGraphics != null)
-            {
-                _playerGraphics.PlayDeathAnimation();
-                yield return new WaitForSeconds(_gameOverTextDelay);
-            }
-            
-            _gameOverTextFader.FadeComponentsOnFader();
-            yield return new WaitForSeconds(2f);
+            _playerGraphics?.PlayDeathAnimation();    
+            yield return new WaitForSeconds(4f); // Wait for death animation and text
 
-            switch (_deathCount)
+            switch (DeathCount)
             {
                 case 0:
                     SceneTransitioner.Instance.ReloadScene();
@@ -48,7 +35,7 @@ namespace Scripts.Game.Player
                     break;
             }
 
-            _deathCount++;
+            DeathCount++;
         }
     } 
 }
