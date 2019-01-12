@@ -89,6 +89,7 @@ namespace Scripts.Menu_and_UI
                 isMatchingSet:              _headIndex == _bodyIndex,
                 timeSpentOnCharacter:       Math.Round(Time.time - _startTime, 2)
             );
+
             DataCollector.Instance.SetCharacterData(characterData);
 
             SceneTransitioner.Instance.LoadNextScene();

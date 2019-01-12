@@ -12,6 +12,8 @@ namespace Scripts.Game.Player
         // 0 deaths: set time to 0, see if that works, then enable the death canvas & reload scene
         // 1 death: change to next scene
 
+        private static int _deathCount;
+
         [SerializeField] internal UnityEvent OnDeath;
         [SerializeField] private PlayerGraphics _playerGraphics;
         [SerializeField] private float _gameOverTextDelay;
@@ -36,11 +38,17 @@ namespace Scripts.Game.Player
             _gameOverTextFader.FadeComponentsOnFader();
             yield return new WaitForSeconds(2f);
 
-            // If 0 deaths
-            SceneTransitioner.Instance.ReloadScene();
+            switch (_deathCount)
+            {
+                case 0:
+                    SceneTransitioner.Instance.ReloadScene();
+                    break;
+                case 1:
+                    SceneTransitioner.Instance.LoadNextScene();
+                    break;
+            }
 
-            // Else if 1 death
-            //SceneTransitioner.Instance.LoadNextScene();
+            _deathCount++;
         }
     } 
 }
