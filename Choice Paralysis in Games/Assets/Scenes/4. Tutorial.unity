@@ -6642,8 +6642,8 @@ MonoBehaviour:
   _progressInstructions: {fileID: 1118242893}
   _instructionTextFader: {fileID: 1118242894}
   _messages:
-  - Another enemy climbed out!
-  - Don't stand in it's laser! When you hear the warning sound, RUN!
+  - Another enemy climbed out.
+  - 'Avoid standing in the laser: the enemy will shoot soon!'
   _initialDelay: 0
   _letterDelay: 0.025
   _onTextLoaded:
@@ -7396,7 +7396,7 @@ MonoBehaviour:
   _instructionTextFader: {fileID: 1559935627}
   _messages:
   - Click your left mouse button to shoot.
-  - Most boxes and pillars can be destroyed.
+  - Boxes and pillars can be destroyed.
   _initialDelay: 0
   _letterDelay: 0.025
   _onTextLoaded:
@@ -14064,8 +14064,8 @@ Tilemap:
   m_Tiles:
   - first: {x: -6, y: -9, z: 0}
     second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileIndex: 12
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14118,8 +14118,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 0, y: -9, z: 0}
     second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileIndex: 15
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14127,8 +14127,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 1, y: -9, z: 0}
     second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileIndex: 12
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14154,6 +14154,15 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 4, y: -9, z: 0}
     second:
+      m_TileIndex: 19
+      m_TileSpriteIndex: 19
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: -6, y: -8, z: 0}
+    second:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
@@ -14161,7 +14170,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -6, y: -8, z: 0}
+  - first: {x: -5, y: -8, z: 0}
     second:
       m_TileIndex: 23
       m_TileSpriteIndex: 23
@@ -14170,7 +14179,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -5, y: -8, z: 0}
+  - first: {x: -4, y: -8, z: 0}
     second:
       m_TileIndex: 22
       m_TileSpriteIndex: 22
@@ -14179,7 +14188,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -4, y: -8, z: 0}
+  - first: {x: -3, y: -8, z: 0}
     second:
       m_TileIndex: 21
       m_TileSpriteIndex: 21
@@ -14188,19 +14197,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -3, y: -8, z: 0}
+  - first: {x: -2, y: -8, z: 0}
     second:
       m_TileIndex: 20
       m_TileSpriteIndex: 20
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: -2, y: -8, z: 0}
-    second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14253,6 +14253,15 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 4, y: -8, z: 0}
     second:
+      m_TileIndex: 15
+      m_TileSpriteIndex: 15
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: -6, y: -7, z: 0}
+    second:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
@@ -14260,7 +14269,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -6, y: -7, z: 0}
+  - first: {x: -5, y: -7, z: 0}
     second:
       m_TileIndex: 19
       m_TileSpriteIndex: 19
@@ -14269,7 +14278,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -5, y: -7, z: 0}
+  - first: {x: -4, y: -7, z: 0}
     second:
       m_TileIndex: 18
       m_TileSpriteIndex: 18
@@ -14278,7 +14287,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -4, y: -7, z: 0}
+  - first: {x: -3, y: -7, z: 0}
     second:
       m_TileIndex: 17
       m_TileSpriteIndex: 17
@@ -14287,19 +14296,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -3, y: -7, z: 0}
+  - first: {x: -2, y: -7, z: 0}
     second:
       m_TileIndex: 16
       m_TileSpriteIndex: 16
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: -2, y: -7, z: 0}
-    second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14388,14 +14388,23 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 8, y: -7, z: 0}
     second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileIndex: 19
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: 9, y: -7, z: 0}
+    second:
+      m_TileIndex: 18
+      m_TileSpriteIndex: 18
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: -6, y: -6, z: 0}
     second:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
@@ -14404,7 +14413,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -6, y: -6, z: 0}
+  - first: {x: -5, y: -6, z: 0}
     second:
       m_TileIndex: 15
       m_TileSpriteIndex: 15
@@ -14413,7 +14422,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -5, y: -6, z: 0}
+  - first: {x: -4, y: -6, z: 0}
     second:
       m_TileIndex: 14
       m_TileSpriteIndex: 14
@@ -14422,7 +14431,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -4, y: -6, z: 0}
+  - first: {x: -3, y: -6, z: 0}
     second:
       m_TileIndex: 13
       m_TileSpriteIndex: 13
@@ -14431,19 +14440,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -3, y: -6, z: 0}
+  - first: {x: -2, y: -6, z: 0}
     second:
       m_TileIndex: 12
       m_TileSpriteIndex: 12
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: -2, y: -6, z: 0}
-    second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14460,8 +14460,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 0, y: -6, z: 0}
     second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileIndex: 23
+      m_TileSpriteIndex: 23
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14469,8 +14469,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 3, y: -6, z: 0}
     second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileIndex: 12
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14514,8 +14514,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 8, y: -6, z: 0}
     second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileIndex: 15
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14523,8 +14523,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 9, y: -6, z: 0}
     second:
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileIndex: 14
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -14680,23 +14680,23 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: b7a62f98134ccaa4db8478bc8349afb4, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 68f9afa48babeb14a8a7a85d921abada, type: 2}
-  - m_RefCount: 38
+  - m_RefCount: 27
     m_Data: {fileID: 11400000, guid: b2b21b87a39982d438dc63075a72e669, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 90ab0e468c6554a4881ab0691035d9a1, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b8cbd970851995340a05f8bced0b1407, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 03ee1ffecf1110c4ca9540100e5657f7, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: b48547b2988fa33489eda8be6b6b2bc7, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b3139ae4c5b80684e90bc8931561bd7f, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: ee06b64a6bf540440ad80f5995cee3fb, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 0e21360df30821c4eb94e6fb99b361aa, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 2186e0ad09a71cb4dbf395cee4e45720, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: fd013c53e6920be458e72b1aed8b46e3, type: 2}
@@ -14704,7 +14704,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 90a45bb3daabbce4f97208c801ebcded, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: a3f625ecb3056234ca8dc58e3749303b, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: f67372718d76728419c8a926e8bc8d78, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -14729,23 +14729,23 @@ Tilemap:
     m_Data: {fileID: 21300050, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300048, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
-  - m_RefCount: 38
+  - m_RefCount: 27
     m_Data: {fileID: 21300068, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 4
     m_Data: {fileID: 21300160, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300158, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300156, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 4
     m_Data: {fileID: 21300154, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300192, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300190, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300188, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 3
     m_Data: {fileID: 21300186, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300224, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
@@ -14753,7 +14753,7 @@ Tilemap:
     m_Data: {fileID: 21300222, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300220, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300218, guid: f7b98655d6dcf844da7d954384d57352, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 66
@@ -15535,9 +15535,10 @@ MonoBehaviour:
   _instructionTextFader: {fileID: 290183941}
   _messages:
   - Well done.
-  - You know all you need to know to survive as long as possible out there.
+  - You are ready to start playing.
   - If you touch an enemy, or a projectile of an enemy, you will die.
-  - You will have 2 tries. Make them count!
+  - Your goal is to survive as long as possible.
+  - You have 2 tries. Make them count!
   - Proceed to the next area behind the manhole to start the game.
   _initialDelay: 0
   _letterDelay: 0.025
@@ -16965,7 +16966,7 @@ MonoBehaviour:
   _instructionTextFader: {fileID: 1487746001}
   _messages:
   - An enemy climbed out of the hole!
-  - Point your weapon at the enemy and shoot until they die.
+  - Point your weapon at the enemy and shoot.
   _initialDelay: 0
   _letterDelay: 0.025
   _onTextLoaded:
