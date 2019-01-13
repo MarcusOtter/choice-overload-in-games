@@ -2631,6 +2631,16 @@ Prefab:
       propertyPath: m_Name
       value: Pillar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 61361039675884734, guid: fa38bb8c94032ec40a0ddd99c96fd86d,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 61361039675884734, guid: fa38bb8c94032ec40a0ddd99c96fd86d,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa38bb8c94032ec40a0ddd99c96fd86d, type: 2}
   m_IsPrefabAsset: 0
@@ -4501,7 +4511,7 @@ Prefab:
     - target: {fileID: 224906029445487080, guid: 7750ac5d2f3545640a0095e87d360182,
         type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 224906029445487080, guid: 7750ac5d2f3545640a0095e87d360182,
         type: 2}
@@ -4541,7 +4551,7 @@ Prefab:
     - target: {fileID: 224906029445487080, guid: 7750ac5d2f3545640a0095e87d360182,
         type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 224906029445487080, guid: 7750ac5d2f3545640a0095e87d360182,
         type: 2}
@@ -4726,7 +4736,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &976868033 stripped
 GameObject:
@@ -4888,7 +4898,7 @@ Transform:
   - {fileID: 214379781}
   - {fileID: 1430447836}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1155385979
 Prefab:
@@ -13696,7 +13706,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4142086861001602, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1413181096082798, guid: e103c983384d4ce44ab0cd91f42db80c, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -14247,7 +14257,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4644966362572242, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_Name
@@ -14278,9 +14288,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1506943039}
   - component: {fileID: 1506943041}
+  - component: {fileID: 1506943042}
   - component: {fileID: 1506943040}
   m_Layer: 5
-  m_Name: Points text
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14302,7 +14313,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -40, y: -40}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506943040
 MonoBehaviour:
@@ -14323,10 +14334,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 0
+  m_text: 00.00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 809d485466ea6d74aa599a2d1bb8ccde, type: 2}
+  m_sharedMaterial: {fileID: 21828926417161560, guid: 809d485466ea6d74aa599a2d1bb8ccde,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14350,8 +14362,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14368,7 +14380,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -14391,10 +14403,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1506943040}
-    characterCount: 1
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -14424,6 +14436,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1506943038}
   m_CullTransparentMesh: 0
+--- !u!114 &1506943042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1506943038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4572fe02efd196147ad07d2e6b60df41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1508018764
 Prefab:
   m_ObjectHideFlags: 0
@@ -14902,7 +14925,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4777028515489492, guid: 29b662dda1650d44190f07856ceb3cac, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1332576775928530, guid: 29b662dda1650d44190f07856ceb3cac, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -15643,7 +15666,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4644966362572242, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_Name
@@ -15839,12 +15862,12 @@ GameObject:
   - component: {fileID: 1871932742}
   - component: {fileID: 1871932741}
   m_Layer: 5
-  m_Name: Points
+  m_Name: Timer panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1871932740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15859,11 +15882,11 @@ RectTransform:
   m_Father: {fileID: 1380650688}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 250, y: 50}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: -10}
+  m_SizeDelta: {x: 100, y: 50}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1871932741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18240,7 +18263,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4644966362572242, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_Name
@@ -23328,7 +23351,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4644966362572242, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1377434519069560, guid: 4a43267f2958d3445bdb1b9a0f09e862, type: 2}
       propertyPath: m_Name
@@ -23408,7 +23431,7 @@ GameObject:
   - component: {fileID: 2065947399}
   - component: {fileID: 2065947397}
   m_Layer: 5
-  m_Name: TextMeshPro Text
+  m_Name: Status message text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23451,7 +23474,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: You died
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -23460,8 +23483,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16119285
-  m_fontColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    rgba: 4294309365
+  m_fontColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -23478,10 +23501,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 35.8
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -23519,13 +23542,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2065947397}
-    characterCount: 8
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
@@ -23563,7 +23586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101f2b06a542aa94aa3fe33b42889091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToFadeIn: 1
+  _animationDuration: 1
   _animationUpdateDelay: 0.02
 --- !u!1001 &2079666130
 Prefab:
@@ -23730,8 +23753,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2101768963}
   - component: {fileID: 2101768964}
+  - component: {fileID: 2101768965}
   m_Layer: 5
-  m_Name: You died
+  m_Name: Status message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23753,7 +23777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: 0, y: 70}
   m_SizeDelta: {x: 0, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2101768964
@@ -23763,6 +23787,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2101768962}
   m_CullTransparentMesh: 0
+--- !u!114 &2101768965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2101768962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe183fc2ea15ac4c9472c84ea79dedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathTextDelay: 1
+  _firstAttemptMessage: Good luck!
+  _lastAttemptMessage: Last attempt
+  _deathMessage: You died
 --- !u!1001 &2109347744
 Prefab:
   m_ObjectHideFlags: 0
@@ -23987,5 +24026,5 @@ Transform:
   - {fileID: 1651701243}
   - {fileID: 1077606805}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

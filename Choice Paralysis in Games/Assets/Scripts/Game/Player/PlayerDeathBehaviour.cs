@@ -22,8 +22,13 @@ namespace Scripts.Game.Player
         {
             OnDeath?.Invoke();
 
-            _playerGraphics?.PlayDeathAnimation();    
-            yield return new WaitForSeconds(4f); // Wait for death animation and text
+            _playerGraphics?.PlayDeathAnimation();
+
+            yield return new WaitForSeconds(0.75f);
+
+            FindObjectOfType<Timer>()?.Stop();
+
+            yield return new WaitForSeconds(3.25f); // Wait for death animation and text
 
             switch (DeathCount)
             {
