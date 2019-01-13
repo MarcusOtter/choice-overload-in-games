@@ -64,6 +64,7 @@ namespace Scripts.Game.Enemies
         protected void Die()
         {
             IsDead = true;
+            FindObjectOfType<Examination.DataCollector>()?.IncrementKillCount();
             OnDeath?.Invoke();
         }
     }

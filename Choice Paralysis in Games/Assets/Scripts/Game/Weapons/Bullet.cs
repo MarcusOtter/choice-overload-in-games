@@ -27,18 +27,52 @@ namespace Scripts.Game.Weapons
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            HandleCollision(collision.collider);
+            // Bullet script should really be an abstract class
+            // and then have a PlayerBullet.cs and an EnemyBullet.cs
+            // inheriting it. For now, this works.
+            if (_isPlayerBullet)
+            {
+                HandlePlayerBulletCollision(collision.collider);
+            }
+            else
+            {
+                HandleEnemyBulletCollision(collision.collider);
+            }
         }
 
-        private void HandleCollision(Collider2D collider)
+        private void HandlePlayerBulletCollision(Collider2D collider)
         {
             // If a player bullet collides with the player
-            if (_isPlayerBullet && collider.CompareTag(EnvironmentVariables.PlayerTag))
+            if (collider.CompareTag(EnvironmentVariables.PlayerTag))
             {
                 Destroy(gameObject);
                 return;
             }
 
+            var damageable = collider.GetComponentInChildren<IDamageable>();
+
+            var dataCollector = Examination.DataCollector.Instance;
+
+            if (damageable != null)
+            {
+                damageable.TakeDamage(_damage);
+
+                dataCollector.RegisterShot(hitEnemy: collider.GetComponent<Enemies.Enemy>() != null);
+            }
+            else
+            {
+                // Play default impact sound if no IDamageable is hit
+                Audio.SoundEffectPlayer.PlaySoundEffect(_impactSound, transform);
+                dataCollector.RegisterShot(hitEnemy: false);
+            }
+
+            // Spawn bullet effect?
+
+            Destroy(gameObject);
+        }
+
+        private void HandleEnemyBulletCollision(Collider2D collider)
+        {
             var damageable = collider.GetComponentInChildren<IDamageable>();
 
             if (damageable != null)
@@ -50,8 +84,6 @@ namespace Scripts.Game.Weapons
                 // Play default impact sound if no IDamageable is hit
                 Audio.SoundEffectPlayer.PlaySoundEffect(_impactSound, transform);
             }
-
-            // Spawn bullet effect?
 
             Destroy(gameObject);
         }

@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 namespace Scripts.Game
@@ -6,7 +7,7 @@ namespace Scripts.Game
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class Timer : MonoBehaviour
     {
-        internal float FinalTime { get; private set; }
+        internal double FinalTime { get; private set; }
 
         private TextMeshProUGUI _timerGUI;
 
@@ -22,22 +23,29 @@ namespace Scripts.Game
         {
             if (!FinalTimeHasChanged)
             {
-                _timerGUI.text = GetCurrentTime().ToString("00.00");
+                SetUIText();
             }
         }
 
-        private bool FinalTimeHasChanged => FinalTime != default(float);
+        private void SetUIText()
+        {
+            _timerGUI.text = GetCurrentTime().ToString("00.00");
+        }
 
-        private float GetCurrentTime()
+        // ReSharper disable once CompareOfFloatsByEqualityOperator
+        private bool FinalTimeHasChanged => FinalTime != default(double);
+
+        private double GetCurrentTime()
         {
             return FinalTimeHasChanged
                 ? FinalTime
-                : (Time.time - _levelStartTime);
+                : Math.Round((Time.time - _levelStartTime), 2);
         }
 
         internal void Stop()
         {
             FinalTime = GetCurrentTime();
+            SetUIText();
         }
     }
 }
