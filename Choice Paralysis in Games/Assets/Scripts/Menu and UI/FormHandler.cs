@@ -8,41 +8,82 @@ namespace Scripts.Menu_and_UI
     public class FormHandler : MonoBehaviour
     {
         [SerializeField] private Button _submitButton;
-        [SerializeField] private TMP_Dropdown[] _dropdowns;
+        [SerializeField] private TMP_Dropdown[] _characterQuestions;
+        [SerializeField] private TMP_Dropdown[] _reflectionQuestions;
 
-        [SerializeField] private Color _incorrectColor = Color.red;
+        [SerializeField] private Color _incorrectColor = new Color(255, 105, 105);
 
         private void Start()
         {
-            _submitButton.onClick.AddListener(ValidateForm);
+            _submitButton.onClick.AddListener(SendForm);
 
-            foreach (var dropdown in _dropdowns)
+            foreach (var dropdown in _characterQuestions)
+            {
+                dropdown.onValueChanged.AddListener(delegate { DropdownSelectionIsValid(dropdown); });
+            }
+
+            foreach (var dropdown in _reflectionQuestions)
             {
                 dropdown.onValueChanged.AddListener(delegate { DropdownSelectionIsValid(dropdown); });
             }
         }
 
-        private void ValidateForm()
+        private void SendForm()
         {
-            foreach (var dropdown in _dropdowns)
+            if (_characterQuestions.Length > 0)
             {
-                if (!DropdownSelectionIsValid(dropdown))
-                {
-                    return;
-                }
+                SendCharacterQuestions();
             }
+
+            if (_reflectionQuestions.Length > 0)
+            {
+                SendReflectionQuestions();
+            }
+            
+            SceneTransitioner.Instance.LoadNextScene();
+        }
+
+        private void SendCharacterQuestions()
+        {
+            if (!DropdownsAreValid(_characterQuestions)) { return; }
 
             var characterQuestions = new CharacterQuestions
             (
-                satisfaction:          _dropdowns[0].captionText.text,
-                options:               _dropdowns[1].captionText.text,
-                enjoyedCustomization:  _dropdowns[2].captionText.text
+                initialCharacterSatisfaction: _characterQuestions[0].captionText.text,
+                optionAmount:                 _characterQuestions[1].captionText.text,
+                enjoyedCustomization:         _characterQuestions[2].captionText.text
             );
 
             DataCollector.Instance.SetCharacterQuestions(characterQuestions);
-            SceneTransitioner.Instance.LoadNextScene();
         }
-        
+
+        private void SendReflectionQuestions()
+        {
+            if (!DropdownsAreValid(_reflectionQuestions)) { return; }
+
+            var reflectionQuestions = new ReflectionQuestions
+            (
+                happyWithPerformance:       _reflectionQuestions[0].captionText.text,
+                finalCharacterSatisfaction: _reflectionQuestions[1].captionText.text,
+                enjoyedGameplay:            _reflectionQuestions[2].captionText.text
+            );
+
+            DataCollector.Instance.SetReflectionQuestions(reflectionQuestions);
+        }
+
+        private bool DropdownsAreValid(TMP_Dropdown[] dropdowns)
+        {
+            foreach (var dropdown in _characterQuestions)
+            {
+                if (!DropdownSelectionIsValid(dropdown))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private bool DropdownSelectionIsValid(TMP_Dropdown dropdown)
         {
             var isValid = dropdown.value != 0;

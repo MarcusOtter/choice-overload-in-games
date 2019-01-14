@@ -3,14 +3,14 @@
     [System.Serializable]
     public struct CharacterQuestions
     {
-        public string Satisfaction;
-        public string Options;
+        public string InitialCharacterSatisfaction;
+        public string OptionAmount;
         public string EnjoyedCustomization;
 
-        public CharacterQuestions(string satisfaction, string options, string enjoyedCustomization)
+        public CharacterQuestions(string initialCharacterSatisfaction, string optionAmount, string enjoyedCustomization)
         {
-            Satisfaction = satisfaction;
-            Options = options;
+            InitialCharacterSatisfaction = initialCharacterSatisfaction;
+            OptionAmount = optionAmount;
             EnjoyedCustomization = enjoyedCustomization;
         }
     }

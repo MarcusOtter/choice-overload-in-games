@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4254675392803162}
-  - component: {fileID: 114015497225582036}
   m_Layer: 0
   m_Name: Audio Player
   m_TagString: Untagged
@@ -694,14 +693,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114015497225582036
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095489090307550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4d541a4ff828d24abb6d5d0c3535293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

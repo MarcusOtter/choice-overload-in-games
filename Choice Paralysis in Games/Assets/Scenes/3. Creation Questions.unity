@@ -1442,10 +1442,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _submitButton: {fileID: 216953958}
-  _dropdowns:
+  _characterQuestions:
   - {fileID: 1334023235}
   - {fileID: 336424}
   - {fileID: 602961013}
+  _reflectionQuestions: []
   _incorrectColor: {r: 1, g: 0.41037738, b: 0.41037738, a: 1}
 --- !u!1 &250702621
 GameObject:
@@ -3108,7 +3109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101f2b06a542aa94aa3fe33b42889091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToFadeIn: 1
+  _animationDuration: 1
   _animationUpdateDelay: 0.02
 --- !u!4 &886284440
 Transform:

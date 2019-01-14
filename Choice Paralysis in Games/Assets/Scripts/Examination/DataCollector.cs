@@ -17,6 +17,7 @@ namespace Scripts.Examination
 
         internal CharacterData? CharacterData { get; private set; }
         private CharacterQuestions? _characterQuestions;
+        private ReflectionQuestions? _reflectionQuestions;
         private GameStats _gameStats;
 
         private PlayerDeathBehaviour _playerDeathBehaviour;
@@ -101,6 +102,15 @@ namespace Scripts.Examination
             _characterQuestions = characterQuestions;
 
             Logger.Instance.Log($"Set character questions. Data:\n{JsonUtility.ToJson(_characterQuestions, true)}", gameObject);
+        }
+
+        internal void SetReflectionQuestions(ReflectionQuestions reflectionQuestions)
+        {
+            if (_reflectionQuestions != null) { Logger.Instance.LogWarning("ReflectionQuestions overriden!", gameObject); }
+
+            _reflectionQuestions = reflectionQuestions;
+
+            Logger.Instance.Log($"Set reflection questions. Data:\n{JsonUtility.ToJson(_reflectionQuestions, true)}", gameObject);
         }
 
         private void OnDisable()
