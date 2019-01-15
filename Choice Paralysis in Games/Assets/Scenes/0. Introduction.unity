@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 1508775910}
   - component: {fileID: 1508775909}
   m_Layer: 5
-  m_Name: '[SPACE] To continue'
+  m_Name: '[Space] To continue'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -663,7 +663,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Press [SPACE] to continue...
+  m_text: Press [Space] to continue...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -829,7 +829,7 @@ MonoBehaviour:
     anonymous and no personal information will be collected.
 
 
-    By pressing [SPACE] to continue, you are agreeing that you have not played this
+    By pressing [Space to continue, you are agreeing that you have not played this
     game before and giving me permission to collect game data for resarch purposes.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 21.75
+  m_fontSize: 23.55
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -898,12 +898,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1538716868}
-    characterCount: 390
+    characterCount: 389
     spriteCount: 0
     spaceCount: 67
     wordCount: 65
     linkCount: 0
-    lineCount: 11
+    lineCount: 12
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -942,8 +942,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _useMultipleMessages: 0
+  _nextMessageKey: 32
+  _progressInstructions: {fileID: 0}
+  _instructionTextFader: {fileID: 0}
+  _messages: []
   _initialDelay: 3
   _letterDelay: 0.025
+  _onTextLoaded:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   _onTextCompleted:
     m_PersistentCalls:
       m_Calls:
