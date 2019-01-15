@@ -6,7 +6,6 @@ namespace Scripts.Menu_and_UI
 {
     public class LoadPlayerName : MonoBehaviour
     {
-        [SerializeField] private string _defaultName = "John Doe the Great";
         [SerializeField] private TextMeshProUGUI _playerNameTmp;
 
         private CharacterData? _characterData;
@@ -22,13 +21,15 @@ namespace Scripts.Menu_and_UI
             if (!_characterData.HasValue)
             {
                 Logger.Instance.LogWarning("Character Data doesn't have any data.", gameObject);
-                _playerNameTmp.text = _defaultName;
+                _playerNameTmp.text = EnvironmentVariables.DefaultCharacterName;
                 return; 
             }
 
             var characterName = _characterData.Value.CharacterName;
 
-            _playerNameTmp.text = string.IsNullOrWhiteSpace(characterName) ? _defaultName : characterName;
+            _playerNameTmp.text = string.IsNullOrWhiteSpace(characterName) 
+                ? EnvironmentVariables.DefaultCharacterName 
+                : characterName;
         }
     }
 }

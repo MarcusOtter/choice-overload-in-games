@@ -3,11 +3,11 @@
     [System.Serializable]
     public struct ReflectionQuestions
     {
-        public string EntertainmentValue;
+        public int EntertainmentValue;
         public string PleasedWithPerformance;
         public string FinalCharacterSatisfaction;
         
-        public ReflectionQuestions(string entertainmentValue, string pleasedWithPerformance, string finalCharacterSatisfaction)
+        public ReflectionQuestions(int entertainmentValue, string pleasedWithPerformance, string finalCharacterSatisfaction)
         {
             EntertainmentValue = entertainmentValue;
             PleasedWithPerformance = pleasedWithPerformance;

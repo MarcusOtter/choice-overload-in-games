@@ -79,7 +79,7 @@ namespace Scripts.Menu_and_UI
             var characterData = new CharacterData
             (
                 hasChangedName:             !string.IsNullOrWhiteSpace(_nameInput.text),
-                characterName:              _nameInput.text,
+                characterName:              string.IsNullOrWhiteSpace(_nameInput.text) ? EnvironmentVariables.DefaultCharacterName : _nameInput.text,
                 timeSpentOnName:            Math.Round(_timeSpentOnName, 2),
                 spriteOptionAmount:         optionAmount,
                 visitedHeadsPercentage:     Math.Round((_visitedHeads.Count / (double)optionAmount) * 100d, 2),

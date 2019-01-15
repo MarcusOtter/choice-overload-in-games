@@ -30,22 +30,27 @@ namespace Scripts.Menu_and_UI
 
         private void SendForm()
         {
+            bool success = true;
+
             if (_characterQuestions.Length > 0)
             {
-                SendCharacterQuestions();
+                success = SendCharacterQuestions();
             }
 
             if (_reflectionQuestions.Length > 0)
             {
-                SendReflectionQuestions();
+                success = SendReflectionQuestions();
             }
-            
-            SceneTransitioner.Instance.LoadNextScene();
+
+            if (success)
+            {
+                SceneTransitioner.Instance.LoadNextScene();
+            }
         }
 
-        private void SendCharacterQuestions()
+        private bool SendCharacterQuestions()
         {
-            if (!DropdownsAreValid(_characterQuestions)) { return; }
+            if (!DropdownsAreValid(_characterQuestions)) { return false; }
 
             var characterQuestions = new CharacterQuestions
             (
@@ -55,25 +60,27 @@ namespace Scripts.Menu_and_UI
             );
 
             DataCollector.Instance.SetCharacterQuestions(characterQuestions);
+            return true;
         }
 
-        private void SendReflectionQuestions()
+        private bool SendReflectionQuestions()
         {
-            if (!DropdownsAreValid(_reflectionQuestions)) { return; }
+            if (!DropdownsAreValid(_reflectionQuestions)) { return false; }
 
             var reflectionQuestions = new ReflectionQuestions
             (
-                entertainmentValue:         _reflectionQuestions[0].captionText.text,
+                entertainmentValue:         int.Parse(_reflectionQuestions[0].captionText.text),
                 pleasedWithPerformance:     _reflectionQuestions[1].captionText.text,
                 finalCharacterSatisfaction: _reflectionQuestions[2].captionText.text
             );
 
             DataCollector.Instance.SetReflectionQuestions(reflectionQuestions);
+            return true;
         }
 
         private bool DropdownsAreValid(TMP_Dropdown[] dropdowns)
         {
-            foreach (var dropdown in _characterQuestions)
+            foreach (var dropdown in dropdowns)
             {
                 if (!DropdownSelectionIsValid(dropdown))
                 {

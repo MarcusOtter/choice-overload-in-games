@@ -24,5 +24,10 @@ namespace Scripts.Game
         {
             _timeScale = newTimeScale;
         }
+
+        private void OnDisable()
+        {
+            Time.timeScale = 1f;
+        }
     }
 }

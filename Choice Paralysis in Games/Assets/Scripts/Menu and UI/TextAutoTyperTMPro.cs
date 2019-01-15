@@ -8,6 +8,9 @@ namespace Scripts.Menu_and_UI
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class TextAutoTyperTMPro : MonoBehaviour
     {
+        [Header("Special mode")]
+        [SerializeField] private bool _infinitelyRepeat;
+
         [Header("Multiple messages")]
         [SerializeField] private bool _useMultipleMessages; // Use the strings defined below instead of the start value
         [SerializeField] private KeyCode _nextMessageKey = KeyCode.Space;
@@ -76,23 +79,27 @@ namespace Scripts.Menu_and_UI
         {
             _allowMessageProgression = false;
 
-            var textToWrite = _useMultipleMessages 
-                ? _messages[_currentMessageIndex]
-                : _text.text;
-
-            _text.text = string.Empty;
-            SetInstructionText(string.Empty);
-
-            if (_currentMessageIndex == 0)
+            do
             {
-                yield return new WaitForSeconds(_initialDelay);
-            }
+                var textToWrite = _useMultipleMessages
+                    ? _messages[_currentMessageIndex]
+                    : _text.text;
 
-            foreach (var letter in textToWrite)
-            {
-                _text.text += letter;
-                yield return new WaitForSeconds(_letterDelay);
-            }
+                _text.text = string.Empty;
+                SetInstructionText(string.Empty);
+
+                if (_currentMessageIndex == 0)
+                {
+                    yield return new WaitForSeconds(_initialDelay);
+                }
+
+                foreach (var letter in textToWrite)
+                {
+                    _text.text += letter;
+                    yield return new WaitForSeconds(_letterDelay);
+                }
+
+            } while (_infinitelyRepeat);
 
             if (!_useMultipleMessages)
             {
