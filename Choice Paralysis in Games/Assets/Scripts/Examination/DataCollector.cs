@@ -9,11 +9,10 @@ namespace Scripts.Examination
     {
         internal static DataCollector Instance { get; private set; }
 
-        // TODO
-        // What are their game results?
-        // How happy are they with their game results?
+        internal ExaminationEntry Entry
+            => new ExaminationEntry(CharacterData.Value, _characterQuestions.Value, _reflectionQuestions.Value, _gameStats);
 
-        // TODO: Make an ExaminationEntry that holds this and game data
+        // TODO: Knew about purpose of the test before?
 
         internal CharacterData? CharacterData { get; private set; }
         private CharacterQuestions? _characterQuestions;
@@ -60,6 +59,7 @@ namespace Scripts.Examination
                     break;
             }
 
+            // TODO: Remove
             Logger.Instance.Log($"Set game stats. Data:\n{JsonUtility.ToJson(_gameStats, true)}", gameObject);
         }
 
@@ -88,7 +88,7 @@ namespace Scripts.Examination
 
         internal void SetCharacterData(CharacterData characterData)
         {
-            if (CharacterData != null) { Logger.Instance.LogWarning("CharacterData overriden!", gameObject); }
+            //if (CharacterData != null) { Logger.Instance.LogWarning("CharacterData overriden!", gameObject); }
             
             CharacterData = characterData;
 
@@ -97,7 +97,7 @@ namespace Scripts.Examination
 
         internal void SetCharacterQuestions(CharacterQuestions characterQuestions)
         {
-            if (_characterQuestions != null) { Logger.Instance.LogWarning("CharacterQuestions overriden!", gameObject); }
+            //if (_characterQuestions != null) { Logger.Instance.LogWarning("CharacterQuestions overriden!", gameObject); }
 
             _characterQuestions = characterQuestions;
 
@@ -106,7 +106,7 @@ namespace Scripts.Examination
 
         internal void SetReflectionQuestions(ReflectionQuestions reflectionQuestions)
         {
-            if (_reflectionQuestions != null) { Logger.Instance.LogWarning("ReflectionQuestions overriden!", gameObject); }
+            //if (_reflectionQuestions != null) { Logger.Instance.LogWarning("ReflectionQuestions overriden!", gameObject); }
 
             _reflectionQuestions = reflectionQuestions;
 

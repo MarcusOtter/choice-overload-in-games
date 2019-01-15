@@ -15538,7 +15538,7 @@ MonoBehaviour:
   - If you touch an enemy, or a projectile of an enemy, you will die.
   - Your goal is to survive as long as possible.
   - You have 2 tries. Make them count!
-  - Proceed to the next area behind the manhole to start the game.
+  - Walk all the way to the right to start the game.
   _initialDelay: 0
   _letterDelay: 0.025
   _onTextLoaded:

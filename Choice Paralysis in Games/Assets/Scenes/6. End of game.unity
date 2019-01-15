@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 11391877}
   - component: {fileID: 11391876}
   m_Layer: 5
-  m_Name: QUESTION Enjoyment
+  m_Name: QUESTION FinalCharacterSatisfaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,6 +515,15 @@ Prefab:
     - target: {fileID: 224906029445487080, guid: 7750ac5d2f3545640a0095e87d360182,
         type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055730628934500, guid: 7750ac5d2f3545640a0095e87d360182, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847880098579896, guid: 7750ac5d2f3545640a0095e87d360182,
+        type: 2}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2736,7 +2745,7 @@ GameObject:
   - component: {fileID: 810858682}
   - component: {fileID: 810858681}
   m_Layer: 5
-  m_Name: ANSWER Enjoyment
+  m_Name: ANSWER FinalCharacterSatisfaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3220,7 +3229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _submitButton: {fileID: 2040001425}
   _characterQuestions: []
-  _reflectionQuestions: []
+  _reflectionQuestions:
+  - {fileID: 90153378}
+  - {fileID: 15251968}
+  - {fileID: 810858682}
   _incorrectColor: {r: 1, g: 0.41037738, b: 0.41037738, a: 1}
 --- !u!225 &1007840717
 CanvasGroup:
@@ -3229,7 +3241,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1007840714}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
