@@ -422,6 +422,8 @@ MonoBehaviour:
   _bodyIcon: {fileID: 598496214}
   _bodyIndexText: {fileID: 830790840}
   _nameInput: {fileID: 1770780024}
+  _defaultAvailableSprites: {fileID: 11400000, guid: a6bd0040b88c2b14797da1e1c4692124,
+    type: 2}
 --- !u!222 &293745308
 CanvasRenderer:
   m_ObjectHideFlags: 0

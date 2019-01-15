@@ -6999,7 +6999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101f2b06a542aa94aa3fe33b42889091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToFadeIn: 1
+  _animationDuration: 1
   _animationUpdateDelay: 0.02
 --- !u!222 &290183942
 CanvasRenderer:
@@ -7928,7 +7928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101f2b06a542aa94aa3fe33b42889091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToFadeIn: 1
+  _animationDuration: 1
   _animationUpdateDelay: 0.02
 --- !u!222 &654497897
 CanvasRenderer:
@@ -13698,7 +13698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101f2b06a542aa94aa3fe33b42889091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToFadeIn: 1
+  _animationDuration: 1
   _animationUpdateDelay: 0.02
 --- !u!222 &1118242895
 CanvasRenderer:
@@ -13909,7 +13909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101f2b06a542aa94aa3fe33b42889091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToFadeIn: 1
+  _animationDuration: 1
   _animationUpdateDelay: 0.02
 --- !u!1001 &1250958431
 Prefab:
@@ -15259,7 +15259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101f2b06a542aa94aa3fe33b42889091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToFadeIn: 1
+  _animationDuration: 1
   _animationUpdateDelay: 0.02
 --- !u!222 &1413206636
 CanvasRenderer:
@@ -15535,7 +15535,6 @@ MonoBehaviour:
   _instructionTextFader: {fileID: 290183941}
   _messages:
   - Well done.
-  - You are ready to start playing.
   - If you touch an enemy, or a projectile of an enemy, you will die.
   - Your goal is to survive as long as possible.
   - You have 2 tries. Make them count!
@@ -15916,7 +15915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101f2b06a542aa94aa3fe33b42889091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToFadeIn: 1
+  _animationDuration: 1
   _animationUpdateDelay: 0.02
 --- !u!222 &1487746002
 CanvasRenderer:
@@ -16553,7 +16552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101f2b06a542aa94aa3fe33b42889091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToFadeIn: 1
+  _animationDuration: 1
   _animationUpdateDelay: 0.02
 --- !u!222 &1559935628
 CanvasRenderer:

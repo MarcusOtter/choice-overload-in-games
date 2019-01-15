@@ -3,15 +3,15 @@
     [System.Serializable]
     public struct ReflectionQuestions
     {
-        public string HappyWithPerformance;
+        public string EntertainmentValue;
+        public string PleasedWithPerformance;
         public string FinalCharacterSatisfaction;
-        public string EnjoyedGameplay;
         
-        public ReflectionQuestions(string happyWithPerformance, string finalCharacterSatisfaction, string enjoyedGameplay)
+        public ReflectionQuestions(string entertainmentValue, string pleasedWithPerformance, string finalCharacterSatisfaction)
         {
-            HappyWithPerformance = happyWithPerformance;
+            EntertainmentValue = entertainmentValue;
+            PleasedWithPerformance = pleasedWithPerformance;
             FinalCharacterSatisfaction = finalCharacterSatisfaction;
-            EnjoyedGameplay = enjoyedGameplay;
         }
     }
 }

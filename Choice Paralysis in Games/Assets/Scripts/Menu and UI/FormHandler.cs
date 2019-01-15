@@ -63,9 +63,9 @@ namespace Scripts.Menu_and_UI
 
             var reflectionQuestions = new ReflectionQuestions
             (
-                happyWithPerformance:       _reflectionQuestions[0].captionText.text,
-                finalCharacterSatisfaction: _reflectionQuestions[1].captionText.text,
-                enjoyedGameplay:            _reflectionQuestions[2].captionText.text
+                entertainmentValue:         _reflectionQuestions[0].captionText.text,
+                pleasedWithPerformance:     _reflectionQuestions[1].captionText.text,
+                finalCharacterSatisfaction: _reflectionQuestions[2].captionText.text
             );
 
             DataCollector.Instance.SetReflectionQuestions(reflectionQuestions);

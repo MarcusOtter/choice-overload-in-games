@@ -23,6 +23,7 @@ namespace Scripts.Examination
             SingletonCheck();
         }
 
+        // Should be called by something else so ExaminationHandler can be used in other scenes without this
         private void Start()
         {
             StartCoroutine(WebtaskIoRequest(_requestType));
