@@ -825,12 +825,8 @@ MonoBehaviour:
     This game is a top-down shooter where your goal is to survive as long as possible.
 
 
-    While you are playing, data will be collected for research. This is completely
-    anonymous and no personal information will be collected.
-
-
-    By pressing [Space] to continue, you are agreeing that you have not played this
-    game before and giving me permission to collect game data for resarch purposes.'
+    While you are playing, data will be collected for research purposes. This is completely
+    anonymous.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -857,7 +853,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 21.75
+  m_fontSize: 25
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -898,12 +894,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1538716868}
-    characterCount: 390
+    characterCount: 192
     spriteCount: 0
-    spaceCount: 67
-    wordCount: 65
+    spaceCount: 33
+    wordCount: 32
     linkCount: 0
-    lineCount: 11
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -942,6 +938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infinitelyRepeat: 0
   _useMultipleMessages: 0
   _nextMessageKey: 32
   _progressInstructions: {fileID: 0}
