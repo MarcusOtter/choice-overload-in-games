@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Scripts.Game.Enemies
 {
@@ -11,27 +12,32 @@ namespace Scripts.Game.Enemies
 
         private List<EnemyWave> _remainingWaves;
 
-        private float _elapsedtime;
+        private float _elapsedTime;
         private int _spawnedWavesAmount;
 
         private void Start()
         {
             // Order by spawn time (low --> high)
             _remainingWaves = _waves.OrderBy(x => x.SpawnTime).ToList();
+
+            // Disable spawning when player dies
+            FindObjectOfType<Player.PlayerDeathBehaviour>().OnDeath.AddListener(() => _elapsedTime = float.MinValue);
         }
 
         private void Update()
         {
-            _elapsedtime += Time.deltaTime;
+            _elapsedTime += Time.deltaTime;
 
             if (!_remainingWaves.Any()) { return; }
 
-            if (_elapsedtime >= _remainingWaves[0].SpawnTime)
+            if (_elapsedTime >= _remainingWaves[0].SpawnTime)
             {
                 SpawnWave(_remainingWaves[0]);
                 _remainingWaves.RemoveAt(0);
             }
         }
+
+        //private void Disable
 
         private void SpawnWave(EnemyWave waveToSpawn)
         {
