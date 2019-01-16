@@ -115,7 +115,7 @@ namespace Scripts.Game.Weapons
             if (!_canShoot)
             {
                 _fireWhenPossible = false;
-                _attackBeingHeld = false;
+                RegisterAttackKeyUp(this, EventArgs.Empty);
             }
         }
 
