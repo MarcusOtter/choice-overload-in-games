@@ -63,7 +63,7 @@ namespace Scripts.Game.Enemies
 
             if (colRoot.CompareTag(EnvironmentVariables.PlayerTag))
             {
-                colRoot.GetComponentInChildren<IDamageable>()?.TakeDamage((int)_collisionDamage);
+                colRoot.GetComponentInChildren<IDamageable>()?.TakeDamage((int) _collisionDamage);
             }
         }
     }

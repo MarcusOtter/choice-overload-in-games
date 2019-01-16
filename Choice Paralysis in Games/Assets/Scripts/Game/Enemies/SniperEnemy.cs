@@ -41,5 +41,15 @@ namespace Scripts.Game.Enemies
 
             Rigidbody.velocity = _moveDir * MovementSpeed;
         }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            var colRoot = other.collider.transform.root;
+
+            if (colRoot.CompareTag(EnvironmentVariables.PlayerTag))
+            {
+                colRoot.GetComponentInChildren<IDamageable>()?.TakeDamage(1);
+            }
+        }
     }
 }
