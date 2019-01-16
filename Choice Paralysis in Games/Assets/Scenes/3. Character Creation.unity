@@ -422,8 +422,6 @@ MonoBehaviour:
   _bodyIcon: {fileID: 598496214}
   _bodyIndexText: {fileID: 830790840}
   _nameInput: {fileID: 1770780024}
-  _defaultAvailableSprites: {fileID: 11400000, guid: a6bd0040b88c2b14797da1e1c4692124,
-    type: 2}
 --- !u!222 &293745308
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3113,6 +3111,53 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1001 &1522150235
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4500210287761536, guid: 31b0ff99e48cec947a1d86466ada1c5b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500210287761536, guid: 31b0ff99e48cec947a1d86466ada1c5b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500210287761536, guid: 31b0ff99e48cec947a1d86466ada1c5b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500210287761536, guid: 31b0ff99e48cec947a1d86466ada1c5b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500210287761536, guid: 31b0ff99e48cec947a1d86466ada1c5b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500210287761536, guid: 31b0ff99e48cec947a1d86466ada1c5b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500210287761536, guid: 31b0ff99e48cec947a1d86466ada1c5b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500210287761536, guid: 31b0ff99e48cec947a1d86466ada1c5b, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114720122362468658, guid: 31b0ff99e48cec947a1d86466ada1c5b,
+        type: 2}
+      propertyPath: _requestType
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 31b0ff99e48cec947a1d86466ada1c5b, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1630548682
 GameObject:
   m_ObjectHideFlags: 0

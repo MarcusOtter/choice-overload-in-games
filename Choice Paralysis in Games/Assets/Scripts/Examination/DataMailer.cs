@@ -8,7 +8,10 @@ namespace Scripts.Examination
 {
     public class DataMailer : MonoBehaviour
     {
-        [SerializeField] private ExaminationEntry _entry;
+        [SerializeField] private TMPro.TextMeshProUGUI _errorMessageText;
+        [SerializeField] private GameObject _finalMessage;
+
+        private ExaminationEntry _entry;
 
         private void Start()
         {
@@ -21,8 +24,10 @@ namespace Scripts.Examination
             StartCoroutine(EmailData());
         }
 
-        private IEnumerator EmailData()
+        private IEnumerator EmailData(float delay = 0f)
         {
+            yield return new WaitForSeconds(delay);
+
             MailMessage mail = new MailMessage(EnvironmentVariables.EmailAddress, EnvironmentVariables.EmailAddress)
             {
                 Subject = $"Gymarb data | {_entry.CharacterData.CharacterName}",
@@ -52,18 +57,25 @@ namespace Scripts.Examination
             if (e.Cancelled)
             {
                 Logger.Instance.LogError($"[{token}] Cancelled.", gameObject);
+                _errorMessageText.text = "Something went wrong while submitting the data. Check your connection and try again.";
+
+                Logger.Instance.Log("Retrying data submission...");
+                StartCoroutine(EmailData(3f));
+                return;
             }
 
             if (e.Error != null)
             {
                 Logger.Instance.LogError($"[{token}] {e.Error}", gameObject);
-            }
-            else
-            {
-                Logger.Instance.Log($"[{token}] Email sent.", gameObject);
+                _errorMessageText.text = $"Something went while submitting the data.\nError message: {e.Error}";
+
+                Logger.Instance.Log("Retrying data submission...");
+                StartCoroutine(EmailData(3f));
+                return;
             }
 
-            // TODO: Go to next scene? Or retry on fail
+            Logger.Instance.Log($"[{token}] Email sent.", gameObject);
+            _finalMessage.SetActive(true);
         }
     }
 }

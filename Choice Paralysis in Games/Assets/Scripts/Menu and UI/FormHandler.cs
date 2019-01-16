@@ -68,8 +68,8 @@ namespace Scripts.Menu_and_UI
             {
                 answers = new SubjectQuestions
                 (
-                    gender:                  _characterQuestions[0].captionText.text,
-                    knowsExperimentPurpose:  _characterQuestions[1].value == 1
+                    gender:                  _subjectQuestions[0].captionText.text,
+                    knowsExperimentPurpose:  _subjectQuestions[1].value == 1
                 );
             }
             else if (questionType == typeof(CharacterQuestions))
