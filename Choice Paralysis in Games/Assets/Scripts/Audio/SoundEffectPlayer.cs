@@ -66,6 +66,8 @@ namespace Scripts.Audio
             _scaleVolumeWithPlayerDistance = scaleVolumeWithDistance;
             _scalePitchWithTimeScale = scalePitchWithTimeScale;
 
+            transform.position = _creatorTransform.position;
+
             if (soundEffect == null)
             {
                 Logger.Instance.LogWarning($"{sender.name} does not have a sound effect.", gameObject);
