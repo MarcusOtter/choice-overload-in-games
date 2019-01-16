@@ -27,7 +27,7 @@ namespace Scripts.Menu_and_UI
 
         private void SetGraphics()
         {
-            if (_characterData != null || !_characterData.HasValue)
+            if (!_characterData.HasValue)
             {
                 Logger.Instance.LogWarning("Character Data doesn't have any data.", gameObject);
                 return;
