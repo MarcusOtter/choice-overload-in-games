@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Scripts.Examination;
@@ -8,6 +9,7 @@ namespace Scripts.Menu_and_UI
     public class FormHandler : MonoBehaviour
     {
         [SerializeField] private Button _submitButton;
+        [SerializeField] private TMP_Dropdown[] _subjectQuestions;
         [SerializeField] private TMP_Dropdown[] _characterQuestions;
         [SerializeField] private TMP_Dropdown[] _reflectionQuestions;
 
@@ -17,12 +19,14 @@ namespace Scripts.Menu_and_UI
         {
             _submitButton.onClick.AddListener(SendForm);
 
-            foreach (var dropdown in _characterQuestions)
-            {
-                dropdown.onValueChanged.AddListener(delegate { DropdownSelectionIsValid(dropdown); });
-            }
+            if (_subjectQuestions != null)    { SubscribeDropdowns(_subjectQuestions); }
+            if (_characterQuestions != null)  { SubscribeDropdowns(_characterQuestions); }
+            if (_reflectionQuestions != null) { SubscribeDropdowns(_reflectionQuestions); }
+        }
 
-            foreach (var dropdown in _reflectionQuestions)
+        private void SubscribeDropdowns(TMP_Dropdown[] dropdowns)
+        {
+            foreach (var dropdown in dropdowns)
             {
                 dropdown.onValueChanged.AddListener(delegate { DropdownSelectionIsValid(dropdown); });
             }
@@ -32,14 +36,20 @@ namespace Scripts.Menu_and_UI
         {
             bool success = true;
 
-            if (_characterQuestions.Length > 0)
+            if (_subjectQuestions != null && _subjectQuestions.Length > 0)
             {
-                success = SendCharacterQuestions();
+                success = SendAnswers(_subjectQuestions, typeof(SubjectQuestions)); 
             }
 
-            if (_reflectionQuestions.Length > 0)
+            if (_characterQuestions != null && _characterQuestions.Length > 0)
             {
-                success = SendReflectionQuestions();
+                success = SendAnswers(_characterQuestions, typeof(CharacterQuestions)); 
+            }
+
+            if (_reflectionQuestions != null && _reflectionQuestions.Length > 0)
+            {
+                success = SendAnswers(_reflectionQuestions, typeof(ReflectionQuestions));
+
             }
 
             if (success)
@@ -48,33 +58,40 @@ namespace Scripts.Menu_and_UI
             }
         }
 
-        private bool SendCharacterQuestions()
+        private bool SendAnswers(TMP_Dropdown[] answerDropdowns, Type questionType)
         {
-            if (!DropdownsAreValid(_characterQuestions)) { return false; }
+            if (!DropdownsAreValid(answerDropdowns)) { return false; }
 
-            var characterQuestions = new CharacterQuestions
-            (
-                initialCharacterSatisfaction: _characterQuestions[0].captionText.text,
-                optionAmount:                 _characterQuestions[1].captionText.text,
-                enjoyedCustomization:         _characterQuestions[2].captionText.text
-            );
+            object answers = null;
 
-            DataCollector.Instance.SetCharacterQuestions(characterQuestions);
-            return true;
-        }
+            if (questionType == typeof(SubjectQuestions))
+            {
+                answers = new SubjectQuestions
+                (
+                    gender:                  _characterQuestions[0].captionText.text,
+                    knowsExperimentPurpose:  _characterQuestions[1].value == 1
+                );
+            }
+            else if (questionType == typeof(CharacterQuestions))
+            {
+                answers = new CharacterQuestions
+                (
+                    initialCharacterSatisfaction:  _characterQuestions[0].captionText.text,
+                    optionAmount:                  _characterQuestions[1].captionText.text,
+                    enjoyedCustomization:          _characterQuestions[2].captionText.text
+                );
+            }
+            else if (questionType == typeof(ReflectionQuestions))
+            {
+                answers = new ReflectionQuestions
+                (
+                    entertainmentValue:          int.Parse(_reflectionQuestions[0].captionText.text),
+                    pleasedWithPerformance:      _reflectionQuestions[1].captionText.text,
+                    finalCharacterSatisfaction:  _reflectionQuestions[2].captionText.text
+                );
+            }
 
-        private bool SendReflectionQuestions()
-        {
-            if (!DropdownsAreValid(_reflectionQuestions)) { return false; }
-
-            var reflectionQuestions = new ReflectionQuestions
-            (
-                entertainmentValue:         int.Parse(_reflectionQuestions[0].captionText.text),
-                pleasedWithPerformance:     _reflectionQuestions[1].captionText.text,
-                finalCharacterSatisfaction: _reflectionQuestions[2].captionText.text
-            );
-
-            DataCollector.Instance.SetReflectionQuestions(reflectionQuestions);
+            DataCollector.Instance.SetData(answers);
             return true;
         }
 

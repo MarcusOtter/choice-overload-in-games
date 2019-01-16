@@ -10,13 +10,14 @@ namespace Scripts.Examination
         internal static DataCollector Instance { get; private set; }
 
         internal ExaminationEntry Entry
-            => new ExaminationEntry(CharacterData.Value, _characterQuestions.Value, _reflectionQuestions.Value, _gameStats);
+            => new ExaminationEntry(_subjectQuestions, CharacterData, _characterQuestions, _reflectionQuestions, _gameStats);
 
-        // TODO: Knew about purpose of the test before?
+        [SerializeField] private int _webtaskSceneBuildIndex = 2;
 
-        internal CharacterData? CharacterData { get; private set; }
-        private CharacterQuestions? _characterQuestions;
-        private ReflectionQuestions? _reflectionQuestions;
+        internal CharacterData CharacterData { get; private set; }
+        private SubjectQuestions _subjectQuestions;
+        private CharacterQuestions _characterQuestions;
+        private ReflectionQuestions _reflectionQuestions;
         private GameStats _gameStats;
 
         private PlayerDeathBehaviour _playerDeathBehaviour;
@@ -36,6 +37,11 @@ namespace Scripts.Examination
         {
             _playerDeathBehaviour = FindObjectOfType<PlayerDeathBehaviour>();
             _playerDeathBehaviour?.OnDeath.AddListener(SetFinalTime);
+
+            if (scene.buildIndex == _webtaskSceneBuildIndex)
+            {
+                ExaminationHandler.Instance?.Initialize();
+            }
         }
 
         private void SetFinalTime()
@@ -58,9 +64,6 @@ namespace Scripts.Examination
                     _gameStats.SecondAttemptTime = FindObjectOfType<Game.Timer>().FinalTime;
                     break;
             }
-
-            // TODO: Remove
-            Logger.Instance.Log($"Set game stats. Data:\n{JsonUtility.ToJson(_gameStats, true)}", gameObject);
         }
 
         // Called by enemies when they die
@@ -86,31 +89,35 @@ namespace Scripts.Examination
             _gameStats.Accuracy = Math.Round((_gameStats.ShotsHit / (double) _gameStats.ShotsFired) * 100d, 2);
         }
 
-        internal void SetCharacterData(CharacterData characterData)
+        internal void SetData(object data)
         {
-            //if (CharacterData != null) { Logger.Instance.LogWarning("CharacterData overriden!", gameObject); }
-            
-            CharacterData = characterData;
+            if (data is SubjectQuestions)
+            {
+                if (!_subjectQuestions.Equals(default(SubjectQuestions))) { Logger.Instance.LogWarning("SubjectQuestions overwritten!", gameObject); }
+                _subjectQuestions = (SubjectQuestions) data;
+            }
+            else if (data is CharacterData)
+            {
+                if (!CharacterData.Equals(default(CharacterData))) { Logger.Instance.LogWarning("CharacterData overwritten!", gameObject); }
+                CharacterData = (CharacterData) data;
+            }
+            else if (data is CharacterQuestions)
+            {
+                if (!_characterQuestions.Equals(default(CharacterQuestions))) { Logger.Instance.LogWarning("CharacterQuestions overwritten!", gameObject); }
+                _characterQuestions = (CharacterQuestions) data;
+            }
+            else if (data is ReflectionQuestions)
+            {
+                if (!_reflectionQuestions.Equals(default(ReflectionQuestions))) { Logger.Instance.LogWarning("ReflectionQuestions overwritten!", gameObject); }
+                _reflectionQuestions = (ReflectionQuestions) data;
+            }
+            else
+            {
+                Logger.Instance.LogError($"Cannot set data of type '{data.GetType()}'", gameObject);
+                return;
+            }
 
-            Logger.Instance.Log($"Set character data. Data:\n{JsonUtility.ToJson(CharacterData, true)}", gameObject);
-        }
-
-        internal void SetCharacterQuestions(CharacterQuestions characterQuestions)
-        {
-            //if (_characterQuestions != null) { Logger.Instance.LogWarning("CharacterQuestions overriden!", gameObject); }
-
-            _characterQuestions = characterQuestions;
-
-            Logger.Instance.Log($"Set character questions. Data:\n{JsonUtility.ToJson(_characterQuestions, true)}", gameObject);
-        }
-
-        internal void SetReflectionQuestions(ReflectionQuestions reflectionQuestions)
-        {
-            //if (_reflectionQuestions != null) { Logger.Instance.LogWarning("ReflectionQuestions overriden!", gameObject); }
-
-            _reflectionQuestions = reflectionQuestions;
-
-            Logger.Instance.Log($"Set reflection questions. Data:\n{JsonUtility.ToJson(_reflectionQuestions, true)}", gameObject);
+            Logger.Instance.Log($"DataCollector reveiced data:\n{JsonUtility.ToJson(data, true)}", gameObject);
         }
 
         private void OnDisable()

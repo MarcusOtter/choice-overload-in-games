@@ -90,7 +90,7 @@ namespace Scripts.Menu_and_UI
                 timeSpentOnCharacter:       Math.Round(Time.time - _startTime, 2)
             );
 
-            DataCollector.Instance.SetCharacterData(characterData);
+            DataCollector.Instance.SetData(characterData);
 
             SceneTransitioner.Instance.LoadNextScene();
         }

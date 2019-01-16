@@ -16,15 +16,14 @@ namespace Scripts.Examination
         [SerializeField] private WebtaskRequestType _requestType;
 
         private int _playerNumber;
-        private int _examinationModeIndex;
+        private int _examinationModeIndex = 5;
 
         private void Awake()
         {
             SingletonCheck();
         }
 
-        // Should be called by something else so ExaminationHandler can be used in other scenes without this
-        private void Start()
+        internal void Initialize()
         {
             StartCoroutine(WebtaskIoRequest(_requestType));
         }
