@@ -6637,6 +6637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infinitelyRepeat: 0
   _useMultipleMessages: 1
   _nextMessageKey: 32
   _progressInstructions: {fileID: 1118242893}
@@ -7168,6 +7169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infinitelyRepeat: 0
   _useMultipleMessages: 1
   _nextMessageKey: 32
   _progressInstructions: {fileID: 1413206634}
@@ -7390,12 +7392,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infinitelyRepeat: 0
   _useMultipleMessages: 1
   _nextMessageKey: 32
   _progressInstructions: {fileID: 1559935626}
   _instructionTextFader: {fileID: 1559935627}
   _messages:
-  - Click your left mouse button to shoot.
+  - Hold your left mouse button to shoot.
   - Boxes and pillars can be destroyed.
   _initialDelay: 0
   _letterDelay: 0.025
@@ -7598,6 +7601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infinitelyRepeat: 0
   _useMultipleMessages: 1
   _nextMessageKey: 32
   _progressInstructions: {fileID: 654497895}
@@ -15529,6 +15533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infinitelyRepeat: 0
   _useMultipleMessages: 1
   _nextMessageKey: 32
   _progressInstructions: {fileID: 290183940}
@@ -16959,6 +16964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infinitelyRepeat: 0
   _useMultipleMessages: 1
   _nextMessageKey: 32
   _progressInstructions: {fileID: 1487746000}
@@ -17402,6 +17408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infinitelyRepeat: 0
   _useMultipleMessages: 1
   _nextMessageKey: 32
   _progressInstructions: {fileID: 1241920359}
