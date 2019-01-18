@@ -5,7 +5,7 @@ namespace Scripts.Game.Enemies
     [System.Serializable]
     public class EnemyWave
     {
-        [SerializeField] internal float SpawnTime;
+        [SerializeField] internal float TimeUntilNextWave;
         [SerializeField] internal GameObject[] EnemyPrefabs;
     }
 }
