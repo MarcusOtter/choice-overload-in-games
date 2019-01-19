@@ -27,9 +27,9 @@ namespace Scripts.Menu_and_UI
 
         private void SetGraphics()
         {
-            if (_characterData == null || !_characterData.HasValue)
+            if (_characterData == null || _availableSprites == null)
             {
-                Logger.Instance.LogWarning("Character Data doesn't have any data.", gameObject);
+                Logger.Instance.LogWarning("Cannot load graphics, missing CharacterData or AvailableSprites", gameObject);
                 return;
             }
 

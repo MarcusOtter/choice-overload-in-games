@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using Random = UnityEngine.Random;
+﻿using UnityEngine;
 
 namespace Scripts.Game.Enemies
 {
@@ -14,55 +11,46 @@ namespace Scripts.Game.Enemies
         [SerializeField] private EnemyWave[] _defaultEnemyWaves;
         [SerializeField] private EnemyWave[] _loopEnemyWaves;
 
-        private List<EnemyWave> _remainingDefaultWaves;
-
-        private float _latestSpawnTime;
-        private float _lifespanTime;
-        private int _spawnedWavesAmount;
-
-        private void Start()
-        {
-            // Order by spawn time (low --> high)
-            _remainingDefaultWaves = _defaultEnemyWaves.OrderBy(x => x.TimeUntilNextWave).ToList();
-
-            // Disable spawning when player dies
-            FindObjectOfType<Player.PlayerDeathBehaviour>().OnDeath.AddListener(() => _lifespanTime = float.MinValue);
-        }
+        private float _nextSpawnTime;
+        private int _spawnedWavesCount;
 
         private void Update()
         {
-            _lifespanTime += Time.deltaTime;
+            if (Time.time < _nextSpawnTime) { return; }
 
-            var waveToSpawn = GetNextWave();
-
-            if (_lifespanTime >= _latestSpawnTime + waveToSpawn.TimeUntilNextWave)
+            if (_spawnedWavesCount < _defaultEnemyWaves.Length - 1)
             {
-                SpawnWave(waveToSpawn);
+                SpawnDefaultWave();
+            }
+            else
+            {
+                SpawnLoopWave();
             }
         }
 
-        private EnemyWave GetNextWave()
+        private void SpawnLoopWave()
         {
-            if (!_remainingDefaultWaves.Any())
-            {
-                return GetLoopWave(_spawnedWavesAmount);
-            }
+            var waveToSpawn = _loopEnemyWaves[_spawnedWavesCount % _loopEnemyWaves.Length];
 
-            var wave = _remainingDefaultWaves[0];
-            _remainingDefaultWaves.RemoveAt(0);
-            return wave;
+            SpawnWaveEnemies(waveToSpawn);
+            _nextSpawnTime = Time.time + waveToSpawn.TimeUntilNextWave;
+
+            waveToSpawn.MultiplyTimeUntilNextWave(1f - _spawnedWavesCount / 100f);
+            _spawnedWavesCount++;
         }
 
-        // return some time instead of the wave.. idk gotta modify it somewhere
-        private EnemyWave GetLoopWave(int waveCount)
+        private void SpawnDefaultWave()
         {
-            var index = waveCount % _loopEnemyWaves.Length;
-            return _loopEnemyWaves[index];
+            var waveToSpawn = _defaultEnemyWaves[_spawnedWavesCount];
+
+            SpawnWaveEnemies(waveToSpawn);
+            _nextSpawnTime = Time.time + waveToSpawn.TimeUntilNextWave;
+            _spawnedWavesCount++;
         }
 
-        private void SpawnWave(EnemyWave waveToSpawn)
+        private void SpawnWaveEnemies(EnemyWave waveToSpawn)
         {
-            Logger.Instance.Log($"Spawning wave {_spawnedWavesAmount + 1}", gameObject);
+            Logger.Instance.Log($"Spawning wave number {_spawnedWavesCount + 1}", gameObject);
 
             foreach (var enemy in waveToSpawn.EnemyPrefabs)
             {
@@ -70,11 +58,6 @@ namespace Scripts.Game.Enemies
                 Instantiate(enemy, spawnPoint, Quaternion.identity);
                 Logger.Instance.Log($"Spawned {enemy.name}", gameObject);
             }
-
-            _latestSpawnTime = Time.time;
-            _spawnedWavesAmount++;
         }
     }
 }
-
-
