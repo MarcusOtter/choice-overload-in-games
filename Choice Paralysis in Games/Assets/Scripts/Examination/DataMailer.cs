@@ -28,9 +28,13 @@ namespace Scripts.Examination
         {
             yield return new WaitForSeconds(delay);
 
+            var characterName = string.IsNullOrWhiteSpace(_entry.CharacterData.CharacterName)
+                ? EnvironmentVariables.DefaultCharacterName
+                : _entry.CharacterData.CharacterName;
+
             MailMessage mail = new MailMessage(EnvironmentVariables.EmailAddress, EnvironmentVariables.EmailAddress)
             {
-                Subject = $"Gymarb data | {_entry.CharacterData.CharacterName}",
+                Subject = $"Gymarb data | {characterName}",
                 Body = JsonUtility.ToJson(_entry, true)
             };
 
@@ -46,8 +50,7 @@ namespace Scripts.Examination
 
             smtp.SendCompleted += MailCallback;
 
-            smtp.SendAsync(mail, _entry.CharacterData.CharacterName);
-            yield break;
+            smtp.SendAsync(mail, characterName);
         }
 
         private void MailCallback(object sender, AsyncCompletedEventArgs e)
