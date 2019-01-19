@@ -78,7 +78,7 @@ namespace Scripts.Menu_and_UI
                 (
                     initialCharacterSatisfaction:  _characterQuestions[0].captionText.text,
                     optionAmount:                  _characterQuestions[1].captionText.text,
-                    enjoyedCustomization:          _characterQuestions[2].captionText.text
+                    enjoyedCustomization:          _characterQuestions[2].value == 1
                 );
             }
             else if (questionType == typeof(ReflectionQuestions))

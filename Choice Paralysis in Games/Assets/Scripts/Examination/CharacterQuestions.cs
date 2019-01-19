@@ -5,9 +5,9 @@
     {
         public string InitialCharacterSatisfaction;
         public string OptionAmount;
-        public string EnjoyedCustomization;
+        public bool EnjoyedCustomization;
 
-        public CharacterQuestions(string initialCharacterSatisfaction, string optionAmount, string enjoyedCustomization)
+        public CharacterQuestions(string initialCharacterSatisfaction, string optionAmount, bool enjoyedCustomization)
         {
             InitialCharacterSatisfaction = initialCharacterSatisfaction;
             OptionAmount = optionAmount;
