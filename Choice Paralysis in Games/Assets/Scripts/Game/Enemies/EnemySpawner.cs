@@ -18,7 +18,7 @@ namespace Scripts.Game.Enemies
         {
             if (Time.time < _nextSpawnTime) { return; }
 
-            if (_spawnedWavesCount < _defaultEnemyWaves.Length - 1)
+            if (_spawnedWavesCount <= _defaultEnemyWaves.Length - 1)
             {
                 SpawnDefaultWave();
             }
