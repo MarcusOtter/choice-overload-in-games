@@ -1442,6 +1442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _submitButton: {fileID: 216953958}
+  _subjectQuestions: []
   _characterQuestions:
   - {fileID: 1334023235}
   - {fileID: 336424}
@@ -1797,6 +1798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0694463119d44409bf812c7c1b37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infinitelyRepeat: 0
   _useMultipleMessages: 0
   _nextMessageKey: 32
   _progressInstructions: {fileID: 0}
@@ -1974,9 +1976,9 @@ MonoBehaviour:
     m_Options:
     - m_Text: Select an answer
       m_Image: {fileID: 0}
-    - m_Text: No
-      m_Image: {fileID: 0}
     - m_Text: Yes
+      m_Image: {fileID: 0}
+    - m_Text: No
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3947,7 +3949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dee60cc13e233748838b00c209c6220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultName: John Doe the Great
   _playerNameTmp: {fileID: 1146270092}
 --- !u!1 &1194263976
 GameObject:

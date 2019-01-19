@@ -5,8 +5,8 @@ namespace Scripts.Audio
     [RequireComponent(typeof(AudioSource))]
     public class SoundEffectPlayer : MonoBehaviour
     {
-        internal const float MainVolume = 1f;
-        internal const float PlayerHearingDistance = 20f;
+        internal static float MainVolume = 1f;
+        private const float PlayerHearingDistance = 20f;
 
         private bool _scaleVolumeWithPlayerDistance = true;
         private bool _scalePitchWithTimeScale = true;

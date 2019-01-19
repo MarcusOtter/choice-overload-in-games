@@ -49,7 +49,7 @@ namespace Scripts
         private IEnumerator LoadScene(int buildIndex)
         {
             _animator.SetTrigger(_leavingSceneAnimation);
-            StartCoroutine(FadeOutAllAudioSources());
+            StartCoroutine(FadeOutAudio());
             yield return new WaitForSeconds(1f);
 
             SceneManager.LoadScene(buildIndex);
@@ -57,39 +57,30 @@ namespace Scripts
             yield return new WaitForSeconds(1f);
 
             _animator.SetTrigger(_enteringSceneAnimation);
+            StartCoroutine(FadeInAudio());
             _activeLoadingSequence = null;
         }
 
-        // Potentially super expensive? idk.
-        // It really only matters on the cave sound audio. So TODO!
-        // Should also fade in all the audio sources when you enter a scene
-        private IEnumerator FadeOutAllAudioSources()
+        private IEnumerator FadeOutAudio()
         {
-            var audioSources = FindObjectsOfType<AudioSource>();
-            
-            var startingVolumes = new float[audioSources.Length];
-
-            for (var i = 0; i < audioSources.Length; i++)
+            while (Audio.SoundEffectPlayer.MainVolume > 0)
             {
-                if (audioSources[i] == null) { continue; }
-
-                startingVolumes[i] = audioSources[i].volume;
-            }
-
-            var timer = 1f;
-
-            while (timer > 0)
-            {
-                for (var i = 0; i < audioSources.Length; i++)
-                {
-                    if (audioSources[i] == null) { continue; }
-
-                    audioSources[i].volume = startingVolumes[i] * timer;
-                }
-
-                timer -= 0.02f;
+                Audio.SoundEffectPlayer.MainVolume -= 0.02f;
                 yield return new WaitForSeconds(0.02f);
             }
+
+            Audio.SoundEffectPlayer.MainVolume = 0;
+        }
+
+        private IEnumerator FadeInAudio()
+        {
+            while (Audio.SoundEffectPlayer.MainVolume < 1)
+            {
+                Audio.SoundEffectPlayer.MainVolume += 0.02f;
+                yield return new WaitForSeconds(0.02f);
+            }
+
+            Audio.SoundEffectPlayer.MainVolume = 1;
         }
 
         private void SingletonCheck()
