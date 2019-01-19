@@ -8,8 +8,11 @@ namespace Scripts.Game.Weapons
         [Header("Bullet settings")]
         [SerializeField] private bool _isPlayerBullet;
 
-        [Header("Audio settings")]
+        [Header("Impact settings")]
         [SerializeField] private Audio.SoundEffect _impactSound;
+        [SerializeField] private ParticleSystem _impactParicleSystem;
+        [SerializeField] private ParticleSystem.MinMaxGradient _wallImpactColor;
+        [SerializeField] private ParticleSystem.MinMaxGradient _enemyImpactColor;
 
         private int _damage;
         private Rigidbody2D _rigidbody;
@@ -49,35 +52,37 @@ namespace Scripts.Game.Weapons
                 return;
             }
 
-            var damageable = collider.GetComponentInChildren<IDamageable>();
-
             var dataCollector = Examination.DataCollector.Instance;
 
-            if (damageable != null)
-            {
-                damageable.TakeDamage(_damage);
+            var hitDamageable = collider.GetComponentInChildren<IDamageable>();
+            bool hitEnemy = collider.GetComponent<Enemies.Enemy>() != null;
 
-                dataCollector.RegisterShot(hitEnemy: collider.GetComponent<Enemies.Enemy>() != null);
+            if (hitDamageable != null)
+            {
+                hitDamageable.TakeDamage(_damage);
+
+                dataCollector.RegisterShot(hitEnemy);
             }
             else
             {
                 // Play default impact sound if no IDamageable is hit
                 Audio.SoundEffectPlayer.PlaySoundEffect(_impactSound, transform);
-                dataCollector.RegisterShot(hitEnemy: false);
+                dataCollector.RegisterShot(hitEnemy);
             }
 
-            // Spawn bullet effect?
+            SpawnImpactParticles(hitEnemy);
 
             Destroy(gameObject);
         }
 
         private void HandleEnemyBulletCollision(Collider2D collider)
         {
-            var damageable = collider.GetComponentInChildren<IDamageable>();
+            var hitDamageable = collider.GetComponentInChildren<IDamageable>();
+            bool hitEnemy = collider.GetComponent<Enemies.Enemy>() != null;
 
-            if (damageable != null)
+            if (hitDamageable != null)
             {
-                damageable.TakeDamage(_damage);
+                hitDamageable.TakeDamage(_damage);
             }
             else
             {
@@ -85,7 +90,21 @@ namespace Scripts.Game.Weapons
                 Audio.SoundEffectPlayer.PlaySoundEffect(_impactSound, transform);
             }
 
+            SpawnImpactParticles(hitEnemy);
+
             Destroy(gameObject);
+        }
+
+        private void SpawnImpactParticles(bool hitEnemy)
+        {
+            var particleSystem = Instantiate(_impactParicleSystem, transform.position, Quaternion.identity);
+            var mainModule = particleSystem.main;
+
+            particleSystem.transform.up = -transform.up;
+
+            mainModule.startColor = hitEnemy
+                ? _enemyImpactColor
+                : _wallImpactColor;
         }
     }
 }

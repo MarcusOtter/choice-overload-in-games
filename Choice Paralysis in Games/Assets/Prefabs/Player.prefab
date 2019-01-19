@@ -341,7 +341,7 @@ MonoBehaviour:
   BulletPrefabToSpawn: {fileID: 114101838162379956, guid: 6c4184d52bede4112847644ebfc50bc6,
     type: 2}
   BulletDamage: 2
-  BulletSpeed: 40
+  BulletSpeed: 35
   ShootDelay: 0.15
   Accuracy: 0.925
   ShootSound: {fileID: 11400000, guid: 4536751f6d025494ab610d7bd4de6d90, type: 2}
@@ -430,7 +430,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   _playerGraphics: {fileID: 114733619643892566}
-  _deathCanvas: {fileID: 0}
 --- !u!114 &114564034676943210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,7 +489,6 @@ MonoBehaviour:
   _recoilTriggerName: TriggerRecoil
   _speedParameterName: Speed
   _skipTriggerName: TriggerSkip
-  DeathAnimationDuration: 2
   _deathTriggerName: TriggerDeath
   _skipSound: {fileID: 11400000, guid: 2dd8966b712f1f24498f91e535f3952c, type: 2}
 --- !u!210 &210057628395354174

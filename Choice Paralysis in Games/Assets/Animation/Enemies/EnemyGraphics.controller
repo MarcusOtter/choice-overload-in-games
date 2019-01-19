@@ -51,7 +51,7 @@ AnimatorStateTransition:
     m_EventTreshold: -1
   - m_ConditionMode: 4
     m_ConditionEvent: Rotation
-    m_EventTreshold: 180
+    m_EventTreshold: 179
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102234430861765060}
   m_Solo: 0
@@ -150,7 +150,7 @@ AnimatorStateTransition:
     m_EventTreshold: -1
   - m_ConditionMode: 4
     m_ConditionEvent: Rotation
-    m_EventTreshold: 180
+    m_EventTreshold: 179
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102175038880412986}
   m_Solo: 0

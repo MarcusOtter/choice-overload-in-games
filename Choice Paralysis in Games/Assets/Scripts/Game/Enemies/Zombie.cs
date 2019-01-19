@@ -30,7 +30,7 @@ namespace Scripts.Game.Enemies
             Rigidbody.velocity = (_walkDirection + GetRepelForce()) * MovementSpeed;
         }
 
-        /// <summary>Returns a force that is calculated depending on nearby enemies.</summary>
+        /// <summary>Returns a force that is calculated depending on nearby enemies with colliders.</summary>
         private Vector2 GetRepelForce()
         {
             var collidersWithinRepelRange = Physics2D.OverlapCircleAll(transform.position, _repelRange);
