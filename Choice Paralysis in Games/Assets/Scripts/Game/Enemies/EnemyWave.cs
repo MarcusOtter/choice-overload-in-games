@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Scripts.Game.Enemies
 {
@@ -12,6 +13,11 @@ namespace Scripts.Game.Enemies
         [SerializeField] internal GameObject[] EnemyPrefabs;
 
         private void OnEnable()
+        {
+            SceneManager.sceneLoaded += ResetTimeUntilNextWave;
+        }
+
+        private void ResetTimeUntilNextWave(Scene loadedScene, LoadSceneMode sceneMode)
         {
             TimeUntilNextWave = _timeUntilNextWave;
         }

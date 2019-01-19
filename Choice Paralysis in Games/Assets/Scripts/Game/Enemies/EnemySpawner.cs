@@ -14,6 +14,17 @@ namespace Scripts.Game.Enemies
         private float _nextSpawnTime;
         private int _spawnedWavesCount;
 
+        private void Start()
+        {
+            if (_defaultEnemyWaves != null && _defaultEnemyWaves.Length > 0)
+            {
+                _nextSpawnTime = Time.time + _defaultEnemyWaves[0].TimeUntilNextWave;
+            }
+
+            // Disable spawning when player dies
+            FindObjectOfType<Player.PlayerDeathBehaviour>().OnDeath.AddListener(() => _nextSpawnTime = float.MaxValue);
+        }
+
         private void Update()
         {
             if (Time.time < _nextSpawnTime) { return; }
