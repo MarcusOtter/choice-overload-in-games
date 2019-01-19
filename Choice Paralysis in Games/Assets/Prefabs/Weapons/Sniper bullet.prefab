@@ -298,7 +298,7 @@ MonoBehaviour:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     m_ColorMin: {r: 0, g: 0, b: 0, a: 0}
-    m_ColorMax: {r: 0.3019608, g: 0.09411765, b: 0.09411765, a: 1}
+    m_ColorMax: {r: 0.49019608, g: 0.1254902, b: 0.1254902, a: 1}
 --- !u!212 &212056802862181602
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -65,7 +65,7 @@ namespace Scripts
         {
             while (Audio.SoundEffectPlayer.MainVolume > 0)
             {
-                Audio.SoundEffectPlayer.MainVolume -= 0.02f;
+                Audio.SoundEffectPlayer.MainVolume -= 0.04f;
                 yield return new WaitForSeconds(0.02f);
             }
 
@@ -76,7 +76,7 @@ namespace Scripts
         {
             while (Audio.SoundEffectPlayer.MainVolume < 1)
             {
-                Audio.SoundEffectPlayer.MainVolume += 0.02f;
+                Audio.SoundEffectPlayer.MainVolume += 0.04f;
                 yield return new WaitForSeconds(0.02f);
             }
 

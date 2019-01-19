@@ -51,6 +51,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4130079793938792}
   - component: {fileID: 82228130862815642}
+  - component: {fileID: 114073001985175044}
+  - component: {fileID: 114857153729002722}
   m_Layer: 0
   m_Name: Dungeon Rumbling Source
   m_TagString: Untagged
@@ -67,6 +69,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4640262860701600}
   - component: {fileID: 82076608498186876}
+  - component: {fileID: 114000048256337424}
+  - component: {fileID: 114162038987897530}
   m_Layer: 0
   m_Name: Dark Rumble Source
   m_TagString: Untagged
@@ -83,6 +87,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4612674970724046}
   - component: {fileID: 82408758236134622}
+  - component: {fileID: 114026381154185920}
+  - component: {fileID: 114531499354739420}
   m_Layer: 0
   m_Name: Ambient Metal
   m_TagString: Untagged
@@ -693,3 +699,69 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114000048256337424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606505505872030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370e9a9e3cfe13042aa1be5ac0a85acf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114026381154185920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1831971302063928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370e9a9e3cfe13042aa1be5ac0a85acf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114073001985175044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325451373002656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370e9a9e3cfe13042aa1be5ac0a85acf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114162038987897530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606505505872030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234df1e0e8d7eb24faacf81ffdbc3a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114531499354739420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1831971302063928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234df1e0e8d7eb24faacf81ffdbc3a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114857153729002722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325451373002656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234df1e0e8d7eb24faacf81ffdbc3a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

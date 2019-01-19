@@ -78,7 +78,6 @@ namespace Scripts.Game.Weapons
         private void HandleEnemyBulletCollision(Collider2D collider)
         {
             var hitDamageable = collider.GetComponentInChildren<IDamageable>();
-            bool hitEnemy = collider.GetComponent<Enemies.Enemy>() != null;
 
             if (hitDamageable != null)
             {
@@ -90,19 +89,22 @@ namespace Scripts.Game.Weapons
                 Audio.SoundEffectPlayer.PlaySoundEffect(_impactSound, transform);
             }
 
-            SpawnImpactParticles(hitEnemy);
+            bool spawnBloodParticles = collider.GetComponent<Enemies.Enemy>() != null ||
+                                  collider.CompareTag(EnvironmentVariables.PlayerTag);
+
+            SpawnImpactParticles(spawnBloodParticles);
 
             Destroy(gameObject);
         }
 
-        private void SpawnImpactParticles(bool hitEnemy)
+        private void SpawnImpactParticles(bool spawnBloodParticles)
         {
             var particleSystem = Instantiate(_impactParicleSystem, transform.position, Quaternion.identity);
             var mainModule = particleSystem.main;
 
             particleSystem.transform.up = -transform.up;
 
-            mainModule.startColor = hitEnemy
+            mainModule.startColor = spawnBloodParticles
                 ? _enemyImpactColor
                 : _wallImpactColor;
         }

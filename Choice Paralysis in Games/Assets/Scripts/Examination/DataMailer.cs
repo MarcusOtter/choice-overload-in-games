@@ -48,6 +48,8 @@ namespace Scripts.Examination
             ServicePointManager.ServerCertificateValidationCallback =
                 (s, certificate, chain, sslPolicyErrors) => true;
 
+            
+
             smtp.SendCompleted += MailCallback;
 
             smtp.SendAsync(mail, characterName);
