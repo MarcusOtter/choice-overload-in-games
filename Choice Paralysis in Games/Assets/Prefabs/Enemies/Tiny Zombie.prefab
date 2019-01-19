@@ -145,7 +145,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 10
   m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -204,6 +204,8 @@ MonoBehaviour:
   _rotationAnimationName: Rotation
   _damagedTriggerName: TriggerDamaged
   _deadBoolName: IsDead
+  _deathSortingLayerName: Ground
+  _deathSortingOrder: 1
 --- !u!114 &114671338885698098
 MonoBehaviour:
   m_ObjectHideFlags: 1
