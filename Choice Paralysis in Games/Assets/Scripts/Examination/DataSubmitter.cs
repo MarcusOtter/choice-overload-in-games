@@ -25,6 +25,11 @@ namespace Scripts.Examination
 
         private IEnumerator EmailData(float delay = 0f)
         {
+            // Prevent data from being emailed from editor
+            #if UNITY_EDITOR
+            yield break;
+            #endif
+
             yield return new WaitForSeconds(delay);
 
             var postData = JsonUtility.ToJson(_entry, false);

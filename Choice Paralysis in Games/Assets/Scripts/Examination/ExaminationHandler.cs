@@ -25,6 +25,10 @@ namespace Scripts.Examination
 
         internal void Initialize()
         {
+            #if UNITY_EDITOR
+            _requestType = WebtaskRequestType.GetCounter;
+            #endif
+
             StartCoroutine(WebtaskIoRequest(_requestType));
         }
 
