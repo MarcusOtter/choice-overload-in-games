@@ -30,6 +30,8 @@ namespace Scripts.Game.Weapons
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            _rigidbody.velocity = Vector2.zero;
+
             // Bullet script should really be an abstract class
             // and then have a PlayerBullet.cs and an EnemyBullet.cs
             // inheriting it. For now, this works.

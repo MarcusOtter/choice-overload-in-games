@@ -32,7 +32,7 @@ namespace Scripts.Examination
         {
             var postData = ((int)requestType).ToString();
 
-            using (UnityWebRequest www = UnityWebRequest.Post(EnvironmentVariables.WebTaskUri, postData))
+            using (UnityWebRequest www = UnityWebRequest.Post(EnvironmentVariables.CounterWebTaskUri, postData))
             {
                 Logger.Instance.Log($"Starting POST request to webtask.io (Post data: {postData}).", gameObject);
                 yield return www.SendWebRequest();

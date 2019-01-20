@@ -17863,21 +17863,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1636866815663510, guid: acf5bdf2d7fed470a9fb242dd652116f,
     type: 2}
   m_PrefabInternal: {fileID: 1655718732}
---- !u!70 &2143347188
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2143347187}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.030000001, y: -0.21}
-  m_Size: {x: 0.56, y: 0.67}
-  m_Direction: 0
 --- !u!50 &2143347189 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 50758007386510452, guid: acf5bdf2d7fed470a9fb242dd652116f,
