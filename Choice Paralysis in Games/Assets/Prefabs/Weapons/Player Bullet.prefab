@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 50885461005208396}
   - component: {fileID: 114101838162379956}
   - component: {fileID: 114209921069813458}
-  - component: {fileID: 61664265750162832}
+  - component: {fileID: 58442325700973754}
   m_Layer: 8
   m_Name: Player Bullet
   m_TagString: Untagged
@@ -123,8 +123,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &61664265750162832
-BoxCollider2D:
+--- !u!58 &58442325700973754
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -136,18 +136,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2222, y: 0.4}
-  m_EdgeRadius: 0
+  m_Radius: 0.2
 --- !u!114 &114101838162379956
 MonoBehaviour:
   m_ObjectHideFlags: 1
