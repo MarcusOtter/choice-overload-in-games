@@ -2,7 +2,7 @@
 Final year Game Design student project regarding [choice overload](https://en.wikipedia.org/wiki/Overchoice) in games and how it affects the entertainment value in games. The project is made in Unity 2018.2.7f1.
 
 ## Results
-The results of the study can be found in the `Results` folder.
+The results of the study can be found in the [Results folder](Results).
 
 ### All data
 - [.PDF](Results/All%20data.pdf)
