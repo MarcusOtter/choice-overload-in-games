@@ -1,0 +1,52 @@
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,All examination entries,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,34,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Subject Questions,,,,Character data,,,,,,,,,,,,Character questions,,,,,Reflection questions,,,,,Game stats,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,No.,Gender,Knows experiment purpose,,No.,Has changed name,Character Name,Time spent on name (s),Sprite option amount,Visited heads (%),Visited bodies (%),Selected head,Selected body,Is matching set,Time spent on character (s),,No.,Initial character satisfaction,Option amount,Enjoyed customization,,No.,Entertainment value,Pleased with performance,Final character satisfaction,,No.,Shots fired,Shots hit,Shots missed,Accuracy (%),Kill count,1st attempt - Time alive (s),2nd attempt - Time alive (s)
+,1,Male,TRUE,,1,TRUE,Yilian,"3,35",2,"100,00%","100,00%",2,2,TRUE,"10,50",,1,Satisfied,I wanted more options,FALSE,,1,8,Pleased,Satisfied,,1,235,68,167,"28,94%",15,"51,47","11,06"
+,2,Female,FALSE,,2,TRUE,Betta the Beta,"51,77",5,"100,00%","100,00%",5,2,FALSE,"99,81",,2,Very satisfied,I wanted more options,TRUE,,2,6,Pleased,Very satisfied,,2,612,112,500,"18,30%",26,"72,08","22,01"
+,3,Male,FALSE,,3,TRUE,Feldir The Undying,"16,27",15,"33,33%","33,33%",13,13,TRUE,"28,08",,3,Very satisfied,I am happy with the amount of options I was given,TRUE,,3,6,Unpleased,Satisfied,,3,242,62,180,"25,62%",13,"47,71","25,70"
+,4,Male,TRUE,,4,TRUE,TheDutchMagikarp,"4,87",30,"100,00%","53,33%",16,16,TRUE,"39,00",,4,Satisfied,I wanted less options,TRUE,,4,7,Unpleased,Satisfied,,4,462,126,336,"27,27%",28,"45,72","49,40"
+,5,Male,TRUE,,5,TRUE,Don,"15,98",45,"68,89%","66,67%",30,30,TRUE,"49,23",,5,Satisfied,I am happy with the amount of options I was given,TRUE,,5,7,Very pleased,Satisfied,,5,436,121,315,"27,75%",30,"23,26","80,41"
+,6,Male,TRUE,,6,TRUE,Bob The Holy,"23,47",2,"100,00%","100,00%",2,2,TRUE,"32,49",,6,Satisfied,I wanted more options,TRUE,,6,9,Very pleased,Satisfied,,6,136,42,94,"30,88%",9,"35,01","13,67"
+,7,Female,FALSE,,7,TRUE,Applesauce,"32,47",60,"36,67%","95,00%",51,53,FALSE,"106,85",,7,Satisfied,I wanted less options,TRUE,,7,4,Unpleased,Satisfied,,7,334,96,238,"28,74%",24,"41,83","55,12"
+,8,Male,FALSE,,8,TRUE,Tantawelle,"4,29",5,"100,00%","100,00%",4,4,TRUE,"19,88",,8,Satisfied,I wanted more options,TRUE,,8,6,Pleased,Satisfied,,8,515,234,281,"45,44%",57,"50,68","114,30"
+,9,Female,FALSE,,9,TRUE,The Witch,"11,84",15,"100,00%","46,67%",6,7,FALSE,"35,96",,9,Satisfied,I wanted more options,TRUE,,9,7,Pleased,Satisfied,,9,513,185,328,"36,06%",44,"96,76","52,31"
+,10,Male,FALSE,,10,TRUE,Billy Herrington,"10,11",30,"100,00%","100,00%",26,2,FALSE,"54,58",,10,Satisfied,I am happy with the amount of options I was given,TRUE,,10,8,Unpleased,Satisfied,,10,381,133,248,"34,91%",34,"45,57","59,71"
+,11,Male,FALSE,,11,TRUE,Yaff,"9,78",45,"100,00%","100,00%",45,41,FALSE,"52,56",,11,Very satisfied,I am happy with the amount of options I was given,TRUE,,11,8,Unpleased,Very satisfied,,11,506,230,276,"45,45%",58,"34,91","116,68"
+,12,Male,FALSE,,12,TRUE,Lord of Ass,"7,59",2,"100,00%","100,00%",1,2,FALSE,"27,26",,12,Unsatisfied,I wanted more options,TRUE,,12,8,Very unpleased,Unsatisfied,,12,267,73,194,"27,34%",16,"30,30","44,05"
+,13,Female,FALSE,,13,TRUE,KingGizzardAndTheWiz,"17,06",60,"35,00%","20,00%",21,12,FALSE,"50,58",,13,Very satisfied,I am happy with the amount of options I was given,TRUE,,13,9,Pleased,Very satisfied,,13,157,70,87,"44,59%",16,"12,17","47,05"
+,14,Male,TRUE,,14,TRUE,John doe the average,"13,63",5,"100,00%","100,00%",5,5,TRUE,"55,94",,14,Satisfied,I wanted more options,TRUE,,14,8,Pleased,Very satisfied,,14,356,95,261,"26,69%",21,"27,54","55,04"
+,15,Male,TRUE,,15,TRUE,CodeMyst's Clone,"11,23",15,"100,00%","100,00%",15,5,FALSE,"58,54",,15,Satisfied,I wanted less options,TRUE,,15,3,Very unpleased,Satisfied,,15,156,36,120,"23,08%",6,"18,95","16,35"
+,16,Male,TRUE,,16,FALSE,John Doe the Great,"0,00",30,"30,00%","40,00%",24,11,FALSE,"16,41",,16,Satisfied,I am happy with the amount of options I was given,TRUE,,16,7,Pleased,Satisfied,,16,372,115,257,"30,91%",28,"74,18","58,71"
+,17,Male,TRUE,,17,TRUE,Gringledoof,"21,62",45,"68,89%","100,00%",16,35,FALSE,"75,71",,17,Satisfied,I wanted less options,TRUE,,17,7,Pleased,Satisfied,,17,283,91,192,"32,16%",19,"42,23","38,17"
+,18,Male,FALSE,,18,TRUE,Buck The Puck,"7,46",60,"33,33%","15,00%",42,53,FALSE,"22,16",,18,Satisfied,I wanted more options,TRUE,,18,5,Pleased,Unsatisfied,,18,442,136,306,"30,77%",34,"34,00","65,34"
+,19,Male,TRUE,,19,TRUE,Gilded Gary the Grea,"15,70",2,"100,00%","100,00%",2,2,TRUE,"25,42",,19,Very unsatisfied,I wanted more options,FALSE,,19,9,Unpleased,Very unsatisfied,,19,314,93,221,"29,62%",22,"59,80","33,14"
+,20,Male,FALSE,,20,FALSE,John Doe the Great,"0,00",30,"53,33%","13,33%",16,4,FALSE,"22,75",,20,Very unsatisfied,I am happy with the amount of options I was given,TRUE,,20,9,Very unpleased,Very satisfied,,20,344,40,304,"11,63%",7,"38,81","8,75"
+,21,Female,FALSE,,21,TRUE,Ninamien,"2,80",45,"100,00%","100,00%",16,20,FALSE,"151,07",,21,Very satisfied,I wanted more options,TRUE,,21,7,Unpleased,Very satisfied,,21,180,63,117,"35,00%",11,"34,05","49,61"
+,22,Male,FALSE,,22,TRUE,Dave,"2,40",2,"100,00%","100,00%",1,2,FALSE,"5,92",,22,Unsatisfied,I wanted more options,TRUE,,22,7,Unpleased,Unsatisfied,,22,252,84,168,"33,33%",19,"22,36","46,21"
+,23,Male,FALSE,,23,FALSE,John Doe the Great,"0,00",30,"6,67%","6,67%",2,2,TRUE,"19,92",,23,Satisfied,I am happy with the amount of options I was given,TRUE,,23,10,Pleased,Satisfied,,23,141,35,106,"24,82%",7,"19,42","18,30"
+,24,Female,FALSE,,24,TRUE,Ostron the burger,"21,19",15,"100,00%","40,00%",11,5,FALSE,"47,08",,24,Very satisfied,I wanted more options,TRUE,,24,8,Pleased,Satisfied,,24,533,109,424,"20,45%",25,"45,03","49,60"
+,25,Male,FALSE,,25,TRUE,Dio the Great,"14,98",5,"100,00%","100,00%",5,2,FALSE,"48,81",,25,Very satisfied,I am happy with the amount of options I was given,TRUE,,25,7,Unpleased,Very satisfied,,25,171,55,116,"32,16%",11,"24,42","35,12"
+,26,Male,FALSE,,26,TRUE,John Dee,"5,90",45,"8,89%","20,00%",3,3,TRUE,"24,74",,26,Satisfied,I am happy with the amount of options I was given,TRUE,,26,6,Unpleased,Satisfied,,26,603,117,486,"19,40%",26,"37,44","51,13"
+,27,Male,TRUE,,27,TRUE,PinkKnight,"14,05",60,"100,00%","95,00%",4,6,FALSE,"86,89",,27,Very satisfied,I am happy with the amount of options I was given,TRUE,,27,9,Unpleased,Very satisfied,,27,236,60,176,"25,42%",13,"50,93","12,95"
+,28,Male,FALSE,,28,FALSE,John Doe the Great,"8,15",2,"100,00%","100,00%",2,2,TRUE,"27,59",,28,Unsatisfied,I wanted more options,TRUE,,28,8,Pleased,Very unsatisfied,,28,293,82,211,"27,99%",21,"31,23","57,56"
+,29,Male,FALSE,,29,TRUE,shakari,"3,02",15,"100,00%","100,00%",10,4,FALSE,"126,59",,29,Satisfied,I am happy with the amount of options I was given,TRUE,,29,5,Very unpleased,Satisfied,,29,312,88,224,"28,21%",21,"29,06","63,02"
+,30,Male,TRUE,,30,TRUE,ObsidianRose,"12,92",5,"100,00%","100,00%",5,5,TRUE,"31,66",,30,Satisfied,I wanted more options,FALSE,,30,5,Unpleased,Satisfied,,30,331,115,216,"34,74%",29,"49,27","43,71"
+,31,Male,TRUE,,31,TRUE,Dom the Awful,"12,27",60,"90,00%","100,00%",8,18,FALSE,"79,14",,31,Unsatisfied,I wanted less options,TRUE,,31,6,Very unpleased,Unsatisfied,,31,303,122,181,"40,26%",31,"41,92","68,41"
+,32,Male,FALSE,,32,TRUE,ThaNexT,"7,20",2,"100,00%","100,00%",1,2,FALSE,"19,29",,32,Satisfied,I wanted more options,TRUE,,32,7,Unpleased,Satisfied,,32,542,163,379,"30,07%",38,"28,61","103,68"
+,33,Male,TRUE,,33,TRUE,Gembito,"4,46",5,"100,00%","100,00%",4,4,TRUE,"19,59",,33,Satisfied,I wanted more options,TRUE,,33,7,Unpleased,Satisfied,,33,541,126,415,"23,29%",31,"75,22","38,06"
+,34,Male,FALSE,,34,TRUE,Groot,"6,09",15,"80,00%","100,00%",8,8,TRUE,"51,24",,34,Satisfied,I wanted more options,FALSE,,34,5,Unpleased,Satisfied,,34,201,78,123,"38,81%",16,"52,76","16,96"
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,Median  ,"9,95",,"100,00%","100,00%",,,Median  ,"37,48",,,,,,,Median  ,7,,,,Median  ,"322,5",94,"222,5","29,28%","21,5","40,32","48,23"
+,,,,,,,Average  ,"11,59",,"80,74%","77,79%",,,Average  ,"47,74",,,,,,,Average  ,"7,00",,,,Average  ,"344,18","101,62","242,56","30,00%","23,71","41,90","47,69"
+,,,,,,,Standard deviation  ,"10,28",,"30,67%","33,62%",,,Standard deviation  ,"34,01",,,,,,,Standard deviation  ,"1,58",,,,Standard deviation  ,"141,59","48,41","109,53","7,55%","12,67","18,16","27,32"
