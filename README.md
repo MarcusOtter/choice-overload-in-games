@@ -7,7 +7,7 @@ The results of the study can be found in the [Results folder](Results).
 ### All data
 - [.PDF](Results/All%20data.pdf)
 - [.CSV](Results/All%20data.csv)
-- [.XLSX](Results/All%20data.pdf)
+- [.XLSX](Results/All%20data.xlsx)
 
 ### Essay
 - [sv_SE](Results/Essay-sv_SE.pdf)
