@@ -2235,7 +2235,7 @@ MonoBehaviour:
 
 
     The purpose of the experiment is to see if there is any correlation between choice
-    paralysis and the entertainment value of a game.
+    overload and the entertainment value of a game.
 
 
     All participants are given different amount of options when creating their character.
@@ -2316,11 +2316,11 @@ MonoBehaviour:
     lineCount: 7
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
